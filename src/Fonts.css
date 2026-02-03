@@ -1,0 +1,49 @@
+.rufina-regular {
+    font-family: "Rufina", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.rufina-bold {
+    font-family: "Rufina", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.reenie-beanie-regular {
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.instrument-sans {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.instrument-sans-medium {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.instrument-sans-semibold {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.instrument-sans-bold {
+    font-family: "Instrument Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
