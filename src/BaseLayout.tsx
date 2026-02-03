@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom"
+import "./BaseLayout.css"
 
 export default function Layout() {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  )
+    return (
+        <div className="base-layout">
+            <Outlet />
+        </div>
+    )
 }
