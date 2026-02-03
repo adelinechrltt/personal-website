@@ -1,11 +1,15 @@
+import AboutMe from "./AboutMe";
+import CTA from "./CTA";
+import HeroSection from "./HeroSection";
+import Portfolio from "./Portfolio";
+
 export default function LandingPage() {
     return (
         <>
-            <h1>
-                <u>Ad</u> astra per aspera
-            </h1>
-            <h3>Turning ideas into code.</h3>
-            <p>Adeline Charlotte Augustinne. Software developer, among other things.</p>
+            <HeroSection />
+            <AboutMe />
+            <Portfolio />
+            <CTA />
         </>
     )
 }
