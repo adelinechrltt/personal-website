@@ -17,6 +17,19 @@ export default function SmallButton({
     type
 }: SmallButonProps) {
     return (
-        <button className={`${type == SmallBtnType.blue ? "blue-1-bg" : "burgundy-bg"} off-white`} onClick={onClick}>{text}</button>
+        <button
+            className={
+                `${type == SmallBtnType.blue ? "blue-1-bg" : "burgundy-bg"} 
+            off-white
+            instruent-sans-bold
+            shadow`
+            }
+            onClick={onClick}
+            style={{
+                borderRadius: "25px",
+                padding: "7px 15px"
+            }}>
+            {text}
+        </button>
     )
 }

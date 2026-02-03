@@ -3,11 +3,11 @@ import SmallButton, { SmallBtnType } from "../../components/Button";
 export default function AboutMe() {
     return (
         <>
-            <h1>
+            <h1 className="rufina-bold blue-1">
                 Adeline.
             </h1>
-            <h2>I learn, break, and build things.</h2>
-            <p>
+            <h2 className="reenie-beanie-regular">I learn, break, and build things.</h2>
+            <p className="instrument-sans">
                 I’m Adeline, an aspiring full-stack software developer based in Jakarta, Indonesia.
                 <br /><br />
                 A lifelong learner dabbling in software development, among other things.

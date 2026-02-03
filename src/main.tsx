@@ -4,6 +4,7 @@ import App from './App.tsx'
 
 import './ColorTokens.css'
 import './index.css'
+import './Fonts.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
