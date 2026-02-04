@@ -4,9 +4,8 @@ import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css'
-import './ColorTokens.css'
 
-import LandingPage from './pages/LandingPage'
+import LandingPage from './pages/LandingPage/LandingPage'
 import Layout from './BaseLayout'
 
 function App() {
