@@ -18,7 +18,7 @@ export default function Portfolio() {
             }}>
                 <h1 className="rufina-bold blue-1"
                     style={{
-                        fontSize: "11.25rem",
+                        fontSize: `${180 / 1512 * 100}vw`,
                         lineHeight: "70%",
                         margin: 0
                     }}>
@@ -26,7 +26,7 @@ export default function Portfolio() {
                 </h1>
                 <p className="instrument-sans"
                     style={{
-                        fontSize: "1.5rem",
+                        fontSize: `${24 / 1512 * 100}vw`,
                         margin: 0
                     }}
                 >
@@ -83,7 +83,7 @@ export default function Portfolio() {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: `${15/16}rem`
+                gap: `${15 / 16}rem`
             }}>
                 <div
                     style={{

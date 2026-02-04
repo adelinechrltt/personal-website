@@ -26,7 +26,7 @@ export default function AboutMe() {
                     <h1
                         className="rufina-bold blue-1"
                         style={{
-                            fontSize: "16.25rem",
+                            fontSize: `${260 / 1512 * 100}vw`,
                             margin: 0,
                             marginBottom: "-4rem"
                         }}>
@@ -35,7 +35,7 @@ export default function AboutMe() {
                     <h2
                         className="reenie-beanie-regular text-dark-gray"
                         style={{
-                            fontSize: "4rem",
+                            fontSize: `${64 / 1512 * 100}vw`,
                             WebkitTextStroke: "1px",
                             textAlign: "end",
                             margin: "0rem",
@@ -49,7 +49,7 @@ export default function AboutMe() {
                 </div>
                 <p className="instrument-sans"
                     style={{
-                        fontSize: "1.5rem",
+                        fontSize: `${24 / 1512 * 100}vw`,
                         margin: 0
                     }}>
                     I’m <b>Adeline</b>, an aspiring full-stack software developer<br />
@@ -87,9 +87,9 @@ export default function AboutMe() {
                 src="src/assets/AdelineFullbody.png" alt=""
                 style={{
                     position: "absolute",
-                    right: "2%",
-                    bottom: "-3%",
-                    height: "90vh",
+                    right: "0%",
+                    bottom: "5%",
+                    height: `${625 / 793 * 100}vh`,
                     zIndex: 2,
                     pointerEvents: "none"
                 }} />

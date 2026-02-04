@@ -28,9 +28,9 @@ export default function SmallButton({
             }
             onClick={onClick}
             style={{
-                borderRadius: "0.98rem",
-                padding: "7px 15px",
-                fontSize: "1.5rem"
+                borderRadius: `${15 / 1512 * 100}vw`,
+                padding: `${7 / 1512 * 100}vw ${15 / 1512 * 100}vw`,
+                fontSize: `${24 / 1512 * 100}vw`
             }}>
             <span
                 style={{

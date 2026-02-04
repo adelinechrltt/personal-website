@@ -5,11 +5,11 @@ import Portfolio from "./Portfolio";
 
 export default function LandingPage() {
     return (
-        <>
+        <section>
             <HeroSection />
             <AboutMe />
             <Portfolio />
             <CTA />
-        </>
+        </section>
     )
 }
