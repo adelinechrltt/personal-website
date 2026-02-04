@@ -9,12 +9,14 @@ type SmallButonProps = {
     onClick: () => void;
     text: string;
     type: SmallBtnType;
+    icon?: string
 }
 
 export default function SmallButton({
     onClick,
     text,
-    type
+    type,
+    icon
 }: SmallButonProps) {
     return (
         <button
@@ -26,10 +28,16 @@ export default function SmallButton({
             }
             onClick={onClick}
             style={{
-                borderRadius: "25px",
-                padding: "7px 15px"
+                borderRadius: "0.98rem",
+                padding: "7px 15px",
+                fontSize: "1.5rem"
             }}>
-            {text}
+            <span
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: "0.9rem"
+                }}>{text}<img src={icon} /></span>
         </button>
     )
 }
