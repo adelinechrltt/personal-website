@@ -2,34 +2,103 @@ import SmallButton, { SmallBtnType } from "../../components/Button";
 
 export default function Portfolio() {
     return (
-        <>
-            <div>
-                <h1 className="rufina-bold blue-1">
+        <section style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            justifyContent: "center",
+            minHeight: "100vh",
+            gap: `${30 / 16}rem`
+        }}>
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: `${10 / 16}rem`
+            }}>
+                <h1 className="rufina-bold blue-1"
+                    style={{
+                        fontSize: "11.25rem",
+                        lineHeight: "70%",
+                        margin: 0
+                    }}>
                     Portfolio.
                 </h1>
-                <p className="instrument-sans">
-                    Take a peek at my past projects.
+                <p className="instrument-sans"
+                    style={{
+                        fontSize: "1.5rem",
+                        margin: 0
+                    }}
+                >
+                    Take a peek at my past <span className="burgundy"><b>projects and achievements.</b></span>
                 </p>
             </div>
-            <div>
-                <h3 className="rufina-bold blue-1">Projects</h3>
-                <div>
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                justifyContent: "center",
+                gap: `${15 / 16}rem`
+            }}>
+                <h3 className="rufina-bold blue-1" style={{
+                    fontSize: `${32 / 16}rem`
+                }}>Projects</h3>
+                <div style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "flex-start",
+                    justifyContent: "center",
+                    gap: `${15 / 16}rem`
+                }}>
                     <img src="https://picsum.photos/500/500" alt="" />
                     <img src="https://picsum.photos/500/500" alt="" />
                 </div>
-                <div>
+                <div style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    alignItems: "flex-start",
+                    justifyContent: "center",
+                    gap: `${15 / 16}rem`
+                }}>
                     <img src="https://picsum.photos/500/500" alt="" />
                     <img src="https://picsum.photos/500/500" alt="" />
                 </div>
-                <SmallButton
-                                    onClick={() => { console.log("pressed") }}
-                                    text={"Hooray"}
-                                    type={SmallBtnType.blue} />
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        width: "100%"
+                    }}
+                >
+                    <SmallButton
+                        onClick={() => { console.log("pressed") }}
+                        text={"View all projects"}
+                        type={SmallBtnType.blue}
+                        icon={"src/assets/Arrow.svg"}
+                    />
+                </div>
             </div>
-            <div>
-                <h3 className="rufina-bold burgundy">Achievements</h3>
-                    <img src="https://picsum.photos/1008/400" alt="" />
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: `${15/16}rem`
+            }}>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        width: "100%"
+                    }}
+                >
+                    <h3 className="rufina-bold burgundy"
+                        style={{
+                            fontSize: `${32 / 16}rem`
+                        }}>Achievements</h3>
+                </div>
+                <img src="https://picsum.photos/1008/400" alt="" />
             </div>
-        </>
+        </section>
     )
 }
