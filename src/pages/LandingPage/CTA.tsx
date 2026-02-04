@@ -76,7 +76,7 @@ export default function CTA() {
                 style={{
                     position: "absolute",
                     right: "-30%",
-                    top: "15%",
+                    bottom: "60%",
                     zIndex: 0,
                     pointerEvents: "none"
                 }}

@@ -42,8 +42,8 @@ export default function HeroSection() {
             <img src="src/assets/HeroSectionVector01.png"
                 style={{
                     position: "absolute",
-                    top: "-15%",
-                    left: "-35%",
+                    bottom: "45%",
+                    right: "70%",
                     zIndex: 0,
                     pointerEvents: "none"
                 }}
