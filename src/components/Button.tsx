@@ -37,7 +37,7 @@ export default function SmallButton({
                     display: "flex",
                     flexDirection: "row",
                     gap: "0.9rem"
-                }}>{text}<img src={icon} /></span>
+                }}>{text}{icon != null ? <img src={icon} /> : <></>}</span>
         </button>
     )
 }
