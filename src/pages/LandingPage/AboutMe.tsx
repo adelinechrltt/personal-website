@@ -3,6 +3,8 @@ import SmallButton, { SmallBtnType } from "../../components/Button";
 export default function AboutMe() {
     return (
         <section style={{
+            position: "relative",
+            overflow: "hidden",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -36,7 +38,8 @@ export default function AboutMe() {
                             fontSize: "4rem",
                             WebkitTextStroke: "1px",
                             textAlign: "end",
-                            margin: 0
+                            margin: "0rem",
+                            marginBottom: "-1.5rem"
                         }}>I <span className="burgundy">learn, break,</span> and{` `}
                         <span className="burgundy" style={{
                             textDecorationThickness: "0.2rem",
@@ -44,7 +47,11 @@ export default function AboutMe() {
                             textUnderlineOffset: "0.3rem"
                         }}>build</span> things.</h2>
                 </div>
-                <p className="instrument-sans" style={{ fontSize: "1.5rem" }}>
+                <p className="instrument-sans"
+                    style={{
+                        fontSize: "1.5rem",
+                        margin: 0
+                    }}>
                     I’m <b>Adeline</b>, an aspiring full-stack software developer<br />
                     based in <b>Jakarta, Indonesia</b>.
                     <br /><br />
@@ -52,13 +59,13 @@ export default function AboutMe() {
                     among other things.
                 </p>
                 <div
-                style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "flex-start",
-                    alignContent: "center",
-                    gap: "3.125rem"
-                }}>
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "flex-start",
+                        alignContent: "center",
+                        gap: "3.125rem"
+                    }}>
                     <span style={{
                         display: "flex",
                         flexDirection: "row",
@@ -76,6 +83,16 @@ export default function AboutMe() {
                         icon={"src/assets/Arrow.svg"} />
                 </div>
             </div>
+            <img
+                src="src/assets/AdelineFullbody.png" alt=""
+                style={{
+                    position: "absolute",
+                    right: "2%",
+                    bottom: "-3%",
+                    height: "90vh",
+                    zIndex: 2,
+                    pointerEvents: "none"
+                }} />
         </section>
     )
 }
