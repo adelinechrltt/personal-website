@@ -50,8 +50,8 @@ export default function Portfolio() {
                     justifyContent: "center",
                     gap: `${15 / 16}rem`
                 }}>
-                    <img src="https://picsum.photos/500/500" alt="" />
-                    <img src="https://picsum.photos/500/500" alt="" />
+                    <img src="https://picsum.photos/400/300" alt="" />
+                    <img src="https://picsum.photos/400/300" alt="" />
                 </div>
                 <div style={{
                     display: "flex",
@@ -60,8 +60,8 @@ export default function Portfolio() {
                     justifyContent: "center",
                     gap: `${15 / 16}rem`
                 }}>
-                    <img src="https://picsum.photos/500/500" alt="" />
-                    <img src="https://picsum.photos/500/500" alt="" />
+                    <img src="https://picsum.photos/400/300" alt="" />
+                    <img src="https://picsum.photos/400/300" alt="" />
                 </div>
                 <div
                     style={{
@@ -83,7 +83,8 @@ export default function Portfolio() {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: `${15 / 16}rem`
+                gap: `${15 / 16}rem`,
+                width: "100%"
             }}>
                 <div
                     style={{
@@ -97,7 +98,7 @@ export default function Portfolio() {
                             fontSize: `${32 / 16}rem`
                         }}>Achievements</h3>
                 </div>
-                <img src="https://picsum.photos/1008/400" alt="" />
+                <img src="https://picsum.photos/800/300" alt="" />
             </div>
         </section>
     )
