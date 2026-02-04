@@ -3,6 +3,7 @@ import SmallButton, { SmallBtnType } from "../../components/Button"
 export default function CTA() {
     return (
         <section style={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
@@ -11,7 +12,7 @@ export default function CTA() {
             gap: `${30 / 16}rem`
         }}>
             <h1 className="rufina-bold burgundy" style={{
-                fontSize: `${128 / 16}rem`,
+                fontSize: `${128 / 16}vw`,
                 lineHeight: "0.7",
                 margin: "0rem",
                 marginBottom: "1.5rem"
@@ -70,6 +71,17 @@ export default function CTA() {
                         icon={"src/assets/Arrow.svg"} />
                 </span>
             </div>
+
+            <img src="src/assets/CTAVector.png"
+                style={{
+                    position: "absolute",
+                    right: "-30%",
+                    top: "15%",
+                    zIndex: 0,
+                    pointerEvents: "none"
+                }}
+            />
+
         </section >
     )
 }

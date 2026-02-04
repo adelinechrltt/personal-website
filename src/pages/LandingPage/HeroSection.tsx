@@ -1,6 +1,7 @@
 export default function HeroSection() {
     return (
         <section style={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-end",
@@ -10,7 +11,8 @@ export default function HeroSection() {
             <div style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "1rem"
+                gap: "1rem",
+                zIndex: 1
             }}>
                 <h1 className="rufina-bold blue-1 shadow-text"
                     style={{
@@ -35,6 +37,26 @@ export default function HeroSection() {
             </div>
             <p className="instrument-sans" style={{ fontSize: `${24 / 1512 * 100}vw` }}>
                 <span className="burgundy"><b><u>Adeline</u> Charlotte Augustinne.</b></span> Software developer, among other things.</p>
+
+
+            <img src="src/assets/HeroSectionVector01.png"
+                style={{
+                    position: "absolute",
+                    top: "-15%",
+                    left: "-35%",
+                    zIndex: 0,
+                    pointerEvents: "none"
+                }}
+            />
+            <img src="src/assets/HeroSectionVector02.png"
+                style={{
+                    position: "absolute",
+                    bottom: "15%",
+                    right: "-25%",
+                    zIndex: 0,
+                    pointerEvents: "none"
+                }}
+            />
         </section>
     )
 }
