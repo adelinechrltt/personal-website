@@ -1,6 +1,10 @@
+import { useState } from "react";
+
 import SmallOutlineBtn from "../../components/PillText";
 
 export default function ExperienceEntry() {
+    const [isExpanded, setIsExpanded] = useState(false);
+
     return (
         <div className="instrument-sans-medium" style={{
             display: "flex",
@@ -48,29 +52,43 @@ export default function ExperienceEntry() {
                     gap: `${15 / 1512 * 100}vw`
                 }}>
                     <p style={{ fontSize: `${16 / 1512 * 100}vw` }}>03/2025 - 12/2025</p>
-                    <button style={{ background: "none", border: "none" }}><img src="src/assets/Chevron.svg" /></button>
+                    <button
+                        style={{
+                            background: "none",
+                            border: "none",
+                            transform: isExpanded ? "rotate(0deg)" : "rotate(-180deg)",
+                            transition: "transform 0.25s ease",
+                        }}
+                        onClick={() => setIsExpanded(prev => !prev)}><img src="src/assets/Chevron.svg" /></button>
                 </div>
             </div>
-            <ul style={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "0 0 0 15px",
-                gap: `${0 / 1512 * 100}vh`
+            <div style={{
+                overflow: "hidden",
+                maxHeight: isExpanded ? "500px" : "0",
+                opacity: isExpanded ? 1 : 0,
+                transition: "max-height 0.5s ease, opacity 0.3s ease",
             }}>
-                <li>Lorem ipsum</li>
-                <li>Lorem ipsum</li>
-                <li>Lorem ipsum</li>
-            </ul>
-            <span style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: `${10 / 1512 * 100}vw`
-            }}>
-                <SmallOutlineBtn text={"Swift"} type={"red"} />
-                <SmallOutlineBtn text={"SwiftUI"} type={"red"} />
-                <SmallOutlineBtn text={"UIKit"} type={"red"} />
-                <SmallOutlineBtn text={"SwiftLint"} type={"red"} />
-            </span>
+                <ul style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    padding: "0 0 0 15px",
+                    gap: `${0 / 1512 * 100}vh`,
+                }}>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                    <li>Lorem ipsum</li>
+                </ul>
+                <span style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    gap: `${10 / 1512 * 100}vw`
+                }}>
+                    <SmallOutlineBtn text={"Swift"} type={"red"} />
+                    <SmallOutlineBtn text={"SwiftUI"} type={"red"} />
+                    <SmallOutlineBtn text={"UIKit"} type={"red"} />
+                    <SmallOutlineBtn text={"SwiftLint"} type={"red"} />
+                </span>
+            </div>
         </div>
     )
 }
