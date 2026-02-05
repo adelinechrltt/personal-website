@@ -5,7 +5,7 @@ export const SmallBtnType = {
 
 export type SmallBtnType = typeof SmallBtnType[keyof typeof SmallBtnType];
 
-type SmallButonProps = {
+type SmallButtonProps = {
     onClick: () => void;
     text: string;
     type: SmallBtnType;
@@ -17,7 +17,7 @@ export default function SmallButton({
     text,
     type,
     icon
-}: SmallButonProps) {
+}: SmallButtonProps) {
     return (
         <button
             className={
