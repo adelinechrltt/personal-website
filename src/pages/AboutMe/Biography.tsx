@@ -1,8 +1,14 @@
 export default function Biography() {
     return (
-        <section>
-            <div>
-
+        <section style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: `${30 / 1812 * 100}vh`,
+        }}>
+            <div style={{
+                position: "relative",
+                marginLeft: `${130 / 1512 * 100}rem`
+            }}>
                 <h1 className="rufina-bold blue-1 shadow-text"
                     style={{
                         fontSize: `${200 / 1512 * 100}vw`,
@@ -17,17 +23,18 @@ export default function Biography() {
                         fontSize: `${40 / 1512 * 100}vw`,
                         WebkitTextStroke: "1px",
                         margin: "0rem",
+                        marginLeft: `${80 / 1512 * 100}rem`
                     }}>
                     Aspiring software developer & lifelong learner
                 </h2>
-
             </div>
 
             <div style={{
                 display: "flex",
                 flexDirection: "column",
                 gap: `${25 / 1812 * 100}vh`,
-                margin: `${10 / 1812 * 100}vh`
+                margin: `${10 / 1812 * 100}vh`,
+                marginLeft: `${290 / 1512 * 100}rem`
             }}>
                 {/* Hello! */}
                 <div style={{
@@ -174,7 +181,9 @@ export default function Biography() {
                             }}>
                             Trivia
                         </h3>
-                        <ul className="instrument-sans" style={{ fontSize: `${15 / 1512 * 100}vw`, margin: 0 }}>
+                        <ul className="instrument-sans" style={{
+                            fontSize: `${15 / 1512 * 100}vw`, margin: 0, textAlign: "justify"
+                        }}>
                             <li><b>INTJ-T</b> and a <b>huge cat person~</b></li>
 
                             <li>
@@ -190,15 +199,27 @@ export default function Biography() {
                             </li>
 
                             <li>
-                                <b>East Asian indie & urban-pop</b>
-                                (Hikaru Utada, m-flo, Elephant Gym)
+                                <b>East Asian indie & urban-pop</b> (Hikaru Utada, m-flo, Elephant Gym)
                             </li>
-
                             <li>I also do <a className="blue-2"><b><u>digital art</u></b></a> on the side too, sometimes!</li>
                         </ul>
                     </div>
                 </div >
             </div>
+            <img src="src/assets/AdelineHalfbody.png" alt="" style={{
+                position: "absolute",
+                maxHeight: `${550 / 725 * 100}vh`,
+                top: `${70 / 1512 * 100}vh`,
+                left: `${150 / 1512 * 100}vw`,
+                pointerEvents: "none"
+            }} />
+            <img src="src/assets/RedStarOutline.svg" alt="" style={{
+                position: "absolute",
+                maxHeight: `${550 / 725 * 100}vh`,
+                top: `${320 / 1512 * 100}vh`,
+                left: `${180 / 1512 * 100}vw`,
+                pointerEvents: "none"
+            }} />
         </section >
     )
 }
