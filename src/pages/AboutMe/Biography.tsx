@@ -1,3 +1,5 @@
+import "./Biography.css"
+
 export default function Biography() {
     return (
         <section style={{
@@ -141,12 +143,21 @@ export default function Biography() {
                                 borderRadius: `20px`,
                                 border: "1px solid #7F2025"
                             }}>
-                                <img src="src/assets/icons/Spotify.svg" alt="" style={{ width: `${75 / 1512 * 100}vw` }} />
-                                <div className="instrument-sans" style={{
+                                <div className="cd-wrapper">
+                                    <div className="cd-ring">
+                                        <img
+                                            src="https://picsum.photos/200" // placeholder album art
+                                            alt="Album art"
+                                            className="cd-art"
+                                        />
+                                    </div>
+                                </div>                                <div className="instrument-sans" style={{
                                     display: "flex",
                                     flexDirection: "column",
                                     justifyItems: "flex-start",
-                                    gap: `${10 / 1881.02 * 100}vh`
+                                    gap: `${10 / 1881.02 * 100}vh`,
+                                    justifyContent: "space-between",
+                                    height: "90%",
                                 }}>
                                     <div style={{
                                         display: "flex",
@@ -182,13 +193,23 @@ export default function Biography() {
                             Trivia
                         </h3>
                         <ul className="instrument-sans" style={{
-                            fontSize: `${15 / 1512 * 100}vw`, margin: 0, textAlign: "justify"
+                            display: "flex",
+                            flexDirection: "column",
+                            fontSize: `${15 / 1512 * 100}vw`,
+                            margin: 0,
+                            textAlign: "justify",
+                            gap: "7px"
                         }}>
                             <li><b>INTJ-T</b> and a <b>huge cat person~</b></li>
 
                             <li>
                                 Several of the things I like include:
-                                <ul>
+                                <ul style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    textAlign: "justify",
+                                    gap: "5px"
+                                }}>
                                     <li>
                                         <b>the Godzilla franchise,</b>  especially Monsterverse & Shin Godzilla
                                     </li>
@@ -205,7 +226,7 @@ export default function Biography() {
                         </ul>
                     </div>
                 </div >
-            </div>
+            </div >
             <img src="src/assets/AdelineHalfbody.png" alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
