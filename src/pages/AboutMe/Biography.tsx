@@ -146,12 +146,13 @@ export default function Biography() {
                                 <div className="cd-wrapper">
                                     <div className="cd-ring">
                                         <img
-                                            src="https://picsum.photos/200" // placeholder album art
+                                            src="https://i.ytimg.com/vi/Cb0JZhdmjtg/maxresdefault.jpg" // placeholder album art
                                             alt="Album art"
                                             className="cd-art"
                                         />
                                     </div>
-                                </div>                                <div className="instrument-sans" style={{
+                                </div>
+                                <div className="instrument-sans" style={{
                                     display: "flex",
                                     flexDirection: "column",
                                     justifyItems: "flex-start",

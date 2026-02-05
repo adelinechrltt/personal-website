@@ -1,4 +1,7 @@
 import SmallButton from "../../components/Button";
+import SmallOutlineBtn from "../../components/PillText";
+import ExperienceEntry from "./ExperienceEntry";
+import TechStackCell from "./TechStackCell";
 
 export default function StackExperience() {
     return (
@@ -6,144 +9,84 @@ export default function StackExperience() {
             display: "flex",
             flexDirection: "column",
             justifyItems: "center",
-            alignItems: "center"
+            alignItems: "center",
+            gap: `${80 / 1512 * 100}vh`,
+            margin: `30px 0px`
         }}>
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyItems: "center",
-                alignItems: "center"
-            }}>
-                <h2>Tech Stack</h2>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyItems: "center",
-                    alignItems: "center"
-                }}>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyItems: "center",
-                        alignItems: "center"
-                    }}>
-                        <p>Mobile Dev.</p>
-                        <span>
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                        </span>
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyItems: "center",
-                        alignItems: "center"
-                    }}>
-                        <p>Web Dev.</p>
-                        <span>
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                        </span>
-                    </div>
-                </div>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyItems: "center",
-                    alignItems: "center"
-                }}>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyItems: "center",
-                        alignItems: "center"
-                    }}>
-                        <p>Backend Dev.</p>
-                        <span>
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                        </span>
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyItems: "center",
-                        alignItems: "center"
-                    }}>
-                        <p>Data</p>
-                        <span>
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                        </span>
-                    </div>
-                </div>
-                <p>...among other things!</p>
-            </div>
+
+            {/* Tech Stack */}
             <div style={{
                 display: "flex",
                 flexDirection: "column",
                 justifyItems: "center",
                 alignItems: "center",
-                width: "100%"
+                gap: `${10 / 1512 * 100}vw`
             }}>
-                <h2>Professional Experience</h2>
+                <h3 className="rufina-bold burgundy"
+                    style={{
+                        fontSize: `${32 / 1512 * 100}vw`,
+                        margin: 0
+                    }}>
+                    Tech Stack
+                </h3>
+
+                {/* Row 1 */}
+                <div style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyItems: "center",
+                    alignItems: "center",
+                    gap: `${54 / 1512 * 100}vw`
+                }}>
+                    <TechStackCell />
+                    <TechStackCell />
+                </div>
+
+                {/* Row 2 */}
+                <div style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyItems: "center",
+                    alignItems: "center",
+                    gap: `${54 / 1512 * 100}vw`
+                }}>
+                    <TechStackCell />
+                    <TechStackCell />
+                </div>
+                <p className="instrument-sans-medium" style={{
+                    fontSize: `${16 / 1512 * 100}vw`,
+                    margin: 0
+                }}><i>... among other things!</i></p>
+            </div>
+
+            {/* Professional Experience */}
+            <div style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyItems: "center",
+                alignItems: "center",
+                width: "100%",
+                gap: `${20 / 1512 * 100}vh`
+            }}>
+                {/* Header */}
+                <h3 className="rufina-bold blue-2"
+                    style={{
+                        fontSize: `${32 / 1512 * 100}vw`,
+                        margin: 0
+                    }}>
+                    Professional Experience
+                </h3>
+
+                {/* Entry */}
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyItems: "center",
-                    alignItems: "start",
+                    gap: `${20 / 1512 * 100}vh`,
                     width: "80%"
                 }}>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyItems: "center",
-                        justifyContent: "space-between",
-                        alignItems: "stretch",
-                        width: "100%"
-                    }}>
-                        <div style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyItems: "center",
-                            alignItems: "center",
-                            width: "100%"
-                        }}>
-                            <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${70 / 1512 * 100}vw` }} />
-                            <div style={{
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyItems: "center",
-                                alignItems: "start",
-                                width: "100%"
-                            }}>
-                                <h3>Apple Developer Academy</h3>
-                                <p>Junior iOS Developer</p>
-                            </div>
-                        </div>
-                        <p>03/2025 - 12/2025</p>
-                        <button>a</button>
-                    </div>
-                    <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                    </ul>
-                    <span>
-                        <SmallButton onClick={function (): void {
-                            throw new Error("Function not implemented.");
-                        }} text={"Swift"} type={"blue"} />
-                        <SmallButton onClick={function (): void {
-                            throw new Error("Function not implemented.");
-                        }} text={"Swift"} type={"blue"} />
-                        <SmallButton onClick={function (): void {
-                            throw new Error("Function not implemented.");
-                        }} text={"Swift"} type={"blue"} />
-                    </span>
+                    <ExperienceEntry />
+                    <hr className="blue-2-bg" style={{ width: "100%", border: "none", height: "1px" }} />
+                    <ExperienceEntry />
                 </div>
             </div>
         </section >
