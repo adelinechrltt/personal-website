@@ -1,5 +1,12 @@
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 
+import Arrow from "../../assets/Arrow.svg"
+import AdelineFullBody from "../../assets/AdelineFullbody.png"
+
+import LinkedIn from "../../assets/icons/LinkedIn.svg"
+import Instagram from "../../assets/icons/Instagram.svg"
+import GitHub from "../../assets/icons/GitHub.svg"
+
 export default function AboutMe() {
     return (
         <section style={{
@@ -72,19 +79,19 @@ export default function AboutMe() {
                         justifyContent: "center",
                         gap: "1.9rem"
                     }}>
-                        <img src="src/assets/icons/LinkedIn.svg" alt="" />
-                        <img src="src/assets/icons/Instagram.svg" alt="" />
-                        <img src="src/assets/icons/GitHub.svg" alt="" />
+                        <img src={LinkedIn} alt="" />
+                        <img src={Instagram} alt="" />
+                        <img src={GitHub} alt="" />
                     </span>
                     <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"More about me!"}
                         type={BtnSmallFillType.blue}
-                        icon={"src/assets/Arrow.svg"} />
+                        icon={Arrow} />
                 </div>
             </div>
             <img
-                src="src/assets/AdelineFullbody.png" alt=""
+                src={AdelineFullBody} alt=""
                 style={{
                     position: "absolute",
                     right: "0%",

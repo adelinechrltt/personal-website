@@ -1,5 +1,9 @@
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill"
 
+import Arrow from "../../assets/Arrow.svg"
+import CTAVector from "../../assets/CTAVector.png"
+import LinkSVG from "../../assets/icons/Link.svg"
+
 export default function CTA() {
     return (
         <section style={{
@@ -49,7 +53,7 @@ export default function CTA() {
                         onClick={() => { console.log("pressed") }}
                         text={"CV"}
                         type={BtnSmallFillType.red}
-                        icon={"src/assets/icons/CV.svg"} />
+                        icon={LinkSVG} />
                 </span>
             </div>
 
@@ -68,11 +72,11 @@ export default function CTA() {
                         onClick={() => { console.log("pressed") }}
                         text={"About me"}
                         type={BtnSmallFillType.blue}
-                        icon={"src/assets/Arrow.svg"} />
+                        icon={Arrow} />
                 </span>
             </div>
 
-            <img src="src/assets/CTAVector.png"
+            <img src={CTAVector}
                 style={{
                     position: "absolute",
                     right: "-30%",

@@ -1,6 +1,8 @@
 import BtnSmallOutline from "../../components/BtnSmallOutline";
 import ProjectsCard from "../../components/ProjectsCard";
 
+import ArrowBack from "../../assets/ArrowBack.svg"
+
 export default function ProjectsList() {
     return (
         <section style={{
@@ -12,7 +14,7 @@ export default function ProjectsList() {
             <div style={{
                 width: "100%"
             }}>
-                <img src="src/assets/ArrowBack.svg" alt=""
+                <img src={ArrowBack} alt=""
                     style={{
                         marginLeft: "-8vw"
                     }}

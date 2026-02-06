@@ -1,5 +1,14 @@
 import "./Biography.css"
 
+import AdelineHalfBody from "../../assets/AdelineHalfbody.png"
+import RedStarOutline from "../../assets/RedStarOutline.svg"
+
+import MusicIcon from "../../assets/icons/MusicIcon.svg"
+import LinkedIn from "../../assets/icons/LinkedIn.svg"
+import Instagram from "../../assets/icons/Instagram.svg"
+import GitHub from "../../assets/icons/GitHub.svg"
+import Spotify from "../../assets/icons/Spotify.svg"
+
 export default function Biography() {
     return (
         <section style={{
@@ -118,10 +127,10 @@ export default function Biography() {
                                 gap: `${30 / 1512 * 100}vw`,
                                 margin: 0
                             }}>
-                                <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src="src/assets/icons/Instagram.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src="src/assets/icons/GitHub.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src="src/assets/icons/Spotify.svg" alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <img src={LinkedIn} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <img src={Instagram} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <img src={GitHub} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <img src={Spotify} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
                             </span>
                         </div>
 
@@ -171,7 +180,7 @@ export default function Biography() {
                                             flexDirection: "row",
                                             justifyItems: "flex-start",
                                             gap: `6px`
-                                        }}><img src="src/assets/icons/MusicIcon.svg" alt="" />
+                                        }}><img src={MusicIcon} alt="" />
                                             <p style={{ margin: 0, fontSize: `${20 / 1881 * 100}vw` }}><b>Jane Doe</b></p></span>
                                         <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>by Kenshi Yonezu & Hikaru Utada</p>
                                     </div>
@@ -228,14 +237,14 @@ export default function Biography() {
                     </div>
                 </div >
             </div >
-            <img src="src/assets/AdelineHalfbody.png" alt="" style={{
+            <img src={AdelineHalfBody} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
                 top: `${70 / 1512 * 100}vh`,
                 left: `${150 / 1512 * 100}vw`,
                 pointerEvents: "none"
             }} />
-            <img src="src/assets/RedStarOutline.svg" alt="" style={{
+            <img src={RedStarOutline} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
                 top: `${320 / 1512 * 100}vh`,
