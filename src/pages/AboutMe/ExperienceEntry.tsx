@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import BtnSmallOutline from "../../components/BtnSmallOutline";
 
-import Chevron from "../../assets/Chevron.svg"
+import ChevronIcon from "../../assets/Chevron"
 import LinkedIn from "../../assets/icons/LinkedIn.svg"
 
 export default function ExperienceEntry() {
@@ -62,7 +62,7 @@ export default function ExperienceEntry() {
                             transform: isExpanded ? "rotate(0deg)" : "rotate(-180deg)",
                             transition: "transform 0.25s ease",
                         }}
-                        onClick={() => setIsExpanded(prev => !prev)}><img src={Chevron} /></button>
+                        onClick={() => setIsExpanded(prev => !prev)}><ChevronIcon /></button>
                 </div>
             </div>
             <div style={{
