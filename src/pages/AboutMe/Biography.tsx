@@ -172,7 +172,7 @@ export default function Biography() {
                                             justifyItems: "flex-start",
                                             gap: `6px`
                                         }}><img src="src/assets/icons/MusicIcon.svg" alt="" />
-                                            <p style={{ margin: 0 }}><b>Jane Doe</b></p></span>
+                                            <p style={{ margin: 0, fontSize: `${20 / 1881 * 100}vw` }}><b>Jane Doe</b></p></span>
                                         <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>by Kenshi Yonezu & Hikaru Utada</p>
                                     </div>
                                     <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>2d ago via Spotify Web API</p>
