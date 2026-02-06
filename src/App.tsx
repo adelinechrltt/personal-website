@@ -7,6 +7,9 @@ import './App.css'
 
 import LandingPage from './pages/LandingPage/LandingPage'
 import Layout from './BaseLayout'
+import AboutMe from './pages/AboutMe/AboutMe'
+import ProjectsList from './pages/ProjectsList/ProjectsList'
+import ProjectEntry from './pages/ProjectEntry/ProjectEntry'
 
 function App() {
 
@@ -15,6 +18,9 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/projects" element={<ProjectsList />} />
+          <Route path="/projects/:slug" element={<ProjectEntry />} />
         </Route>
       </Routes>
     </BrowserRouter>

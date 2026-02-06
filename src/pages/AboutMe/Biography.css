@@ -1,0 +1,43 @@
+.cd-wrapper {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cd-ring {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, #242321 0%, #464544 20%, #242321 40%, #302f2d 60%, #242321 80%, #302f2d 100%);
+    box-shadow: 0 0 8px rgba(172, 172, 172, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 8s linear infinite;
+}
+
+.cd-ring:hover {
+    animation-play-state: paused;
+}
+
+.cd-art {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+
+/* rotation */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

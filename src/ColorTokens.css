@@ -19,10 +19,18 @@
 }
 
 .blue-2 {
-    color: #2A6BB6
+    color: #5B89BF
 }
 
 .blue-2-bg {
+    background-color: #5B89BF
+}
+
+.blue-3 {
+    color: #2A6BB6
+}
+
+.blue-3-bg {
     background-color: #2A6BB6
 }
 
@@ -34,10 +42,26 @@
     background-color: #7F2025
 }
 
-.text-dark-gray {
+.white {
+    color: #F6F7F8
+}
+
+.white-bg {
+    background-color: #F6F7F8
+}
+
+.dark-gray {
     color: #38322F
+}
+
+.dark-gray-bg {
+    background-color: #38322F
 }
 
 .text-gray {
     color: #706B64
+}
+
+.text-white {
+    color: #F6F7F8
 }

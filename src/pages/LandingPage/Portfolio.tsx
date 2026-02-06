@@ -1,4 +1,6 @@
-import SmallButton, { SmallBtnType } from "../../components/Button";
+import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
+
+import Arrow from "../../assets/Arrow.svg"
 
 export default function Portfolio() {
     return (
@@ -70,11 +72,11 @@ export default function Portfolio() {
                         width: "100%"
                     }}
                 >
-                    <SmallButton
+                    <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"View all projects"}
-                        type={SmallBtnType.blue}
-                        icon={"src/assets/Arrow.svg"}
+                        type={BtnSmallFillType.blue}
+                        icon={Arrow}
                     />
                 </div>
             </div>
