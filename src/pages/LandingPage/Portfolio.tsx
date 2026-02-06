@@ -1,7 +1,9 @@
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 import ProjectsCard from "../../components/ProjectsCard";
+import Carousel from "./Carousel";
 
 import Arrow from "../../assets/Arrow.svg"
+import ChevronIcon from "../../assets/Chevron";
 
 export default function Portfolio() {
     return (
@@ -107,7 +109,9 @@ export default function Portfolio() {
                             margin: 0
                         }}>Achievements</h3>
                 </div>
-                <img src="https://picsum.photos/800/300" alt="" />
+
+                {/* Carousel */}
+                <Carousel />
             </div>
         </section>
     )
