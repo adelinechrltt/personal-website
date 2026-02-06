@@ -1,5 +1,5 @@
-import SmallButton from "../../components/Button";
-import SmallOutlineBtn from "../../components/PillText";
+import BtnSmallFill from "../../components/BtnSmallFill";
+import BtnSmallOutline from "../../components/BtnSmallOutline";
 import ExperienceEntry from "./ExperienceEntry";
 import TechStackCell from "./TechStackCell";
 

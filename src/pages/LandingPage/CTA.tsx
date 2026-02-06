@@ -1,4 +1,4 @@
-import SmallButton, { SmallBtnType } from "../../components/Button"
+import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill"
 
 export default function CTA() {
     return (
@@ -37,18 +37,18 @@ export default function CTA() {
                     flexDirection: "row",
                     gap: `${10 / 16}rem`
                 }}>
-                    <SmallButton
+                    <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"Hooray"}
-                        type={SmallBtnType.red} />
-                    <SmallButton
+                        type={BtnSmallFillType.red} />
+                    <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"Hooray"}
-                        type={SmallBtnType.red} />
-                    <SmallButton
+                        type={BtnSmallFillType.red} />
+                    <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"CV"}
-                        type={SmallBtnType.red}
+                        type={BtnSmallFillType.red}
                         icon={"src/assets/icons/CV.svg"} />
                 </span>
             </div>
@@ -64,10 +64,10 @@ export default function CTA() {
                     Or contact me via <span className="blue-1"><b>my socials</b></span>.
                 </p>
                 <span>
-                    <SmallButton
+                    <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"About me"}
-                        type={SmallBtnType.blue}
+                        type={BtnSmallFillType.blue}
                         icon={"src/assets/Arrow.svg"} />
                 </span>
             </div>

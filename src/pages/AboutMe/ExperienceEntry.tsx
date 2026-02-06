@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SmallOutlineBtn from "../../components/PillText";
+import BtnSmallOutline from "../../components/BtnSmallOutline";
 
 export default function ExperienceEntry() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -83,10 +83,10 @@ export default function ExperienceEntry() {
                     flexDirection: "row",
                     gap: `${10 / 1512 * 100}vw`
                 }}>
-                    <SmallOutlineBtn text={"Swift"} type={"red"} />
-                    <SmallOutlineBtn text={"SwiftUI"} type={"red"} />
-                    <SmallOutlineBtn text={"UIKit"} type={"red"} />
-                    <SmallOutlineBtn text={"SwiftLint"} type={"red"} />
+                    <BtnSmallOutline text={"Swift"} type={"red"} />
+                    <BtnSmallOutline text={"SwiftUI"} type={"red"} />
+                    <BtnSmallOutline text={"UIKit"} type={"red"} />
+                    <BtnSmallOutline text={"SwiftLint"} type={"red"} />
                 </span>
             </div>
         </div>
