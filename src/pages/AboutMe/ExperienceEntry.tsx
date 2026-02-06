@@ -2,6 +2,9 @@ import { useState } from "react";
 
 import BtnSmallOutline from "../../components/BtnSmallOutline";
 
+import Chevron from "../../assets/Chevron.svg"
+import LinkedIn from "../../assets/icons/LinkedIn.svg"
+
 export default function ExperienceEntry() {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -30,7 +33,7 @@ export default function ExperienceEntry() {
                     alignItems: "center",
                     gap: `${10 / 1512 * 100}vw`
                 }}>
-                    <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${70 / 1512 * 100}vw` }} />
+                    <img src={LinkedIn} alt="" style={{ width: `${70 / 1512 * 100}vw` }} />
                     <div style={{
                         display: "flex",
                         flexDirection: "column",
@@ -59,7 +62,7 @@ export default function ExperienceEntry() {
                             transform: isExpanded ? "rotate(0deg)" : "rotate(-180deg)",
                             transition: "transform 0.25s ease",
                         }}
-                        onClick={() => setIsExpanded(prev => !prev)}><img src="src/assets/Chevron.svg" /></button>
+                        onClick={() => setIsExpanded(prev => !prev)}><img src={Chevron} /></button>
                 </div>
             </div>
             <div style={{

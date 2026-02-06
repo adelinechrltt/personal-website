@@ -1,3 +1,6 @@
+import HeroSectionVector01 from "../../assets/HeroSectionVector01.png"
+import HeroSectionVector02 from "../../assets/HeroSectionVector02.png"
+
 export default function HeroSection() {
     return (
         <section style={{
@@ -39,7 +42,7 @@ export default function HeroSection() {
                 <span className="burgundy"><b><u>Adeline</u> Charlotte Augustinne.</b></span> Software developer, among other things.</p>
 
 
-            <img src="src/assets/HeroSectionVector01.png"
+            <img src={HeroSectionVector01}
                 style={{
                     position: "absolute",
                     bottom: "45%",
@@ -48,7 +51,7 @@ export default function HeroSection() {
                     pointerEvents: "none"
                 }}
             />
-            <img src="src/assets/HeroSectionVector02.png"
+            <img src={HeroSectionVector02}
                 style={{
                     position: "absolute",
                     bottom: "15%",
