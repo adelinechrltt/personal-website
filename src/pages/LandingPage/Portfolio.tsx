@@ -1,6 +1,9 @@
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
+import ProjectsCard from "../../components/ProjectsCard";
+import Carousel from "./Carousel";
 
 import Arrow from "../../assets/Arrow.svg"
+import ChevronIcon from "../../assets/Chevron";
 
 export default function Portfolio() {
     return (
@@ -10,13 +13,15 @@ export default function Portfolio() {
             alignItems: "flex-start",
             justifyContent: "center",
             minHeight: "100vh",
-            gap: `${30 / 16}rem`
+            gap: `${30 / 16}rem`,
+            width: "100%"
         }}>
             <div style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-                gap: `${10 / 16}rem`
+                gap: `${10 / 16}rem`,
+                width: "100%"
             }}>
                 <h1 className="rufina-bold blue-1"
                     style={{
@@ -40,30 +45,33 @@ export default function Portfolio() {
                 flexDirection: "column",
                 alignItems: "flex-start",
                 justifyContent: "center",
-                gap: `${15 / 16}rem`
+                gap: `${15 / 16}rem`,
+                width: "100%"
             }}>
                 <h3 className="rufina-bold blue-1" style={{
-                    fontSize: `${32 / 16}rem`
+                    fontSize: `${32 / 16}rem`, margin: 0
                 }}>Projects</h3>
                 <div style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "flex-start",
                     justifyContent: "center",
-                    gap: `${15 / 16}rem`
+                    gap: `${15 / 16}rem`,
+                    width: "100%"
                 }}>
-                    <img src="https://picsum.photos/400/300" alt="" />
-                    <img src="https://picsum.photos/400/300" alt="" />
+                    <ProjectsCard type={"blue"} />
+                    <ProjectsCard type={"blue"} />
                 </div>
                 <div style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "flex-start",
                     justifyContent: "center",
-                    gap: `${15 / 16}rem`
+                    gap: `${15 / 16}rem`,
+                    width: "100%"
                 }}>
-                    <img src="https://picsum.photos/400/300" alt="" />
-                    <img src="https://picsum.photos/400/300" alt="" />
+                    <ProjectsCard type={"blue"} />
+                    <ProjectsCard type={"blue"} />
                 </div>
                 <div
                     style={{
@@ -97,10 +105,13 @@ export default function Portfolio() {
                 >
                     <h3 className="rufina-bold burgundy"
                         style={{
-                            fontSize: `${32 / 16}rem`
+                            fontSize: `${32 / 16}rem`,
+                            margin: 0
                         }}>Achievements</h3>
                 </div>
-                <img src="https://picsum.photos/800/300" alt="" />
+
+                {/* Carousel */}
+                <Carousel />
             </div>
         </section>
     )
