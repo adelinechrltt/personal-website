@@ -8,6 +8,7 @@ import './App.css'
 import LandingPage from './pages/LandingPage/LandingPage'
 import Layout from './BaseLayout'
 import AboutMe from './pages/AboutMe/AboutMe'
+import ProjectsList from './pages/ProjectsList/ProjectsList'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/projects" element={<ProjectsList />} />
         </Route>
       </Routes>
     </BrowserRouter>
