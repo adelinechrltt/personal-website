@@ -1,4 +1,4 @@
-import SmallButton, { SmallBtnType } from "../../components/Button";
+import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 
 export default function AboutMe() {
     return (
@@ -76,10 +76,10 @@ export default function AboutMe() {
                         <img src="src/assets/icons/Instagram.svg" alt="" />
                         <img src="src/assets/icons/GitHub.svg" alt="" />
                     </span>
-                    <SmallButton
+                    <BtnSmallFill
                         onClick={() => { console.log("pressed") }}
                         text={"More about me!"}
-                        type={SmallBtnType.blue}
+                        type={BtnSmallFillType.blue}
                         icon={"src/assets/Arrow.svg"} />
                 </div>
             </div>
