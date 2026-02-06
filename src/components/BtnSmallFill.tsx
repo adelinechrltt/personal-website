@@ -1,27 +1,27 @@
-export const SmallBtnType = {
+export const BtnSmallFillType = {
     blue: "blue",
     red: "red"
 } as const;
 
-export type SmallBtnType = typeof SmallBtnType[keyof typeof SmallBtnType];
+export type BtnSmallFillType = typeof BtnSmallFillType[keyof typeof BtnSmallFillType];
 
-type SmallButtonProps = {
+type BtnSmallFillProps = {
     onClick: () => void;
     text: string;
-    type: SmallBtnType;
+    type: BtnSmallFillType;
     icon?: string
 }
 
-export default function SmallButton({
+export default function BtnSmallFill({
     onClick,
     text,
     type,
     icon
-}: SmallButtonProps) {
+}: BtnSmallFillProps) {
     return (
         <button
             className={
-                `${type == SmallBtnType.blue ? "blue-1-bg" : "burgundy-bg"} 
+                `${type == BtnSmallFillType.blue ? "blue-1-bg" : "burgundy-bg"} 
             off-white
             instruent-sans-bold
             shadow`
