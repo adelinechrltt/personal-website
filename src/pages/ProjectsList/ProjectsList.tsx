@@ -29,7 +29,7 @@ export default function ProjectsList() {
                     flexDirection: "row",
                     justifyContent: "space-between"
                 }}>
-                    <h3 className="instrument-sans-medium" style={{ margin: 0 }}>An overview of my <span className="burgundy"><b>projects catalogue.</b></span></h3>
+                    <h3 className="instrument-sans" style={{ margin: 0 }}>An overview of my <span className="burgundy"><b>projects catalogue.</b></span></h3>
                     <div style={{
                         display: "flex",
                         flexDirection: "row",
