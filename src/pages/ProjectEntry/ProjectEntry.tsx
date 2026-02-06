@@ -1,3 +1,5 @@
+import Carousel from "./Carousel"
+
 import ArrowBack from "../../assets/ArrowBack.svg"
 import BtnSmallOutline from "../../components/BtnSmallOutline"
 
@@ -80,99 +82,7 @@ export default function ProjectEntry() {
                     </div>
                 </div>
 
-                {/* Carousel */}
-                <div style={{
-                    position: "relative",
-                    display: "flex",
-                    justifyItems: "center",
-                    alignItems: "center",
-                    width: "100%",
-                    overflow: "hidden",
-                    maxHeight: "28.125rem",
-                    borderRadius: `${20 / 1512 * 100}vw`,
-                    border: "1.5px solid #7F2025",
-                }}>
-                    <img src="https://picsum.photos/1000" alt="" style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                    }} />
-                    <div
-                        style={{
-                            position: "absolute",
-                            inset: 0,
-                            pointerEvents: "none",
-                            borderRadius: "inherit",
-                            boxShadow: "inset 0 0 10px #D9CEC2",
-                        }}
-                    />
-                    <div
-                        style={{
-                            position: "absolute",
-                            inset: "0 0 auto 0",
-                            top: "50%",
-                            transform: "translateY(-50%)",
-                            padding: "0 4%",
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            width: "100%",
-                            boxSizing: "border-box",
-                        }}
-                    >
-                        <button
-                            className="burgundy-bg"
-                            style={{
-                                width: "3rem",
-                                height: "4rem",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                cursor: "pointer",
-                                borderRadius: "999px",
-                                boxShadow: "0 0 10px #D9CEC2",
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    transform: "rotate(-90deg)",
-                                    transition: "transform 0.3s ease",
-                                }}
-                            >
-                                <ChevronIcon color="#EBE0D2" size={30} strokeWidth={5} />
-                            </div>
-                        </button>
-                        <button
-                            className="burgundy-bg"
-                            style={{
-                                width: "3rem",
-                                height: "4rem",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                cursor: "pointer",
-                                borderRadius: "999px",
-                                boxShadow: "0 0 10px #D9CEC2"
-                            }}
-                        >
-                            <div
-                                style={{
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    transform: "rotate(90deg)",
-                                    transition: "transform 0.3s ease",
-                                }}
-                            >
-                                <ChevronIcon color="#EBE0D2" size={30} strokeWidth={5} />
-                            </div>
-                        </button>
-                    </div>
-                </div>
+                <Carousel />
 
                 {/* Problem */}
                 <div style={{
