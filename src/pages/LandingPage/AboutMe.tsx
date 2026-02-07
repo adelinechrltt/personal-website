@@ -6,6 +6,7 @@ import AdelineFullBody from "../../assets/AdelineFullbody.png"
 import LinkedIn from "../../assets/icons/LinkedIn.svg"
 import Instagram from "../../assets/icons/Instagram.svg"
 import GitHub from "../../assets/icons/GitHub.svg"
+import NavBar from "../../components/NavBar";
 
 export default function AboutMe() {
     return (
@@ -16,8 +17,10 @@ export default function AboutMe() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            minHeight: "100vh"
+            minHeight: "100vh",
+            marginTop: `${27 / 1512 * 100}vw`
         }}>
+            <NavBar />
             <div
                 style={{
                     display: "flex",
