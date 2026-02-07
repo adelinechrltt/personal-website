@@ -10,7 +10,7 @@ import NavBar from "../../components/NavBar";
 
 export default function AboutMe() {
     return (
-        <section style={{
+        <section id="about-me" style={{
             position: "relative",
             overflow: "hidden",
             display: "flex",
@@ -20,7 +20,6 @@ export default function AboutMe() {
             minHeight: "100vh",
             marginTop: `${27 / 1512 * 100}vw`
         }}>
-            <NavBar />
             <div
                 style={{
                     display: "flex",

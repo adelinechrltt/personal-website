@@ -7,7 +7,7 @@ import ChevronIcon from "../../assets/Chevron";
 
 export default function Portfolio() {
     return (
-        <section style={{
+        <section id="portfolio" style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "flex-start",
