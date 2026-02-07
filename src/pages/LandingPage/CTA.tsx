@@ -2,7 +2,7 @@ import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill"
 
 import Arrow from "../../assets/Arrow.svg"
 import CTAVector from "../../assets/CTAVector.png"
-import LinkSVG from "../../assets/icons/Link.svg"
+import LinkIcon from "../../assets/icons/Link.tsx"
 
 export default function CTA() {
     return (
@@ -53,7 +53,7 @@ export default function CTA() {
                         onClick={() => { console.log("pressed") }}
                         text={"CV"}
                         type={BtnSmallFillType.red}
-                        icon={LinkSVG} />
+                        icon={<LinkIcon />} />
                 </span>
             </div>
 
