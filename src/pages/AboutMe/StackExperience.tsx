@@ -1,7 +1,56 @@
-import BtnSmallFill from "../../components/BtnSmallFill";
-import BtnSmallOutline from "../../components/BtnSmallOutline";
+import type { ComponentType, SVGProps } from "react";
+
 import ExperienceEntry from "./ExperienceEntry";
 import TechStackCell from "./TechStackCell";
+
+type SvgIcon = ComponentType<SVGProps<SVGSVGElement>>;
+
+const mobile = import.meta.glob(
+    "/src/assets/icons/techStackIcons/mobile/*.svg",
+    {
+        eager: true,
+        import: "default",
+        query: "?react"
+    }
+) as Record<string, SvgIcon>;
+
+const web = import.meta.glob(
+    "/src/assets/icons/techStackIcons/web/*.svg",
+    {
+        eager: true,
+        import: "default",
+        query: "?react"
+    }
+) as Record<string, SvgIcon>;
+
+const backend = import.meta.glob(
+    "/src/assets/icons/techStackIcons/backend/*.svg",
+    {
+        eager: true,
+        import: "default",
+        query: "?react"
+    }
+) as Record<string, SvgIcon>;
+
+const data = import.meta.glob(
+    "/src/assets/icons/techStackIcons/data/*.svg",
+    {
+        eager: true,
+        import: "default",
+        query: "?react"
+    }
+) as Record<string, SvgIcon>;
+
+const mobileIcons = Object.values(mobile)
+const webIcons = Object.values(web)
+const backendIcons = Object.values(backend)
+const dataIcons = Object.values(data)
+
+const rawFiles = import.meta.glob("/src/assets/icons/techStackIcons/mobile/*.svg", { eager: true });
+console.log("Raw SVG files:", rawFiles);
+
+const relativeFiles = import.meta.glob("../assets/icons/techStackIcons/mobile/*.svg?react", { eager: true, import: "default" });
+console.log("Relative path files:", relativeFiles);
 
 export default function StackExperience() {
     return (
@@ -38,8 +87,8 @@ export default function StackExperience() {
                     alignItems: "center",
                     gap: `${54 / 1512 * 100}vw`
                 }}>
-                    <TechStackCell />
-                    <TechStackCell />
+                    <TechStackCell title={"Mobile Dev."} icons={mobileIcons} />
+                    <TechStackCell title={"Wev Dev."} icons={webIcons} />
                 </div>
 
                 {/* Row 2 */}
@@ -50,8 +99,8 @@ export default function StackExperience() {
                     alignItems: "center",
                     gap: `${54 / 1512 * 100}vw`
                 }}>
-                    <TechStackCell />
-                    <TechStackCell />
+                    <TechStackCell title={"Backend"} icons={backendIcons} />
+                    <TechStackCell title={"Data"} icons={dataIcons} />
                 </div>
                 <p className="instrument-sans-medium" style={{
                     fontSize: `${16 / 1512 * 100}vw`,
