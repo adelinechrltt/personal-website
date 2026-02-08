@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill"
 
 import Arrow from "../../assets/Arrow.svg"
@@ -5,6 +7,8 @@ import CTAVector from "../../assets/CTAVector.png"
 import LinkIcon from "../../assets/icons/Link.tsx"
 
 export default function CTA() {
+    const navigate = useNavigate();
+
     return (
         <section id="cta-section" style={{
             position: "relative",
@@ -69,7 +73,7 @@ export default function CTA() {
                 </p>
                 <span>
                     <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
+                        onClick={() => { navigate("/about-me") }}
                         text={"About me"}
                         type={BtnSmallFillType.blue}
                         icon={Arrow} />

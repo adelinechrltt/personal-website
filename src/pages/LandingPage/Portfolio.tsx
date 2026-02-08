@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 import ProjectsCard from "../../components/ProjectsCard";
 import Carousel from "./Carousel";
@@ -6,6 +8,8 @@ import Arrow from "../../assets/Arrow.svg"
 import ChevronIcon from "../../assets/Chevron";
 
 export default function Portfolio() {
+    const navigate = useNavigate();
+
     return (
         <section id="portfolio" style={{
             display: "flex",
@@ -81,7 +85,7 @@ export default function Portfolio() {
                     }}
                 >
                     <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
+                        onClick={() => { navigate("/projects") }}
                         text={"View all projects"}
                         type={BtnSmallFillType.blue}
                         icon={Arrow}
