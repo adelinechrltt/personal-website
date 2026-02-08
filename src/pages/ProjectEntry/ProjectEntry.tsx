@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom"
+
 import Carousel from "./Carousel"
 
 import ArrowBack from "../../assets/ArrowBack.svg"
@@ -10,6 +12,8 @@ import Instagram from "../../assets/icons/Instagram.svg"
 import GitHub from "../../assets/icons/GitHub.svg"
 
 export default function ProjectEntry() {
+    const navigate = useNavigate();
+
     return (
         <section style={{
             display: "flex",
@@ -18,11 +22,14 @@ export default function ProjectEntry() {
             width: "100%"
         }}>
             <div>
-                <img src={ArrowBack} alt=""
-                    style={{
-                        marginLeft: "-8vw"
-                    }}
-                />
+                <button style={{ margin: 0, background: "none" }} onClick={() => navigate("/projects")}>
+                    <img src={ArrowBack} alt=""
+                        style={{
+                            marginLeft: "-8vw"
+                        }
+                        }
+                    />
+                </button>
             </div>
 
             <div style={{
