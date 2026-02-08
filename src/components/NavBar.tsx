@@ -105,7 +105,8 @@ export default function NavBar({ sections }: NavBarProps) {
                 alignItems: "center",
                 gap: `${60 / 1512 * 100}vw`
             }}>
-                <BtnSmallFill onClick={() => { }} text={"CV"} type={"red"} icon={<LinkIcon width={13} />} size={20} gap={"5px"} />
+                <BtnSmallFill onClick={() =>
+                    window.open("https://drive.google.com/drive/folders/19iKoH-SQ_I6FD54sieSNxMfy29LS-9L_?usp=sharing")} text={"CV"} type={"red"} icon={<LinkIcon width={13} />} size={20} gap={"5px"} />
                 <BtnSmallOutline onClick={() => scrollToSection("cta-section")} text={"Let's work together!"} type={"red"} size={24} />
             </div>
         </section >
