@@ -30,7 +30,7 @@ export default function HeroSection() {
                         textUnderlineOffset: "0.7rem"
                     }}>Ad</span> astra<br />per aspera.
                 </h1>
-                <h3 className="reenie-beanie-regular text-dark-gray"
+                <h3 className="reenie-beanie-regular dark-gray"
                     style={{
                         fontSize: `${64 / 1512 * 100}vw`,
                         WebkitTextStroke: "1px",

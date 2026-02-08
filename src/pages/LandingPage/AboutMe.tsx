@@ -45,7 +45,7 @@ export default function AboutMe() {
                         Adeline.
                     </h1>
                     <h2
-                        className="reenie-beanie-regular text-dark-gray"
+                        className="reenie-beanie-regular dark-gray"
                         style={{
                             fontSize: `${64 / 1512 * 100}vw`,
                             WebkitTextStroke: "1px",

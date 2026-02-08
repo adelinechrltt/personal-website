@@ -29,7 +29,7 @@ export default function Biography() {
                     Adeline.
                 </h1>
 
-                <h2 className="reenie-beanie-regular text-dark-gray"
+                <h2 className="reenie-beanie-regular dark-gray"
                     style={{
                         fontSize: `${40 / 1512 * 100}vw`,
                         WebkitTextStroke: "1px",
