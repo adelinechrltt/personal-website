@@ -7,9 +7,9 @@ import BtnSmallOutline from "../../components/BtnSmallOutline"
 
 import ChevronIcon from "../../assets/Chevron"
 
-import LinkedIn from "../../assets/icons/LinkedIn.svg"
 import Instagram from "../../assets/icons/Instagram.svg"
 import GitHub from "../../assets/icons/GitHub.svg"
+import LinkedInIcon from "../../assets/icons/LinkedIn"
 
 export default function ProjectEntry() {
     const navigate = useNavigate();
@@ -83,7 +83,7 @@ export default function ProjectEntry() {
                             gap: `${10 / 1512 * 100}vw`
                         }}>
                             <img src={GitHub} alt="" style={{ maxWidth: `${38 / 1512 * 100}vw` }} />
-                            <img src={LinkedIn} alt="" style={{ maxWidth: `${38 / 1512 * 100}vw` }} />
+                            <LinkedInIcon width={38} height={38} />
                             <img src={Instagram} alt="" style={{ maxWidth: `${38 / 1512 * 100}vw` }} />
                         </span>
                     </div>

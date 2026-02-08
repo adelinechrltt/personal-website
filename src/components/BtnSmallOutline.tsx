@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 export const BtnSmallOutlineType = {
     blue: "blue",
     blueAlt: "blue-alt",
@@ -11,7 +13,7 @@ type BtnSmallOutlineProps = {
     onClick?: () => void;
     text: string;
     type: BtnSmallOutlineType;
-    icon?: string;
+    icon?: string | React.ReactNode;
     size?: any
 }
 
@@ -56,8 +58,20 @@ export default function BtnSmallOutline({
                 style={{
                     display: "flex",
                     flexDirection: "row",
-                    gap: "0.9rem"
-                }}>{text}{icon != null ? <img src={icon} /> : <></>}</span>
+                    gap: "0.9rem",
+                    alignItems: "center"
+                }}>{text}
+                {icon && (
+                    typeof icon === "string" ? (
+                        <img
+                            src={icon}
+                            alt=""
+                            style={{ width: "1em", height: "1em" }}
+                        />
+                    ) : (
+                        icon
+                    ))}
+            </span>
         </button >
     )
 }
