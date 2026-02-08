@@ -9,14 +9,18 @@ type BtnSmallFillProps = {
     onClick: () => void;
     text: string;
     type: BtnSmallFillType;
-    icon?: string
+    icon?: string | React.ReactNode;
+    size?: any;
+    gap?: any;
 }
 
 export default function BtnSmallFill({
     onClick,
     text,
     type,
-    icon
+    icon,
+    size = 24,
+    gap = "0.9rem"
 }: BtnSmallFillProps) {
     return (
         <button
@@ -30,14 +34,29 @@ export default function BtnSmallFill({
             style={{
                 borderRadius: `${15 / 1512 * 100}vw`,
                 padding: `${7 / 1512 * 100}vw ${15 / 1512 * 100}vw`,
-                fontSize: `${24 / 1512 * 100}vw`
+                fontSize: `${size / 1512 * 100}vw`,
+                justifyItems: "center",
+                alignItems: "center"
             }}>
             <span
                 style={{
                     display: "flex",
                     flexDirection: "row",
-                    gap: "0.9rem"
-                }}>{text}{icon != null ? <img src={icon} /> : <></>}</span>
+                    gap: gap,
+                    justifyItems: "center",
+                    alignItems: "center"
+                }}>{text}
+                {icon && (
+                    typeof icon === "string" ? (
+                        <img
+                            src={icon}
+                            alt=""
+                            style={{ width: "1em", height: "1em" }}
+                        />
+                    ) : (
+                        icon
+                    ))}
+            </span>
         </button>
     )
 }

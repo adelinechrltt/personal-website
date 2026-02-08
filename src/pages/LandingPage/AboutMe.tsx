@@ -1,22 +1,27 @@
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 
 import Arrow from "../../assets/Arrow.svg"
 import AdelineFullBody from "../../assets/AdelineFullbody.png"
 
-import LinkedIn from "../../assets/icons/LinkedIn.svg"
 import Instagram from "../../assets/icons/Instagram.svg"
 import GitHub from "../../assets/icons/GitHub.svg"
+import LinkedInIcon from "../../assets/icons/LinkedIn";
 
 export default function AboutMe() {
+    const navigate = useNavigate();
+
     return (
-        <section style={{
+        <section id="about-me" style={{
             position: "relative",
             overflow: "hidden",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            minHeight: "100vh"
+            minHeight: "100vh",
+            marginTop: `${27 / 1512 * 100}vw`
         }}>
             <div
                 style={{
@@ -79,12 +84,12 @@ export default function AboutMe() {
                         justifyContent: "center",
                         gap: "1.9rem"
                     }}>
-                        <img src={LinkedIn} alt="" />
+                        <LinkedInIcon width={38} height={38} />
                         <img src={Instagram} alt="" />
                         <img src={GitHub} alt="" />
                     </span>
                     <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
+                        onClick={() => { navigate("/about-me") }}
                         text={"More about me!"}
                         type={BtnSmallFillType.blue}
                         icon={Arrow} />

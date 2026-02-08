@@ -1,5 +1,8 @@
+import type { ReactNode } from "react";
+
 export const BtnSmallOutlineType = {
     blue: "blue",
+    blueAlt: "blue-alt",
     red: "red",
     white: "white"
 } as const;
@@ -10,20 +13,25 @@ type BtnSmallOutlineProps = {
     onClick?: () => void;
     text: string;
     type: BtnSmallOutlineType;
-    icon?: string
+    icon?: string | React.ReactNode;
+    size?: any
 }
 
 export default function BtnSmallOutline({
     onClick,
     text,
     type,
-    icon
+    icon,
+    size = 16
 }: BtnSmallOutlineProps) {
     let btnClass = "";
 
     switch (type) {
         case BtnSmallOutlineType.blue:
             btnClass = "blue-2";
+            break;
+        case BtnSmallOutlineType.blueAlt:
+            btnClass = "blue-3";
             break;
         case BtnSmallOutlineType.red:
             btnClass = "burgundy";
@@ -39,7 +47,7 @@ export default function BtnSmallOutline({
             style={{
                 borderRadius: `${20 / 1512 * 100}vw`,
                 padding: `${7 / 1512 * 100}vw ${15 / 1512 * 100}vw`,
-                fontSize: `${16 / 1512 * 100}vw`,
+                fontSize: `${size / 1512 * 100}vw`,
                 background: "none",
                 border: "1px solid",
             }
@@ -50,8 +58,20 @@ export default function BtnSmallOutline({
                 style={{
                     display: "flex",
                     flexDirection: "row",
-                    gap: "0.9rem"
-                }}>{text}{icon != null ? <img src={icon} /> : <></>}</span>
+                    gap: "0.9rem",
+                    alignItems: "center"
+                }}>{text}
+                {icon && (
+                    typeof icon === "string" ? (
+                        <img
+                            src={icon}
+                            alt=""
+                            style={{ width: "1em", height: "1em" }}
+                        />
+                    ) : (
+                        icon
+                    ))}
+            </span>
         </button >
     )
 }

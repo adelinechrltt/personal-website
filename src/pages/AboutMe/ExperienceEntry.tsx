@@ -3,7 +3,7 @@ import { useState } from "react";
 import BtnSmallOutline from "../../components/BtnSmallOutline";
 
 import ChevronIcon from "../../assets/Chevron"
-import LinkedIn from "../../assets/icons/LinkedIn.svg"
+import LinkedInIcon from "../../assets/icons/LinkedIn.tsx"
 
 export default function ExperienceEntry() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -33,7 +33,7 @@ export default function ExperienceEntry() {
                     alignItems: "center",
                     gap: `${10 / 1512 * 100}vw`
                 }}>
-                    <img src={LinkedIn} alt="" style={{ width: `${70 / 1512 * 100}vw` }} />
+                    <LinkedInIcon width={70} height={70} />
                     <div style={{
                         display: "flex",
                         flexDirection: "column",

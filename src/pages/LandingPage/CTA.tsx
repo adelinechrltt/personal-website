@@ -1,12 +1,18 @@
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill"
+import BtnSmallOutline, { BtnSmallOutlineType } from "../../components/BtnSmallOutline.tsx";
 
 import Arrow from "../../assets/Arrow.svg"
 import CTAVector from "../../assets/CTAVector.png"
-import LinkSVG from "../../assets/icons/Link.svg"
+import LinkIcon from "../../assets/icons/Link.tsx"
+import LinkedInIcon from "../../assets/icons/LinkedIn.tsx";
 
 export default function CTA() {
+    const navigate = useNavigate();
+
     return (
-        <section style={{
+        <section id="cta-section" style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -41,19 +47,19 @@ export default function CTA() {
                     flexDirection: "row",
                     gap: `${10 / 16}rem`
                 }}>
+                    <BtnSmallOutline size={20} text={"E-mail"} type={BtnSmallOutlineType.red} icon="src/assets/icons/Email.svg"
+                        onClick={() =>
+                            window.location.href = "mailto:adeline.chrltt@gmail.com"} />
+                    <BtnSmallOutline size={20} text={"LinkedIn"} type={BtnSmallOutlineType.red} icon={<LinkedInIcon width={20} fill="#7F2025" />}
+                        onClick={() =>
+                            window.open("https://linkedin.com/in/adelinechrltt")} />
                     <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
-                        text={"Hooray"}
-                        type={BtnSmallFillType.red} />
-                    <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
-                        text={"Hooray"}
-                        type={BtnSmallFillType.red} />
-                    <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
+                        onClick={() =>
+                            window.open("https://drive.google.com/drive/folders/19iKoH-SQ_I6FD54sieSNxMfy29LS-9L_?usp=sharing")}
+                        size={20}
                         text={"CV"}
                         type={BtnSmallFillType.red}
-                        icon={LinkSVG} />
+                        icon={<LinkIcon />} />
                 </span>
             </div>
 
@@ -69,7 +75,7 @@ export default function CTA() {
                 </p>
                 <span>
                     <BtnSmallFill
-                        onClick={() => { console.log("pressed") }}
+                        onClick={() => { navigate("/about-me") }}
                         text={"About me"}
                         type={BtnSmallFillType.blue}
                         icon={Arrow} />

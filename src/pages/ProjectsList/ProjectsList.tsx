@@ -2,8 +2,11 @@ import BtnSmallOutline from "../../components/BtnSmallOutline";
 import ProjectsCard from "../../components/ProjectsCard";
 
 import ArrowBack from "../../assets/ArrowBack.svg"
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectsList() {
+    const navigate = useNavigate();
+
     return (
         <section style={{
             display: "flex",
@@ -14,11 +17,17 @@ export default function ProjectsList() {
             <div style={{
                 width: "100%"
             }}>
-                <img src={ArrowBack} alt=""
-                    style={{
-                        marginLeft: "-8vw"
-                    }}
-                />
+                <div>
+                    <button style={{ margin: 0, background: "none" }} onClick={() => navigate("/")}>
+                        <img src={ArrowBack} alt=""
+                            style={{
+                                marginLeft: "-8vw"
+                            }
+                            }
+                        />
+                    </button>
+                </div>
+
                 <h1 className="blue-1 shadow-text"
                     style={{
                         fontSize: `${180 / 1512 * 100}vw`,

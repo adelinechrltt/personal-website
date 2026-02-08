@@ -4,7 +4,7 @@ import AdelineHalfBody from "../../assets/AdelineHalfbody.png"
 import RedStarOutline from "../../assets/RedStarOutline.svg"
 
 import MusicIcon from "../../assets/icons/MusicIcon.svg"
-import LinkedIn from "../../assets/icons/LinkedIn.svg"
+import LinkedInIcon from "../../assets/icons/LinkedIn.tsx"
 import Instagram from "../../assets/icons/Instagram.svg"
 import GitHub from "../../assets/icons/GitHub.svg"
 import Spotify from "../../assets/icons/Spotify.svg"
@@ -127,7 +127,7 @@ export default function Biography() {
                                 gap: `${30 / 1512 * 100}vw`,
                                 margin: 0
                             }}>
-                                <img src={LinkedIn} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <LinkedInIcon width={30} height={30} />
                                 <img src={Instagram} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
                                 <img src={GitHub} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
                                 <img src={Spotify} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />

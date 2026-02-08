@@ -10,11 +10,13 @@ import Layout from './BaseLayout'
 import AboutMe from './pages/AboutMe/AboutMe'
 import ProjectsList from './pages/ProjectsList/ProjectsList'
 import ProjectEntry from './pages/ProjectEntry/ProjectEntry'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<LandingPage />} />

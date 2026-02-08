@@ -1,3 +1,5 @@
+import LinkedInIcon from "../../assets/icons/LinkedIn";
+
 export default function TechStackCell() {
     return (
         < div style={{
@@ -17,9 +19,9 @@ export default function TechStackCell() {
                 flexDirection: "row",
                 gap: `${15 / 1512 * 100}vw`
             }}>
-                <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${54 / 1512 * 100}vw` }} />
-                <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${54 / 1512 * 100}vw` }} />
-                <img src="src/assets/icons/LinkedIn.svg" alt="" style={{ width: `${54 / 1512 * 100}vw` }} />
+                <LinkedInIcon width={30} height={30} />
+                <LinkedInIcon width={30} height={30} />
+                <LinkedInIcon width={30} height={30} />
             </span>
         </div >
     )
