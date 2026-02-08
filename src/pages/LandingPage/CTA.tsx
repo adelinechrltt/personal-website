@@ -6,7 +6,7 @@ import LinkIcon from "../../assets/icons/Link.tsx"
 
 export default function CTA() {
     return (
-        <section id=" " style={{
+        <section id="cta-section" style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",

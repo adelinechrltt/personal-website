@@ -106,7 +106,7 @@ export default function NavBar({ sections }: NavBarProps) {
                 gap: `${60 / 1512 * 100}vw`
             }}>
                 <BtnSmallFill onClick={() => { }} text={"CV"} type={"red"} icon={<LinkIcon width={13} />} size={20} gap={"5px"} />
-                <BtnSmallOutline text={"Let's work together!"} type={"red"} size={24} />
+                <BtnSmallOutline onClick={() => scrollToSection("cta-section")} text={"Let's work together!"} type={"red"} size={24} />
             </div>
         </section >
     )
