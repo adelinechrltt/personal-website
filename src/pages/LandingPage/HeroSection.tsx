@@ -3,7 +3,7 @@ import HeroSectionVector02 from "../../assets/HeroSectionVector02.png"
 
 export default function HeroSection() {
     return (
-        <section id="hero-section" style={{
+        <section id="home" style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",
