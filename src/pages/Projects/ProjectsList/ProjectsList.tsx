@@ -1,7 +1,7 @@
-import BtnSmallOutline from "../../components/BtnSmallOutline";
-import ProjectsCard from "../../components/ProjectsCard";
+import BtnSmallOutline from "../../../components/BtnSmallOutline";
+import ProjectsCard from "../../../components/ProjectsCard";
 
-import ArrowBack from "../../assets/ArrowBack.svg"
+import ArrowBack from "../../../assets/ArrowBack.svg"
 import { useNavigate } from "react-router-dom";
 
 export default function ProjectsList() {

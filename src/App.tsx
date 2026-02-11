@@ -8,8 +8,8 @@ import './App.css'
 import LandingPage from './pages/LandingPage/LandingPage'
 import Layout from './BaseLayout'
 import AboutMe from './pages/AboutMe/AboutMe'
-import ProjectsList from './pages/ProjectsList/ProjectsList'
-import ProjectEntry from './pages/ProjectEntry/ProjectEntry'
+import ProjectsList from './pages/Projects/ProjectsList/ProjectsList'
+import ProjectEntry from './pages/Projects/ProjectEntry/ProjectEntry'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {

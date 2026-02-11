@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import ChevronIcon from "../../assets/Chevron";
+import ChevronIcon from "../../../assets/Chevron";
 
 // temp images
 const images = [

@@ -2,14 +2,12 @@ import { useNavigate } from "react-router-dom"
 
 import Carousel from "./Carousel"
 
-import ArrowBack from "../../assets/ArrowBack.svg"
-import BtnSmallOutline from "../../components/BtnSmallOutline"
+import ArrowBack from "../../../assets/ArrowBack.svg"
+import BtnSmallOutline from "../../../components/BtnSmallOutline"
 
-import ChevronIcon from "../../assets/Chevron"
-
-import Instagram from "../../assets/icons/Instagram.svg"
-import GitHub from "../../assets/icons/GitHub.svg"
-import LinkedInIcon from "../../assets/icons/LinkedIn"
+import Instagram from "../../../assets/icons/Instagram.svg"
+import GitHub from "../../../assets/icons/GitHub.svg"
+import LinkedInIcon from "../../../assets/icons/LinkedIn"
 
 export default function ProjectEntry() {
     const navigate = useNavigate();
