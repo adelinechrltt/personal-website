@@ -1,10 +1,8 @@
-import { useState, type ComponentType, type SVGProps } from "react";
+import { useState } from "react";
 
 import BtnSmallOutline from "../../../components/BtnSmallOutline.tsx";
 
 import ChevronIcon from "../../../assets/Chevron.tsx"
-
-type SvgIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
 type ExperienceEntryProps = {
     icon: string;
@@ -118,7 +116,7 @@ export default function ExperienceEntry({
                     }}
                 >
                     {description.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <li style={{ margin: "3px 0px" }} key={index}>{item}</li>
                     ))}
                 </ul>
 
@@ -126,7 +124,8 @@ export default function ExperienceEntry({
                     style={{
                         display: "flex",
                         flexWrap: "wrap",
-                        gap: `${10 / 1512 * 100}vw`
+                        gap: `${10 / 1512 * 100}vw`,
+                        margin: "10px 0px"
                     }}
                 >
                     {techStack.map((tech) => (
