@@ -1,56 +1,9 @@
 import type { ComponentType, SVGProps } from "react";
 
-import ExperienceEntry from "./ExperienceEntry";
-import TechStackCell from "./TechStackCell";
+import ExperienceEntry from "./components/ExperienceEntry";
+import TechStackCell from "./components/TechStackCell";
 
-type SvgIcon = ComponentType<SVGProps<SVGSVGElement>>;
-
-const mobile = import.meta.glob(
-    "/src/assets/icons/techStackIcons/mobile/*.svg",
-    {
-        eager: true,
-        import: "default",
-        query: "?react"
-    }
-) as Record<string, SvgIcon>;
-
-const web = import.meta.glob(
-    "/src/assets/icons/techStackIcons/web/*.svg",
-    {
-        eager: true,
-        import: "default",
-        query: "?react"
-    }
-) as Record<string, SvgIcon>;
-
-const backend = import.meta.glob(
-    "/src/assets/icons/techStackIcons/backend/*.svg",
-    {
-        eager: true,
-        import: "default",
-        query: "?react"
-    }
-) as Record<string, SvgIcon>;
-
-const data = import.meta.glob(
-    "/src/assets/icons/techStackIcons/data/*.svg",
-    {
-        eager: true,
-        import: "default",
-        query: "?react"
-    }
-) as Record<string, SvgIcon>;
-
-const mobileIcons = Object.values(mobile)
-const webIcons = Object.values(web)
-const backendIcons = Object.values(backend)
-const dataIcons = Object.values(data)
-
-const rawFiles = import.meta.glob("/src/assets/icons/techStackIcons/mobile/*.svg", { eager: true });
-console.log("Raw SVG files:", rawFiles);
-
-const relativeFiles = import.meta.glob("../assets/icons/techStackIcons/mobile/*.svg?react", { eager: true, import: "default" });
-console.log("Relative path files:", relativeFiles);
+import { mobileIcons, webIcons, backendIcons, dataIcons } from "./stack.data";
 
 export default function StackExperience() {
     return (
