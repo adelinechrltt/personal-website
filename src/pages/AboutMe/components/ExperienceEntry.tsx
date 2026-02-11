@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import BtnSmallOutline from "../../components/BtnSmallOutline";
+import BtnSmallOutline from "../../../components/BtnSmallOutline.tsx";
 
-import ChevronIcon from "../../assets/Chevron"
-import LinkedInIcon from "../../assets/icons/LinkedIn.tsx"
+import ChevronIcon from "../../../assets/Chevron.tsx"
+import LinkedInIcon from "../../../assets/icons/LinkedIn.tsx"
 
 export default function ExperienceEntry() {
     const [isExpanded, setIsExpanded] = useState(false);
