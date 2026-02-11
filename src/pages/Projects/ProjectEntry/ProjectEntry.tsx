@@ -1,6 +1,8 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import type { ReactNode } from "react"
 
 import Carousel from "./Carousel"
+import { projects } from "../project.data"
 
 import ArrowBack from "../../../assets/ArrowBack.svg"
 import BtnSmallOutline from "../../../components/BtnSmallOutline"
@@ -10,7 +12,16 @@ import GitHub from "../../../assets/icons/GitHub.svg"
 import LinkedInIcon from "../../../assets/icons/LinkedIn"
 
 export default function ProjectEntry() {
+
     const navigate = useNavigate();
+
+    const { slug } = useParams()
+
+    const project = projects.find((p) => p.slug === slug)
+
+    if (!project) {
+        return <div>Project not found.</div>
+    }
 
     return (
         <section style={{
@@ -21,12 +32,7 @@ export default function ProjectEntry() {
         }}>
             <div>
                 <button style={{ margin: 0, background: "none" }} onClick={() => navigate("/projects")}>
-                    <img src={ArrowBack} alt=""
-                        style={{
-                            marginLeft: "-8vw"
-                        }
-                        }
-                    />
+                    <img src={ArrowBack} alt="" style={{ marginLeft: "-8vw" }} />
                 </button>
             </div>
 
@@ -36,7 +42,7 @@ export default function ProjectEntry() {
                 gap: `${50 / 1812 * 100}vh`
             }}>
 
-                {/* Title & Subheading*/}
+                {/* Title & Subheading */}
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
@@ -47,7 +53,7 @@ export default function ProjectEntry() {
                             fontSize: `${120 / 1512 * 100}vw`,
                             margin: "0"
                         }}>
-                        Kimo.
+                        {project.title}
                     </h1>
 
                     <div className="instrument-sans" style={{
@@ -55,9 +61,14 @@ export default function ProjectEntry() {
                         flexDirection: "row",
                         justifyContent: "space-between"
                     }}>
-                        <p style={{ margin: 0, fontSize: `${24 / 1512 * 100}vw` }}>Lorem ipsum <span className="burgundy"><b>dolor sit amet.</b></span></p>
-                        <p style={{ margin: 0, fontSize: `${24 / 1512 * 100}vw` }}>2025.</p>
+                        <p style={{ margin: 0, fontSize: `${24 / 1512 * 100}vw` }}>
+                            {project.subtitle}
+                        </p>
+                        <p style={{ margin: 0, fontSize: `${24 / 1512 * 100}vw` }}>
+                            {project.year}.
+                        </p>
                     </div>
+
                     <div className="instrument-sans" style={{
                         display: "flex",
                         flexDirection: "row",
@@ -66,23 +77,47 @@ export default function ProjectEntry() {
                         <span style={{
                             display: "flex",
                             flexDirection: "row",
-                            justifyItems: "start",
                             gap: `${20 / 1512 * 100}vw`
                         }}>
-                            <BtnSmallOutline text={"Swift"} type={"red"} />
-                            <BtnSmallOutline text={"SwiftUI"} type={"red"} />
-                            <BtnSmallOutline text={"UIKit"} type={"red"} />
-                            <BtnSmallOutline text={"SwiftLint"} type={"red"} />
+                            {project.techStack.map((tech) => (
+                                <BtnSmallOutline
+                                    key={tech}
+                                    text={tech}
+                                    type={"red"}
+                                />
+                            ))}
                         </span>
+
                         <span style={{
                             display: "flex",
                             flexDirection: "row",
-                            justifyItems: "start",
                             gap: `${10 / 1512 * 100}vw`
                         }}>
-                            <img src={GitHub} alt="" style={{ maxWidth: `${38 / 1512 * 100}vw` }} />
-                            <LinkedInIcon width={38} height={38} />
-                            <img src={Instagram} alt="" style={{ maxWidth: `${38 / 1512 * 100}vw` }} />
+                            {project.github && (
+                                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src={GitHub}
+                                        alt="GitHub"
+                                        style={{ maxWidth: `${38 / 1512 * 100}vw` }}
+                                    />
+                                </a>
+                            )}
+
+                            {project.linkedin && (
+                                <a href={project.linkedin} target="_blank" rel="noopener noreferrer">
+                                    <LinkedInIcon width={38} height={38} />
+                                </a>
+                            )}
+
+                            {project.instagram && (
+                                <a href={project.instagram} target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src={Instagram}
+                                        alt="Instagram"
+                                        style={{ maxWidth: `${38 / 1512 * 100}vw` }}
+                                    />
+                                </a>
+                            )}
                         </span>
                     </div>
                 </div>
@@ -93,7 +128,6 @@ export default function ProjectEntry() {
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyItems: "center",
                     alignItems: "start",
                     gap: `${10 / 1812 * 100}vh`
                 }}>
@@ -109,9 +143,8 @@ export default function ProjectEntry() {
                             margin: 0,
                             fontSize: `${16 / 1512 * 100}vw`,
                             textAlign: "justify"
-                        }}
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        }}>
+                        {project.problem}
                     </p>
                 </div>
 
@@ -119,7 +152,6 @@ export default function ProjectEntry() {
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyItems: "center",
                     alignItems: "end",
                     gap: `${10 / 1812 * 100}vh`
                 }}>
@@ -135,9 +167,8 @@ export default function ProjectEntry() {
                             margin: 0,
                             fontSize: `${16 / 1512 * 100}vw`,
                             textAlign: "end"
-                        }}
-                    >
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        }}>
+                        {project.solution}
                     </p>
                 </div>
 
@@ -145,7 +176,6 @@ export default function ProjectEntry() {
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyItems: "center",
                     alignItems: "start",
                     gap: `${10 / 1812 * 100}vh`
                 }}>
@@ -154,28 +184,23 @@ export default function ProjectEntry() {
                             fontSize: `${32 / 1512 * 100}vw`,
                             margin: "0"
                         }}>
-                        Problem
+                        Features
                     </h1>
                     <ul className="instrument-sans"
                         style={{
                             margin: 0,
-                            fontSize: `${16 / 1512 * 100}vw`,
-                            textAlign: "justify"
-                        }}
-                    >
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
+                            fontSize: `${16 / 1512 * 100}vw`
+                        }}>
+                        {project.features.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
                     </ul>
                 </div>
 
-                {/* Roles & Collaborators */}
+                {/* Roles */}
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyItems: "center",
                     alignItems: "end",
                     gap: `${10 / 1812 * 100}vh`
                 }}>
@@ -184,24 +209,21 @@ export default function ProjectEntry() {
                             fontSize: `${32 / 1512 * 100}vw`,
                             margin: "0"
                         }}>
-                        Solution
+                        Roles
                     </h1>
                     <ul className="instrument-sans"
                         style={{
                             margin: 0,
                             fontSize: `${16 / 1512 * 100}vw`,
                             textAlign: "end"
-                        }}
-                    >
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Lorem ipsum dolor sit amet</li>
+                        }}>
+                        {project.roles.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
                     </ul>
                 </div>
-            </div >
 
-        </section >
+            </div>
+        </section>
     )
 }
