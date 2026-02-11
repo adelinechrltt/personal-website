@@ -122,7 +122,7 @@ export default function ProjectEntry() {
                     </div>
                 </div>
 
-                <Carousel />
+                <Carousel images={project.images} />
 
                 {/* Problem */}
                 <div style={{
