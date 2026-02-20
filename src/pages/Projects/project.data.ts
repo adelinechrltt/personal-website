@@ -162,20 +162,32 @@ export const projects: Project[] = [
         slug: "eazybytes-microservices-course",
         tag: "web",
         title: "Microservices Code-Along.",
-        subtitle: "AI-powered child emotion tracker.",
+        subtitle: "Spring Boot microservices with Docker & Kubernetes.",
         year: "2025",
-        techStack: ["Swift", "SwiftUI", "Firebase"],
-        github: "https://github.com/yourrepo",
-        problem: "Parents struggle to track emotional development in early childhood.",
-        solution: "We built an interactive SEL-based iOS app with AI-driven insights.",
+        techStack: [
+            "Spring",
+            "Docker",
+            "Docker Compose",
+            "Spring Boot",
+            "Spring Cloud",
+            "JPA & Hibernate",
+            "Eureka",
+        ],
+        github: "https://github.com/adelinechrltt/EazyBytes-Microservices",
+        problem: "**Modern applications demand scalable and independently deployable services**, but monolithic architectures limit flexibility, fault isolation, and deployment speed. \n\nUnderstanding distributed systems requires hands-on experience with service communication, configuration management, and containerization.",
+        solution: "I built and containerized multiple **Spring Boot microservices** following a structured code-along based on the EazyBytes course. \n\nThe system integrates **service discovery, centralized configuration, and API gateway routing**, simulating a production-style distributed architecture.",
         features: [
-            "Emotion logging",
-            "Parent dashboard",
-            "AI-powered recommendations"
+            "**Independent Spring Boot microservices** with environment-based configuration.",
+            "Service discovery using **Eureka**.",
+            "Centralized configuration via **Config Server**.",
+            "API Gateway routing and inter-service communication.",
+            "Containerized services using **Docker and Docker Compose**."
         ],
         contributions: [
-            "Technical Developer",
-            "Product Lead"
+            "Implemented Docker image generation using **Dockerfiles, Buildpacks, and Google Jib**.",
+            "Configured internal (application.yml) and externalized environment profiles.",
+            "Set up centralized configuration with encrypted properties.",
+            "Orchestrated multi-service environments using Docker Compose."
         ],
         images: [
             "https://picsum.photos/id/1015/1200/800",
@@ -187,45 +199,31 @@ export const projects: Project[] = [
         slug: "yelpcamp-course",
         tag: "web",
         title: "YelpCamp Code-Along.",
-        subtitle: "AI-powered child emotion tracker.",
+        subtitle: "Full-stack MERN application with authentication and validation.",
         year: "2025",
-        techStack: ["Swift", "SwiftUI", "Firebase"],
-        github: "https://github.com/yourrepo",
-        problem: "Parents struggle to track emotional development in early childhood.",
-        solution: "We built an interactive SEL-based iOS app with AI-driven insights.",
+        techStack: [
+            "MERN",
+            "MongoDB",
+            "Express.js",
+            "React.js",
+            "Node.js",
+            "Bootstrap"
+        ],
+        github: "https://github.com/adelinechrltt/YelpCamp---WebDev-Course",
+        problem: "**Building scalable full-stack applications requires understanding both client and server architecture**, including routing, validation, and database modeling. \n\nMany beginner projects isolate frontend and backend concepts without demonstrating how they integrate in a production-style environment.",
+        solution: "Through a structured code-along based on Colt Steele’s Web Developer Bootcamp, I developed a **Yelp-style campsite listing platform** using the MERN stack. \n\nThe project integrates RESTful routing, server-side validation, templating, and database persistence to simulate a real-world full-stack application.",
         features: [
-            "Emotion logging",
-            "Parent dashboard",
-            "AI-powered recommendations"
+            "CRUD functionality for campsite listings.",
+            "RESTful routing using Express Router.",
+            "Server-side validation with **JOI**.",
+            "MongoDB data modeling and persistence.",
+            "Responsive UI using **Bootstrap** and templating with EJSmate."
         ],
         contributions: [
-            "Technical Developer",
-            "Product Lead"
-        ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
-    },
-    {
-        slug: "medium-clone-course",
-        tag: "web",
-        title: "Small Medium Clone.",
-        subtitle: "AI-powered child emotion tracker.",
-        year: "2025",
-        techStack: ["Swift", "SwiftUI", "Firebase"],
-        github: "https://github.com/yourrepo",
-        problem: "Parents struggle to track emotional development in early childhood.",
-        solution: "We built an interactive SEL-based iOS app with AI-driven insights.",
-        features: [
-            "Emotion logging",
-            "Parent dashboard",
-            "AI-powered recommendations"
-        ],
-        contributions: [
-            "Technical Developer",
-            "Product Lead"
+            "Implemented full-stack CRUD architecture using MERN.",
+            "Structured modular Express routing and middleware patterns.",
+            "Integrated server-side validation for data integrity.",
+            "Connected frontend rendering with backend APIs and database models."
         ],
         images: [
             "https://picsum.photos/id/1015/1200/800",
@@ -239,20 +237,31 @@ export const projects: Project[] = [
         slug: "stellarfest",
         tag: "misc",
         title: "Stellarfest.",
-        subtitle: "AI-powered child emotion tracker.",
+        subtitle: "Role-based event management system built with MVC architecture.",
         year: "2025",
-        techStack: ["Swift", "SwiftUI", "Firebase"],
-        github: "https://github.com/yourrepo",
-        problem: "Parents struggle to track emotional development in early childhood.",
-        solution: "We built an interactive SEL-based iOS app with AI-driven insights.",
+        techStack: [
+            "Java",
+            "JavaFX",
+            "MySQL",
+            "JDBC",
+            "MVC Architecture"
+        ],
+        github: "https://github.com/adelinechrltt/Stellarfest_OOAD",
+        problem: "**Event management involves multiple stakeholders with different permissions and workflows**, making system structure and access control critical. \n\nWithout a well-designed architecture, handling authentication, role-based features, and data persistence becomes difficult to scale and maintain.",
+        solution: "StellarFest is a **full-stack event management platform** developed for an Object-Oriented Architecture and Design course. \n\nBuilt using **vanilla Java, JavaFX, and MySQL with JDBC**, the system follows a structured **MVC architecture** to ensure clean separation between presentation, business logic, and data layers. \n\nThe project achieved a final evaluation score of **97/100**.",
         features: [
-            "Emotion logging",
-            "Parent dashboard",
-            "AI-powered recommendations"
+            "Role-based authentication (**Admin, Event Organizer, Vendor, Guest**).",
+            "Full CRUD functionality for events and products.",
+            "Invitation system between organizers, vendors, and guests.",
+            "Profile management (change email, username, password).",
+            "Admin dashboard for centralized user management."
         ],
         contributions: [
-            "Technical Developer",
-            "Product Lead"
+            "Designed and implemented MVC-based system architecture.",
+            "Developed database connectivity using JDBC and MySQL.",
+            "Built JavaFX GUI with structured navigation flows.",
+            "Created system documentation including UML diagrams and module explanations.",
+            "Collaborated in full-stack development for end-semester submission."
         ],
         images: [
             "https://picsum.photos/id/1015/1200/800",
@@ -263,21 +272,24 @@ export const projects: Project[] = [
     {
         slug: "ootd-game",
         tag: "misc",
-        title: "Outfit of The Day.",
-        subtitle: "AI-powered child emotion tracker.",
+        title: "Outfit of the Day.",
+        subtitle: "A reflective Swift Playground about resilience and self-expression.",
         year: "2025",
-        techStack: ["Swift", "SwiftUI", "Firebase"],
-        github: "https://github.com/yourrepo",
-        problem: "Parents struggle to track emotional development in early childhood.",
-        solution: "We built an interactive SEL-based iOS app with AI-driven insights.",
+        techStack: ["Swift", "Swift Playgrounds"],
+        github: "https://github.com/adelinechrltt/outfit-of-the-day-game",
+        problem: "**Grief, burnout, and emotional setbacks can make even small daily routines feel overwhelming.** \n\nSometimes, rebuilding strength starts not with grand solutions, but with gentle, personal rituals that help us reconnect with ourselves.",
+        solution: "Outfit of the Day is a **reflective dress-up game built in Swift Playgrounds**, where clothing choices symbolize emotional states. \n\nThe ending dynamically changes based on how your outfit makes your avatar feel, turning a simple interaction into an **interactive metaphor for healing, resilience, and rediscovering joy through small acts of care.**",
         features: [
-            "Emotion logging",
-            "Parent dashboard",
-            "AI-powered recommendations"
+            "Emotion-driven branching endings.",
+            "Interactive outfit selection mechanics.",
+            "Soft, hand-drawn visual style and custom illustrations.",
+            "Symbolic design elements, including a recurring sunflower motif."
         ],
         contributions: [
-            "Technical Developer",
-            "Product Lead"
+            "Designed and developed the full interactive experience in Swift Playgrounds.",
+            "Conceptualized emotional branching logic and narrative outcomes.",
+            "Created custom illustrations and visual identity.",
+            "Translated personal storytelling into interactive game mechanics."
         ],
         images: [
             "https://picsum.photos/id/1015/1200/800",
@@ -289,20 +301,29 @@ export const projects: Project[] = [
         slug: "few-shot-learning",
         tag: "misc",
         title: "FSL in Dermatology.",
-        subtitle: "AI-powered child emotion tracker.",
+        subtitle: "Metric-based few-shot learning for cross-domain skin lesion classification.",
         year: "2025",
-        techStack: ["Swift", "SwiftUI", "Firebase"],
+        techStack: [
+            "Python",
+            "PyTorch",
+            "EfficientNetV2-S",
+            "Few-Shot Learning",
+            "Medical Imaging"
+        ],
         github: "https://github.com/yourrepo",
-        problem: "Parents struggle to track emotional development in early childhood.",
-        solution: "We built an interactive SEL-based iOS app with AI-driven insights.",
+        problem: "**Skin lesion classifiers trained on single, well-curated datasets often fail under real-world domain shifts**, such as variations in age, anatomical location, and skin tone. \n\nThis performance drop disproportionately affects under-represented groups, highlighting the need for models that generalize more robustly across domains.",
+        solution: "This research investigates **metric-based few-shot learning (FSL)** as a strategy to improve cross-domain generalization in dermatology image classification. \n\nFour episodically trained meta-learning models — **Prototypical, Matching, Siamese, and Relation Networks** — sharing an EfficientNetV2-S backbone were trained on HAM10000 and evaluated across five domains. \n\nThe best-performing FSL model was further tested on the DDI dataset and compared against conventional supervised baselines using imbalance-aware metrics such as **AUC-PR, F1, precision, and recall**.",
         features: [
-            "Emotion logging",
-            "Parent dashboard",
-            "AI-powered recommendations"
+            "Implementation of four metric-based few-shot meta-learning architectures.",
+            "Episodic training framework for cross-domain robustness.",
+            "Evaluation across five shifted domains.",
+            "Benchmark comparison against conventional supervised classifier.",
+            "Use of imbalance-aware metrics beyond accuracy and AUC-ROC."
         ],
         contributions: [
-            "Technical Developer",
-            "Product Lead"
+            "Developed the **high-level research design**, grounding methodology in relevant academic literature and prior citations.",
+            "Integrated and experimentally validated an **EfficientNetV2-S–based Prototypical Network** for cross-domain evaluation.",
+            "Presented findings at **IEEE ITIS 2025** and received **Best Speaker Award**."
         ],
         images: [
             "https://picsum.photos/id/1015/1200/800",
