@@ -1,8 +1,8 @@
 import type { ComponentType, SVGProps } from "react";
 
-import AppleDeveloperAcademy from "../../assets/icons/experienceIcons/AppleDeveloperAcademy.jpeg"
-import AI4Impact from "../../assets/icons/experienceIcons/AI4Impact.jpeg";
-import BNCC from "../../assets/icons/experienceIcons/BNCC.jpeg"
+import AppleDeveloperAcademy from "../../../assets/icons/experienceIcons/AppleDeveloperAcademy.jpeg"
+import AI4Impact from "../../../assets/icons/experienceIcons/AI4Impact.jpeg";
+import BNCC from "../../../assets/icons/experienceIcons/BNCC.jpeg"
 
 export type Experience = {
     icon: string;

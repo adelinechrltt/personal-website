@@ -7,7 +7,7 @@ import Carousel from "./Carousel";
 import Arrow from "../../assets/Arrow.svg"
 import ChevronIcon from "../../assets/Chevron";
 
-import { projects } from "../Projects/project.data";
+import { projects } from "../Projects/model/project.data";
 
 export default function Portfolio() {
     const navigate = useNavigate();

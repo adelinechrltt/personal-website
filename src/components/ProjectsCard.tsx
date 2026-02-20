@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BtnSmallOutline from "./BtnSmallOutline";
-import type { Project } from "../pages/Projects/project.data";
+import type { Project } from "../pages/Projects/model/project.data";
 
 export const ProjectsCardType = {
     blue: "blue",

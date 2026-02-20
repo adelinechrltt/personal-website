@@ -72,7 +72,7 @@ export default function ProjectCarousel() {
                                 problem: "",
                                 solution: "",
                                 features: [],
-                                roles: [],
+                                contributions: [],
                                 images: []
                             }} />
                             <p className="instrument-sans-medium" style={{

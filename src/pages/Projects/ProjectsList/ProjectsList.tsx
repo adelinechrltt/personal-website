@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import BtnSmallOutline from "../../../components/BtnSmallOutline";
 import ProjectsCard from "../../../components/ProjectsCard";
-import { projects } from "../project.data";
+import { projects } from "../model/project.data";
 
 import ArrowBack from "../../../assets/ArrowBack.svg"
 

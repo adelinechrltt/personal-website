@@ -1,9 +1,9 @@
 import ExperienceEntry from "./components/ExperienceEntry";
 import TechStackCell from "./components/TechStackCell";
 
-import { mobileIcons, webIcons, backendIcons, dataIcons } from "./stack.data";
+import { mobileIcons, webIcons, backendIcons, dataIcons } from "./model/stack.data";
 
-import { experiences } from "./experience.data";
+import { experiences } from "./model/experience.data";
 
 export default function StackExperience() {
     return (

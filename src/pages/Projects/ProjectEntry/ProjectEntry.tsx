@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkBreaks from "remark-breaks";
 
 import Carousel from "./Carousel"
-import { projects } from "../project.data"
+import { projects } from "../model/project.data"
 
 import ArrowBack from "../../../assets/ArrowBack.svg"
 import BtnSmallOutline from "../../../components/BtnSmallOutline"
