@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallOutline from "./BtnSmallOutline";
+import type { Project } from "../pages/Projects/project.data";
 
 export const ProjectsCardType = {
     blue: "blue",
@@ -9,12 +12,15 @@ export const ProjectsCardType = {
 export type ProjectsCardType = typeof ProjectsCardType[keyof typeof ProjectsCardType];
 
 type ProjectsCardProps = {
+    project: Project;
     type: ProjectsCardType;
 }
 
 export default function ProjectsCard({
+    project,
     type
 }: ProjectsCardProps) {
+    const navigate = useNavigate();
 
     let cardBG = "";
     switch (type) {
@@ -29,15 +35,18 @@ export default function ProjectsCard({
     }
 
     return (
-        <div style={{
-            display: "flex",
-            flexDirection: "column",
-            borderRadius: "20px",
-            border: "1px solid #7F2025",
-            height: "22.6rem",
-            width: "100%",
-            overflow: "hidden"
-        }}>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "20px",
+                border: "1px solid #7F2025",
+                height: "22.6rem",
+                width: "50%",
+                overflow: "hidden"
+            }}
+            onClick={() => navigate(`/projects/${project.slug}`)}
+        >
             {/* Image wrapper; crop oversized images */}
             <div
                 style={{
@@ -46,7 +55,7 @@ export default function ProjectsCard({
                     overflow: "hidden",
                 }}>
                 <img
-                    src="https://picsum.photos/400"
+                    src={project.images[0]}
                     alt=""
                     style={{
                         width: "100%",
@@ -63,13 +72,22 @@ export default function ProjectsCard({
                 alignItems: "center",
                 padding: `${20 / 1512 * 100}vw ${20 / 1512 * 100}vw`
             }}>
-                <p className="instrument-sans-bold white" style={{ fontSize: `${24 / 1512 * 100}vw`, margin: 0 }}>Kimo</p>
+                <p className="instrument-sans-bold white" style={{ fontSize: `${24 / 1512 * 100}vw`, margin: 0 }}>{project.title}
+                </p>
                 <span style={{
                     display: "flex",
                     flexDirection: "row",
                     gap: `${20 / 1512 * 100}vw`,
                 }}>
-                    <BtnSmallOutline text={"Swift"} type={"white"} />
+                    <span>
+                        {project.techStack.slice(0, 2).map((tech) => (
+                            <BtnSmallOutline
+                                key={tech}
+                                text={tech}
+                                type="white"
+                            />
+                        ))}
+                    </span>
                 </span>
             </div>
         </div >
