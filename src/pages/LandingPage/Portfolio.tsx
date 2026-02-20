@@ -56,15 +56,43 @@ export default function Portfolio() {
                     fontSize: `${32 / 16}rem`, margin: 0
                 }}>Projects</h3>
                 <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, 1fr)",
                     gap: `${15 / 16}rem`,
                     width: "100%"
                 }}>
-                    <ProjectsCard type={"blue"} />
-                    <ProjectsCard type={"blue"} />
+                    <ProjectsCard type={"blue"} project={{
+                        slug: "",
+                        tag: "",
+                        title: "",
+                        subtitle: "",
+                        year: "",
+                        techStack: [],
+                        github: undefined,
+                        linkedin: undefined,
+                        instagram: undefined,
+                        problem: "",
+                        solution: "",
+                        features: [],
+                        roles: [],
+                        images: []
+                    }} />
+                    <ProjectsCard type={"blue"} project={{
+                        slug: "",
+                        tag: "",
+                        title: "",
+                        subtitle: "",
+                        year: "",
+                        techStack: [],
+                        github: undefined,
+                        linkedin: undefined,
+                        instagram: undefined,
+                        problem: "",
+                        solution: "",
+                        features: [],
+                        roles: [],
+                        images: []
+                    }} />
                 </div>
                 <div style={{
                     display: "flex",
@@ -74,8 +102,6 @@ export default function Portfolio() {
                     gap: `${15 / 16}rem`,
                     width: "100%"
                 }}>
-                    <ProjectsCard type={"blue"} />
-                    <ProjectsCard type={"blue"} />
                 </div>
                 <div
                     style={{

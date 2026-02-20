@@ -42,7 +42,7 @@ export default function ProjectsCard({
                 borderRadius: "20px",
                 border: "1px solid #7F2025",
                 height: "22.6rem",
-                width: "50%",
+                width: "100%",
                 overflow: "hidden"
             }}
             onClick={() => navigate(`/projects/${project.slug}`)}

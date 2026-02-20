@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallOutline from "../../../components/BtnSmallOutline";
 import ProjectsCard from "../../../components/ProjectsCard";
+import { projects } from "../project.data";
 
 import ArrowBack from "../../../assets/ArrowBack.svg"
-import { useNavigate } from "react-router-dom";
 
 export default function ProjectsList() {
     const navigate = useNavigate();
+
+    const iosProjects = projects.filter(p => p.tag === "iOS");
+    const webProjects = projects.filter(p => p.tag === "web");
+    const miscProjects = projects.filter(p => p.tag === "misc");
 
     return (
         <section style={{
@@ -63,20 +69,17 @@ export default function ProjectsList() {
                     gap: `${15 / 1812 * 100}vh`,
                 }}>
                     <div style={{
-                        display: "flex",
-                        flexDirection: "row",
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, 1fr)",
                         gap: `${15 / 1512 * 100}vw`
                     }}>
-                        <ProjectsCard type={"blue"} />
-                        <ProjectsCard type={"blue"} />
-                    </div>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        gap: `${15 / 1512 * 100}vw`
-                    }}>
-                        <ProjectsCard type={"blue"} />
-                        <ProjectsCard type={"blue"} />
+                        {iosProjects.map(project => (
+                            <ProjectsCard
+                                key={project.slug}
+                                project={project}
+                                type="blue"
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -90,19 +93,22 @@ export default function ProjectsList() {
                 <h3 className="rufina-bold burgundy" style={{ fontSize: `${32 / 1512 * 100}vw`, margin: 0, textAlign: "end" }}>Web Development</h3>
                 <div style={{
                     display: "flex",
-                    flexDirection: "row",
-                    gap: `${15 / 1512 * 100}vw`,
+                    flexDirection: "column",
+                    gap: `${15 / 1812 * 100}vh`,
                 }}>
-                    <ProjectsCard type={"red"} />
-                    <ProjectsCard type={"red"} />
-                </div>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: `${15 / 1512 * 100}vw`
-                }}>
-                    <ProjectsCard type={"red"} />
-                    <ProjectsCard type={"red"} />
+                    <div style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, 1fr)",
+                        gap: `${15 / 1512 * 100}vw`
+                    }}>
+                        {webProjects.map(project => (
+                            <ProjectsCard
+                                key={project.slug}
+                                project={project}
+                                type="red"
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
 
@@ -115,19 +121,22 @@ export default function ProjectsList() {
                 <h3 className="rufina-bold dark-gray" style={{ fontSize: `${32 / 1512 * 100}vw`, margin: 0 }}>Miscellaneous</h3>
                 <div style={{
                     display: "flex",
-                    flexDirection: "row",
-                    gap: `${15 / 1512 * 100}vw`,
+                    flexDirection: "column",
+                    gap: `${15 / 1812 * 100}vh`,
                 }}>
-                    <ProjectsCard type={"gray"} />
-                    <ProjectsCard type={"gray"} />
-                </div>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: `${15 / 1512 * 100}vw`
-                }}>
-                    <ProjectsCard type={"gray"} />
-                    <ProjectsCard type={"gray"} />
+                    <div style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, 1fr)",
+                        gap: `${15 / 1512 * 100}vw`
+                    }}>
+                        {miscProjects.map(project => (
+                            <ProjectsCard
+                                key={project.slug}
+                                project={project}
+                                type="gray"
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
         </section >

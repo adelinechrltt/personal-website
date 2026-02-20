@@ -59,7 +59,22 @@ export default function ProjectCarousel() {
                             gap: `${20 / 16}rem`,
                             flex: `0 0 calc(${(100 / visibleCards)}% - ${((visibleCards - 1) * (15 / 16)) / visibleCards}rem)`
                         }}>
-                            <ProjectsCard type={"red"} />
+                            <ProjectsCard type={"red"} project={{
+                                slug: "",
+                                tag: "",
+                                title: "",
+                                subtitle: "",
+                                year: "",
+                                techStack: [],
+                                github: undefined,
+                                linkedin: undefined,
+                                instagram: undefined,
+                                problem: "",
+                                solution: "",
+                                features: [],
+                                roles: [],
+                                images: []
+                            }} />
                             <p className="instrument-sans-medium" style={{
                                 fontSize: `${16 / 1512 * 100}vw`,
                                 margin: 0,
