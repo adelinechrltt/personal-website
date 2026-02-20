@@ -5,6 +5,8 @@ import ProjectsCard from "../../../components/ProjectsCard";
 import { projects } from "../model/project.data";
 
 import ArrowBack from "../../../assets/ArrowBack.svg"
+import { useState } from "react";
+import ChevronIcon from "../../../assets/Chevron";
 
 export default function ProjectsList() {
     const navigate = useNavigate();
@@ -12,6 +14,12 @@ export default function ProjectsList() {
     const iosProjects = projects.filter(p => p.tag === "iOS");
     const webProjects = projects.filter(p => p.tag === "web");
     const miscProjects = projects.filter(p => p.tag === "misc");
+
+    const [expanded, setExpanded] = useState({
+        ios: true,
+        web: true,
+        misc: true,
+    });
 
     return (
         <section style={{
@@ -56,89 +64,127 @@ export default function ProjectsList() {
                 </div>
             </div>
 
-            {/* iOS Development */}
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: `${10 / 1812 * 100}vh`,
-            }}>
-                <h3 className="rufina-bold blue-2" style={{ fontSize: `${32 / 1512 * 100}vw`, margin: 0 }}>iOS Development</h3>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: `${15 / 1812 * 100}vh`,
-                }}>
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: `${15 / 1512 * 100}vw`
-                    }}>
-                        {iosProjects.map(project => (
-                            <ProjectsCard
-                                key={project.slug}
-                                project={project}
-                                type="blue"
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+            {/* iOS Projects */}
+            <ProjectsSection
+                title="iOS Development"
+                colorClass="blue-2"
+                projects={iosProjects}
+                cardType="blue"
+                sectionKey="ios"
+                expanded={expanded}
+                setExpanded={setExpanded}
+            />
 
-            {/* Web Development */}
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: `${10 / 1812 * 100}vh`,
-            }}>
-                <h3 className="rufina-bold burgundy" style={{ fontSize: `${32 / 1512 * 100}vw`, margin: 0, textAlign: "end" }}>Web Development</h3>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: `${15 / 1812 * 100}vh`,
-                }}>
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: `${15 / 1512 * 100}vw`
-                    }}>
-                        {webProjects.map(project => (
-                            <ProjectsCard
-                                key={project.slug}
-                                project={project}
-                                type="red"
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+            {/* Webdev Projects */}
+            <ProjectsSection
+                title="Web Development"
+                colorClass="burgundy"
+                align="end"
+                projects={webProjects}
+                cardType="red"
+                sectionKey="web"
+                expanded={expanded}
+                setExpanded={setExpanded}
+            />
 
-            {/* Miscellaneous Development */}
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: `${10 / 1812 * 100}vh`,
-            }}>
-                <h3 className="rufina-bold dark-gray" style={{ fontSize: `${32 / 1512 * 100}vw`, margin: 0 }}>Miscellaneous</h3>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: `${15 / 1812 * 100}vh`,
-                }}>
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: `${15 / 1512 * 100}vw`
-                    }}>
-                        {miscProjects.map(project => (
-                            <ProjectsCard
-                                key={project.slug}
-                                project={project}
-                                type="gray"
-                            />
-                        ))}
-                    </div>
-                </div>
-            </div>
+            {/* Misc Projects */}
+            <ProjectsSection
+                title="Miscellaneous"
+                colorClass="dark-gray"
+                projects={miscProjects}
+                cardType="gray"
+                sectionKey="misc"
+                expanded={expanded}
+                setExpanded={setExpanded}
+            />
         </section >
     )
+}
+
+function ProjectsSection({
+    title,
+    colorClass,
+    align = "start",
+    projects,
+    cardType,
+    sectionKey,
+    expanded,
+    setExpanded
+}: any) {
+    const isExpanded = expanded[sectionKey];
+
+    return (
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: `${10 / 1812 * 100}vh`,
+            }}
+        >
+            {/* Header Row */}
+            <div
+                style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: `${align == "start" ? "start" : "end"}`
+                }}
+            >
+                <h3
+                    className={`rufina-bold ${colorClass}`}
+                    style={{
+                        fontSize: `${32 / 1512 * 100}vw`,
+                        margin: 0,
+                        textAlign: align,
+                    }}
+                >
+                    {title}
+                </h3>
+
+                <button
+                    style={{
+                        background: "none",
+                        border: "none",
+                        cursor: "pointer",
+                        transform: isExpanded ? "rotate(90deg)" : "rotate(180deg)",
+                        transition: "transform 0.3s ease"
+                    }}
+                    onClick={() =>
+                        setExpanded((prev: any) => ({
+                            ...prev,
+                            [sectionKey]: !prev[sectionKey],
+                        }))
+                    }
+                >
+                    <ChevronIcon color={colorClass == "blue-2" ? "#5B89BF" :
+                        colorClass == "burgundy" ? "#7F2025" : "#38322F"} />
+                </button>
+            </div>
+
+            {/* Collapsible Grid */}
+            <div
+                style={{
+                    overflow: "hidden",
+                    maxHeight: isExpanded ? "2000px" : "0",
+                    opacity: isExpanded ? 1 : 0,
+                    transition: "max-height 0.5s ease, opacity 0.3s ease",
+                }}
+            >
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, 1fr)",
+                        gap: `${15 / 1512 * 100}vw`,
+                    }}
+                >
+                    {projects.map((project: any) => (
+                        <ProjectsCard
+                            key={project.slug}
+                            project={project}
+                            type={cardType}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 }
