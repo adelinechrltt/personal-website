@@ -1,4 +1,8 @@
+import { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import BtnSmallOutline from "./BtnSmallOutline";
+import type { Project } from "../pages/Projects/model/project.data";
 
 export const ProjectsCardType = {
     blue: "blue",
@@ -9,12 +13,16 @@ export const ProjectsCardType = {
 export type ProjectsCardType = typeof ProjectsCardType[keyof typeof ProjectsCardType];
 
 type ProjectsCardProps = {
+    project: Project;
     type: ProjectsCardType;
 }
 
 export default function ProjectsCard({
+    project,
     type
 }: ProjectsCardProps) {
+    const navigate = useNavigate();
+    const isClickable = Boolean(project.slug && project.slug.trim() !== "");
 
     let cardBG = "";
     switch (type) {
@@ -28,16 +36,40 @@ export default function ProjectsCard({
             cardBG = "dark-gray-bg"
     }
 
+    const techContainerRef = useRef<HTMLSpanElement>(null);
+    const [visibleCount, setVisibleCount] = useState(2);
+
+    useEffect(() => {
+        const el = techContainerRef.current;
+        if (!el) return;
+
+        const isOverflowing = el.scrollWidth > el.clientWidth;
+
+        if (isOverflowing) {
+            setVisibleCount(1);
+        } else {
+            setVisibleCount(2);
+        }
+    }, [project.techStack]);
+
     return (
-        <div style={{
-            display: "flex",
-            flexDirection: "column",
-            borderRadius: "20px",
-            border: "1px solid #7F2025",
-            height: "22.6rem",
-            width: "100%",
-            overflow: "hidden"
-        }}>
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "20px",
+                border: "1px solid #7F2025",
+                height: "22.6rem",
+                width: "100%",
+                overflow: "hidden",
+                cursor: isClickable ? "pointer" : "default",
+            }}
+            onClick={
+                isClickable
+                    ? () => navigate(`/projects/${project.slug}`)
+                    : undefined
+            }
+        >
             {/* Image wrapper; crop oversized images */}
             <div
                 style={{
@@ -46,7 +78,7 @@ export default function ProjectsCard({
                     overflow: "hidden",
                 }}>
                 <img
-                    src="https://picsum.photos/400"
+                    src={project.images[0]}
                     alt=""
                     style={{
                         width: "100%",
@@ -63,13 +95,40 @@ export default function ProjectsCard({
                 alignItems: "center",
                 padding: `${20 / 1512 * 100}vw ${20 / 1512 * 100}vw`
             }}>
-                <p className="instrument-sans-bold white" style={{ fontSize: `${24 / 1512 * 100}vw`, margin: 0 }}>Kimo</p>
+                <p className="instrument-sans-bold white"
+                    style={{
+                        display: "-webkit-box",
+                        fontSize: `${project.techStack.length == 0 ? `${20 / 1512 * 100}vw` : `${24 / 1512 * 100} vw`}`,
+                        margin: 0,
+                        width: `${project.techStack.length == 0 ? "100%" : "60%"}`,
+                        overflow: "hidden",
+                        WebkitLineClamp: `${project.techStack.length == 0 ? 2 : 1}`,
+                        WebkitBoxOrient: "vertical",
+                    }}
+                >{project.title}
+                </p>
                 <span style={{
                     display: "flex",
                     flexDirection: "row",
                     gap: `${20 / 1512 * 100}vw`,
                 }}>
-                    <BtnSmallOutline text={"Swift"} type={"white"} />
+                    <span
+                        ref={techContainerRef}
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            gap: `${10 / 1512 * 100}vw`,
+                            minWidth: 0
+                        }}
+                    >
+                        {project.techStack.slice(0, visibleCount).map((tech) => (
+                            <BtnSmallOutline
+                                key={tech}
+                                text={tech}
+                                type="white"
+                            />
+                        ))}
+                    </span>
                 </span>
             </div>
         </div >

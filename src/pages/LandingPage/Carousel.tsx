@@ -1,20 +1,18 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
+
 import ChevronIcon from "../../assets/Chevron";
 import ProjectsCard from "../../components/ProjectsCard";
 
-// temp data
-const projects = [
-    { id: 1, title: "Project One" },
-    { id: 2, title: "Project Two" },
-    { id: 3, title: "Project Three" },
-    { id: 4, title: "Project Four" },
-    { id: 5, title: "Project Five" },
-];
+import { achievements } from "./model/achievements.data";
+import { achievementToProject } from "./model/achievements.mapper";
 
 export default function ProjectCarousel() {
     const [index, setIndex] = useState(0);
-
     const visibleCards = 3;
+
+    const projects = achievements.map(achievementToProject);
+
     const maxIndex = projects.length - visibleCards;
 
     const next = () => {
@@ -24,6 +22,7 @@ export default function ProjectCarousel() {
     const prev = () => {
         setIndex((i) => (i <= 0 ? maxIndex : i - 1));
     };
+
 
     return (
         <div style={{
@@ -42,7 +41,8 @@ export default function ProjectCarousel() {
             <div style={{
                 overflow: "hidden",
                 width: "100%",
-                borderRadius: "8px"
+                borderRadius: "8px",
+                padding: "0 2px"
             }}>
                 <div style={{
                     display: "flex",
@@ -51,21 +51,38 @@ export default function ProjectCarousel() {
                     transition: "transform 0.5s ease-in-out",
                     transform: `translateX(calc(-${index * (100 / visibleCards)}% - ${index * (15 / 16 / visibleCards)}rem))`,
                 }}>
-                    {projects.map((proj, i) => (
-                        <div key={proj.id} style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "center",
-                            gap: `${20 / 16}rem`,
-                            flex: `0 0 calc(${(100 / visibleCards)}% - ${((visibleCards - 1) * (15 / 16)) / visibleCards}rem)`
-                        }}>
-                            <ProjectsCard type={"red"} />
-                            <p className="instrument-sans-medium" style={{
-                                fontSize: `${16 / 1512 * 100}vw`,
-                                margin: 0,
-                                textAlign: "center"
-                            }}>
-                                {proj.title}
+                    {projects.map((proj) => (
+                        <div
+                            key={`${proj.title}-${proj.year}`}
+                            style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                gap: `${20 / 16}rem`,
+                                flex: `0 0 calc(${100 / visibleCards}% - ${((visibleCards - 1) * (15 / 16)) / visibleCards}rem)`
+                            }}
+                        >
+                            <ProjectsCard type="red" project={proj} />
+
+                            <p
+                                className="instrument-sans-medium"
+                                style={{
+                                    fontSize: `${16 / 1512 * 100}vw`,
+                                    margin: 0,
+                                    textAlign: "center"
+                                }}
+                            >
+                                <ReactMarkdown
+                                    components={{
+                                        p: ({ children }) => (
+                                            <p style={{ margin: "5px 0", textIndent: "2em" }}>
+                                                {children}
+                                            </p>
+                                        )
+                                    }}
+                                >
+                                    {proj.subtitle}
+                                </ReactMarkdown>
                             </p>
                         </div>
                     ))}

@@ -1,7 +1,9 @@
-import BtnSmallFill from "../../components/BtnSmallFill";
-import BtnSmallOutline from "../../components/BtnSmallOutline";
-import ExperienceEntry from "./ExperienceEntry";
-import TechStackCell from "./TechStackCell";
+import ExperienceEntry from "./components/ExperienceEntry";
+import TechStackCell from "./components/TechStackCell";
+
+import { mobileIcons, webIcons, backendIcons, dataIcons } from "./model/stack.data";
+
+import { experiences } from "./model/experience.data";
 
 export default function StackExperience() {
     return (
@@ -38,8 +40,8 @@ export default function StackExperience() {
                     alignItems: "center",
                     gap: `${54 / 1512 * 100}vw`
                 }}>
-                    <TechStackCell />
-                    <TechStackCell />
+                    <TechStackCell title={"Mobile Dev."} icons={mobileIcons} />
+                    <TechStackCell title={"Wev Dev."} icons={webIcons} />
                 </div>
 
                 {/* Row 2 */}
@@ -50,8 +52,8 @@ export default function StackExperience() {
                     alignItems: "center",
                     gap: `${54 / 1512 * 100}vw`
                 }}>
-                    <TechStackCell />
-                    <TechStackCell />
+                    <TechStackCell title={"Backend"} icons={backendIcons} />
+                    <TechStackCell title={"Data"} icons={dataIcons} />
                 </div>
                 <p className="instrument-sans-medium" style={{
                     fontSize: `${16 / 1512 * 100}vw`,
@@ -84,9 +86,17 @@ export default function StackExperience() {
                     gap: `${20 / 1512 * 100}vh`,
                     width: "80%"
                 }}>
-                    <ExperienceEntry />
-                    <hr className="blue-2-bg" style={{ width: "100%", border: "none", height: "1px" }} />
-                    <ExperienceEntry />
+                    {experiences.map((exp, index) => (
+                        <div key={exp.company}>
+                            <ExperienceEntry {...exp} />
+                            {index !== experiences.length - 1 && (
+                                <hr
+                                    className="blue-2-bg"
+                                    style={{ width: "100%", border: "none", height: "1px" }}
+                                />
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
         </section >

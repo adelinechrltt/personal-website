@@ -1,15 +1,13 @@
 import { useState } from "react";
 
-import ChevronIcon from "../../assets/Chevron";
+import ChevronIcon from "../../../assets/Chevron";
 
-// temp images
-const images = [
-    "https://picsum.photos/id/1015/1200/600",
-    "https://picsum.photos/id/1016/1200/600",
-    "https://picsum.photos/id/1018/1200/600",
-];
+type CarouselProps = {
+    images: string[]
+}
 
-export default function Carousel() {
+export default function Carousel({ images }: CarouselProps) {
+
     const [index, setIndex] = useState(0);
 
     const prev = () => setIndex((i) => (i === 0 ? images.length - 1 : i - 1));

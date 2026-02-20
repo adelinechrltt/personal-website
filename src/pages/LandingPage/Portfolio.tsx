@@ -7,8 +7,20 @@ import Carousel from "./Carousel";
 import Arrow from "../../assets/Arrow.svg"
 import ChevronIcon from "../../assets/Chevron";
 
+import { projects } from "../Projects/model/project.data";
+
 export default function Portfolio() {
     const navigate = useNavigate();
+
+    const iosProjects = projects.filter(p => p.tag === "iOS").slice(0, 2);
+    const webProject = projects.find(p => p.tag === "web");
+    const miscProject = projects.find(p => p.tag === "misc");
+
+    const selectedProjects = [
+        ...iosProjects,
+        ...(webProject ? [webProject] : []),
+        ...(miscProject ? [miscProject] : []),
+    ];
 
     return (
         <section id="portfolio" style={{
@@ -56,15 +68,18 @@ export default function Portfolio() {
                     fontSize: `${32 / 16}rem`, margin: 0
                 }}>Projects</h3>
                 <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, 1fr)",
                     gap: `${15 / 16}rem`,
                     width: "100%"
                 }}>
-                    <ProjectsCard type={"blue"} />
-                    <ProjectsCard type={"blue"} />
+                    {selectedProjects.map((project) => (
+                        <ProjectsCard
+                            key={project.slug}
+                            type={project.tag == "iOS" ? "blue" : project.tag == "web" ? "red" : "gray"}
+                            project={project}
+                        />
+                    ))}
                 </div>
                 <div style={{
                     display: "flex",
@@ -74,8 +89,6 @@ export default function Portfolio() {
                     gap: `${15 / 16}rem`,
                     width: "100%"
                 }}>
-                    <ProjectsCard type={"blue"} />
-                    <ProjectsCard type={"blue"} />
                 </div>
                 <div
                     style={{

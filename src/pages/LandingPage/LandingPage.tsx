@@ -14,7 +14,7 @@ export default function LandingPage() {
                 top: 0,
                 left: 0
             }}>
-                <NavBar sections={["Home", "About Me", "Portfolio"]} />
+                <NavBar sections={["Hero Section", "About Me", "Portfolio"]} />
             </div>
             <HeroSection />
             <AboutMe />
