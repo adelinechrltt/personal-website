@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom"
-import type { ReactNode } from "react"
+import ReactMarkdown from "react-markdown";
+import remarkBreaks from "remark-breaks";
 
 import Carousel from "./Carousel"
 import { projects } from "../project.data"
@@ -39,7 +40,7 @@ export default function ProjectEntry() {
             <div style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: `${50 / 1812 * 100}vh`
+                gap: `${70 / 1812 * 100}vh`
             }}>
 
                 {/* Title & Subheading */}
@@ -51,7 +52,8 @@ export default function ProjectEntry() {
                     <h1 className="blue-1 shadow-text"
                         style={{
                             fontSize: `${120 / 1512 * 100}vw`,
-                            margin: "0"
+                            margin: "0",
+                            lineHeight: "80%"
                         }}>
                         {project.title}
                     </h1>
@@ -142,9 +144,20 @@ export default function ProjectEntry() {
                         style={{
                             margin: 0,
                             fontSize: `${16 / 1512 * 100}vw`,
-                            textAlign: "justify"
+                            textAlign: "justify",
+                            maxWidth: "85%"
                         }}>
-                        {project.problem}
+                        <ReactMarkdown remarkPlugins={[remarkBreaks]}
+                            components={{
+                                p: ({ children }) => (
+                                    <p style={{ margin: "5px 0", textIndent: "2em" }}>
+                                        {children}
+                                    </p>
+                                )
+                            }}
+                        >
+                            {project.problem}
+                        </ReactMarkdown>
                     </p>
                 </div>
 
@@ -166,9 +179,20 @@ export default function ProjectEntry() {
                         style={{
                             margin: 0,
                             fontSize: `${16 / 1512 * 100}vw`,
-                            textAlign: "end"
+                            textAlign: "justify",
+                            maxWidth: "85%"
                         }}>
-                        {project.solution}
+                        <ReactMarkdown remarkPlugins={[remarkBreaks]}
+                            components={{
+                                p: ({ children }) => (
+                                    <p style={{ margin: "5px 0", textIndent: "2em" }}>
+                                        {children}
+                                    </p>
+                                )
+                            }}
+                        >
+                            {project.solution}
+                        </ReactMarkdown>
                     </p>
                 </div>
 
@@ -189,15 +213,24 @@ export default function ProjectEntry() {
                     <ul className="instrument-sans"
                         style={{
                             margin: 0,
-                            fontSize: `${16 / 1512 * 100}vw`
+                            fontSize: `${16 / 1512 * 100}vw`,
+                            maxWidth: "60%"
                         }}>
                         {project.features.map((item, index) => (
-                            <li key={index}>{item}</li>
+                            <li key={index}>
+                                <ReactMarkdown
+                                    components={{
+                                        p: ({ children }) => <span>{children}</span>
+                                    }}
+                                >
+                                    {item}
+                                </ReactMarkdown>
+                            </li>
                         ))}
                     </ul>
                 </div>
 
-                {/* Roles */}
+                {/* Contributions */}
                 <div style={{
                     display: "flex",
                     flexDirection: "column",
@@ -209,16 +242,24 @@ export default function ProjectEntry() {
                             fontSize: `${32 / 1512 * 100}vw`,
                             margin: "0"
                         }}>
-                        Roles
+                        Contributions
                     </h1>
                     <ul className="instrument-sans"
                         style={{
                             margin: 0,
                             fontSize: `${16 / 1512 * 100}vw`,
-                            textAlign: "end"
+                            maxWidth: "60%"
                         }}>
-                        {project.roles.map((item, index) => (
-                            <li key={index}>{item}</li>
+                        {project.contributions.map((item, index) => (
+                            <li key={index}>
+                                <ReactMarkdown
+                                    components={{
+                                        p: ({ children }) => <span>{children}</span>
+                                    }}
+                                >
+                                    {item}
+                                </ReactMarkdown>
+                            </li>
                         ))}
                     </ul>
                 </div>
