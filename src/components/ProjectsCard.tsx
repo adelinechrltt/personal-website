@@ -98,11 +98,11 @@ export default function ProjectsCard({
                 <p className="instrument-sans-bold white"
                     style={{
                         display: "-webkit-box",
-                        fontSize: `${24 / 1512 * 100}vw`,
+                        fontSize: `${project.techStack.length == 0 ? `${20 / 1512 * 100}vw` : `${24 / 1512 * 100} vw`}`,
                         margin: 0,
-                        width: "60%",
+                        width: `${project.techStack.length == 0 ? "100%" : "60%"}`,
                         overflow: "hidden",
-                        WebkitLineClamp: 1,
+                        WebkitLineClamp: `${project.techStack.length == 0 ? 2 : 1}`,
                         WebkitBoxOrient: "vertical",
                     }}
                 >{project.title}
