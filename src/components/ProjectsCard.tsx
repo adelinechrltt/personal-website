@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BtnSmallOutline from "./BtnSmallOutline";
@@ -33,6 +34,22 @@ export default function ProjectsCard({
         case ProjectsCardType.gray:
             cardBG = "dark-gray-bg"
     }
+
+    const techContainerRef = useRef<HTMLSpanElement>(null);
+    const [visibleCount, setVisibleCount] = useState(2);
+
+    useEffect(() => {
+        const el = techContainerRef.current;
+        if (!el) return;
+
+        const isOverflowing = el.scrollWidth > el.clientWidth;
+
+        if (isOverflowing) {
+            setVisibleCount(1);
+        } else {
+            setVisibleCount(2);
+        }
+    }, [project.techStack]);
 
     return (
         <div
@@ -72,15 +89,33 @@ export default function ProjectsCard({
                 alignItems: "center",
                 padding: `${20 / 1512 * 100}vw ${20 / 1512 * 100}vw`
             }}>
-                <p className="instrument-sans-bold white" style={{ fontSize: `${24 / 1512 * 100}vw`, margin: 0 }}>{project.title}
+                <p className="instrument-sans-bold white"
+                    style={{
+                        display: "-webkit-box",
+                        fontSize: `${24 / 1512 * 100}vw`,
+                        margin: 0,
+                        width: "60%",
+                        overflow: "hidden",
+                        WebkitLineClamp: 1,
+                        WebkitBoxOrient: "vertical",
+                    }}
+                >{project.title}
                 </p>
                 <span style={{
                     display: "flex",
                     flexDirection: "row",
                     gap: `${20 / 1512 * 100}vw`,
                 }}>
-                    <span>
-                        {project.techStack.slice(0, 2).map((tech) => (
+                    <span
+                        ref={techContainerRef}
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            gap: `${10 / 1512 * 100}vw`,
+                            minWidth: 0
+                        }}
+                    >
+                        {project.techStack.slice(0, visibleCount).map((tech) => (
                             <BtnSmallOutline
                                 key={tech}
                                 text={tech}
