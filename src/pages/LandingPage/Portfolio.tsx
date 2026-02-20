@@ -7,8 +7,20 @@ import Carousel from "./Carousel";
 import Arrow from "../../assets/Arrow.svg"
 import ChevronIcon from "../../assets/Chevron";
 
+import { projects } from "../Projects/project.data";
+
 export default function Portfolio() {
     const navigate = useNavigate();
+
+    const iosProjects = projects.filter(p => p.tag === "iOS").slice(0, 2);
+    const webProject = projects.find(p => p.tag === "web");
+    const miscProject = projects.find(p => p.tag === "misc");
+
+    const selectedProjects = [
+        ...iosProjects,
+        ...(webProject ? [webProject] : []),
+        ...(miscProject ? [miscProject] : []),
+    ];
 
     return (
         <section id="portfolio" style={{
@@ -61,38 +73,13 @@ export default function Portfolio() {
                     gap: `${15 / 16}rem`,
                     width: "100%"
                 }}>
-                    <ProjectsCard type={"blue"} project={{
-                        slug: "",
-                        tag: "",
-                        title: "",
-                        subtitle: "",
-                        year: "",
-                        techStack: [],
-                        github: undefined,
-                        linkedin: undefined,
-                        instagram: undefined,
-                        problem: "",
-                        solution: "",
-                        features: [],
-                        roles: [],
-                        images: []
-                    }} />
-                    <ProjectsCard type={"blue"} project={{
-                        slug: "",
-                        tag: "",
-                        title: "",
-                        subtitle: "",
-                        year: "",
-                        techStack: [],
-                        github: undefined,
-                        linkedin: undefined,
-                        instagram: undefined,
-                        problem: "",
-                        solution: "",
-                        features: [],
-                        roles: [],
-                        images: []
-                    }} />
+                    {selectedProjects.map((project) => (
+                        <ProjectsCard
+                            key={project.slug}
+                            type={project.tag == "iOS" ? "blue" : project.tag == "web" ? "red" : "gray"}
+                            project={project}
+                        />
+                    ))}
                 </div>
                 <div style={{
                     display: "flex",
