@@ -22,6 +22,7 @@ export default function ProjectsCard({
     type
 }: ProjectsCardProps) {
     const navigate = useNavigate();
+    const isClickable = Boolean(project.slug && project.slug.trim() !== "");
 
     let cardBG = "";
     switch (type) {
@@ -60,9 +61,14 @@ export default function ProjectsCard({
                 border: "1px solid #7F2025",
                 height: "22.6rem",
                 width: "100%",
-                overflow: "hidden"
+                overflow: "hidden",
+                cursor: isClickable ? "pointer" : "default",
             }}
-            onClick={() => navigate(`/projects/${project.slug}`)}
+            onClick={
+                isClickable
+                    ? () => navigate(`/projects/${project.slug}`)
+                    : undefined
+            }
         >
             {/* Image wrapper; crop oversized images */}
             <div
