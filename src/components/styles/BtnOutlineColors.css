@@ -1,0 +1,80 @@
+.btn-small-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+}
+
+.btn-small-outline:hover {
+    transform: translateY(-2px);
+}
+
+.btn-small-outline:active {
+    transform: translateY(0);
+}
+
+.btn-small-outline:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-small-outline:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+
+/* BLUE */
+
+.btn-small-outline.blue {
+    color: #5B89BF;
+}
+
+.btn-small-outline.blue:hover {
+    color: #2864a9;
+}
+
+.btn-small-outline.blue-alt {
+    color: #2A6BB6;
+}
+
+.btn-small-outline.blue-alt:hover {
+    color: #13457e;
+}
+
+
+/* Red */
+
+.btn-small-outline.red {
+    color: #7F2025;
+}
+
+.btn-small-outline.red:hover {
+    color: #c71913;
+}
+
+
+/* White */
+
+.btn-small-outline.white {
+    color: #F6F7F8;
+}
+
+.btn-small-outline.white:hover {
+    color: #F6F7F8;
+}
+
+
+/* Gray */
+
+.btn-small-outline.dark-gray {
+    color: #38322F;
+}
+
+.btn-small-outline.dark-gray:hover {
+    color: #524c49;
+}

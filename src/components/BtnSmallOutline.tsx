@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import "./styles/BtnOutlineColors.css";
 
 export const BtnSmallOutlineType = {
     blue: "blue",
@@ -18,6 +18,7 @@ type BtnSmallOutlineProps = {
     size?: any
 }
 
+
 export default function BtnSmallOutline({
     onClick,
     text,
@@ -25,47 +26,32 @@ export default function BtnSmallOutline({
     icon,
     size = 16
 }: BtnSmallOutlineProps) {
-    let btnClass = "";
-
-    switch (type) {
-        case BtnSmallOutlineType.blue:
-            btnClass = "blue-2";
-            break;
-        case BtnSmallOutlineType.blueAlt:
-            btnClass = "blue-3";
-            break;
-        case BtnSmallOutlineType.red:
-            btnClass = "burgundy";
-            break;
-        case BtnSmallOutlineType.white:
-            btnClass = "white";
-            break;
-        case BtnSmallOutlineType.gray:
-            btnClass = "dark-gray";
-            break;
-    }
 
     return (
         <button
-            className={`${btnClass}
-            instrument-sans-bold`}
+            className={`
+                btn-small-outline
+                ${type}
+                instrument-sans-bold
+            `}
             style={{
                 borderRadius: `${20 / 1512 * 100}vw`,
                 padding: `${7 / 1512 * 100}vw ${15 / 1512 * 100}vw`,
                 fontSize: `${size / 1512 * 100}vw`,
-                background: "none",
-                border: "1px solid",
-            }
-            }
+                opacity: "100%"
+            }}
             disabled={!onClick}
-            onClick={onClick} >
+            onClick={onClick}
+        >
             <span
                 style={{
                     display: "flex",
                     flexDirection: "row",
                     gap: "0.9rem",
                     alignItems: "center"
-                }}>{text}
+                }}
+            >
+                {text}
                 {icon && (
                     typeof icon === "string" ? (
                         <img
@@ -75,8 +61,9 @@ export default function BtnSmallOutline({
                         />
                     ) : (
                         icon
-                    ))}
+                    )
+                )}
             </span>
-        </button >
-    )
+        </button>
+    );
 }
