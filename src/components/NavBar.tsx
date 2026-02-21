@@ -1,7 +1,6 @@
 import BtnSmallFill from "./BtnSmallFill"
 import BtnSmallOutline from "./BtnSmallOutline"
 
-import LinkSVG from "../assets/icons/Link.svg"
 import LinkIcon from "../assets/icons/Link"
 import { useState, useEffect } from "react";
 
@@ -10,7 +9,7 @@ interface NavBarProps {
 }
 
 export default function NavBar({ sections }: NavBarProps) {
-    const [activeSection, setActiveSection] = useState("Home");
+    const [activeSection, setActiveSection] = useState("Hero Section");
     const [manualOverride, setManualOverride] = useState(false);
     const [targetSection, setTargetSection] = useState<string | null>(null);
 
