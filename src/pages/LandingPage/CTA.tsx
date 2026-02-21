@@ -1,4 +1,4 @@
-/* CTA.tsx */
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
@@ -10,17 +10,39 @@ import LinkIcon from "../../assets/icons/Link.tsx";
 import LinkedInIcon from "../../assets/icons/LinkedIn.tsx";
 
 import "./styles/CTA.css";
+import "./styles/Animations.css"
 
 export default function CTA() {
     const navigate = useNavigate();
 
+    const sectionRef = useRef<HTMLElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        if (!sectionRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.15 }
+        );
+
+        observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+
     return (
-        <section id="cta-section">
-            <h1 className="rufina-bold burgundy cta-header">
+        <section id="cta-section" ref={sectionRef}>
+            <h1 className={`rufina-bold burgundy cta-header ${visible ? "animate-float-1 animate-float-delay-3" : ""}`}>
                 Let's work <span>together.</span>
             </h1>
 
-            <div className="cta-contact">
+            <div className={`cta-contact ${visible ? "animate-float-2 animate-float-delay-3" : ""}`}>
                 <p className="instrument-sans">
                     Get in touch with me!
                 </p>
@@ -51,7 +73,7 @@ export default function CTA() {
                 </span>
             </div>
 
-            <div className="cta-socials">
+            <div className={`cta-socials ${visible ? "animate-float-2 animate-float-delay-3" : ""}`}>
                 <p className="instrument-sans">
                     Or contact me via <span className="blue-1"><b>my socials</b></span>.
                 </p>
@@ -65,7 +87,7 @@ export default function CTA() {
                 </span>
             </div>
 
-            <img src={CTAVector} className="cta-vector" />
+            <img src={CTAVector} className={`cta-vector ${visible ? "animate-slide-left animate-float-delay-3" : ""}`} />
         </section>
     );
 }
