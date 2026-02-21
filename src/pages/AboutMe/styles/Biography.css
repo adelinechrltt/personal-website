@@ -1,0 +1,264 @@
+#biography {
+    display: flex;
+    flex-direction: column;
+    gap: calc(30 / 1812 * 100vh);
+    position: relative;
+}
+
+.biography-header {
+    position: relative;
+    margin-left: calc(130 / 1512 * 100rem);
+}
+
+.biography-header h1 {
+    font-size: calc(200 / 1512 * 100vw);
+    margin: 0;
+    margin-bottom: -1.5rem;
+}
+
+.biography-header h2 {
+    font-size: calc(40 / 1512 * 100vw);
+    -webkit-text-stroke: 1px;
+    margin: 0;
+    margin-left: calc(80 / 1512 * 100rem);
+}
+
+
+/* Main content */
+
+.biography-content {
+    display: flex;
+    flex-direction: column;
+    gap: calc(25 / 1812 * 100vh);
+    margin: calc(10 / 1812 * 100vh);
+    margin-left: calc(290 / 1512 * 100rem);
+}
+
+
+/* Hello section */
+
+.biography-hello {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.biography-hello h3 {
+    font-size: calc(32 / 1512 * 100vw);
+    margin: 0;
+}
+
+.biography-hello p,
+.biography-hello ul {
+    font-size: calc(18 / 1512 * 100vw);
+    margin: 0;
+}
+
+.biography-hello ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Columns */
+
+.biography-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+
+/* Left column - Socials + Spotify */
+
+.biography-left-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: calc(20 / 1812 * 100vh);
+}
+
+
+/* Socials */
+
+.biography-socials {
+    display: flex;
+    flex-direction: column;
+    gap: calc(10 / 1881.02 * 100vh);
+}
+
+.biography-socials h3 {
+    font-size: calc(32 / 1512 * 100vw);
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: calc(30 / 1512 * 100vw);
+    margin: 0;
+}
+
+.social-icons img {
+    width: calc(30 / 1512 * 100vw);
+}
+
+
+/* Spotify */
+
+.biography-spotify {
+    display: flex;
+    flex-direction: column;
+    gap: calc(10 / 1881.02 * 100vh);
+}
+
+.biography-spotify p {
+    font-size: calc(16 / 1512 * 100vw);
+    margin: 0;
+}
+
+.spotify-player {
+    display: flex;
+    flex-direction: row;
+    gap: calc(20 / 1512 * 100vw);
+    padding: 15px;
+    background: linear-gradient(90deg, #D9CEC2 0%, #C0BCB4 100%);
+    border-radius: 20px;
+    border: 1px solid #7F2025;
+}
+
+.spotify-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: calc(10 / 1881.02 * 100vh);
+    height: 90%;
+}
+
+.spotify-info-top {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+}
+
+.spotify-info-top span {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+}
+
+.spotify-info-top span p,
+.spotify-info-top span img {
+    margin: 0;
+}
+
+.spotify-info-top span p {
+    font-size: calc(20 / 1881 * 100vw);
+    font-weight: bold;
+}
+
+.spotify-info-top p {
+    font-size: calc(14 / 1881 * 100vw);
+    margin: 0;
+}
+
+
+/* Right column - Trivia */
+
+.biography-right-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 5px;
+}
+
+.biography-right-column h3 {
+    font-size: calc(32 / 1512 * 100vw);
+    margin: 0;
+}
+
+.trivia-list {
+    display: flex;
+    flex-direction: column;
+    font-size: calc(15 / 1512 * 100vw);
+    margin: 0;
+    text-align: justify;
+    gap: 7px;
+}
+
+.trivia-list ul {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 5px;
+}
+
+
+/* Images */
+
+.biography-image {
+    position: absolute;
+    pointer-events: none;
+}
+
+.biography-image.adeline-halfbody {
+    max-height: calc(550 / 725 * 100vh);
+    top: calc(70 / 1512 * 100vh);
+    left: calc(150 / 1512 * 100vw);
+}
+
+.biography-image.red-star {
+    max-height: calc(550 / 725 * 100vh);
+    top: calc(320 / 1512 * 100vh);
+    left: calc(180 / 1512 * 100vw);
+}
+
+
+/* CD */
+
+.cd-wrapper {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cd-ring {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: linear-gradient( 135deg, #242321 0%, #464544 20%, #242321 40%, #302f2d 60%, #242321 80%, #302f2d 100%);
+    box-shadow: 0 0 8px rgba(172, 172, 172, 0.4), inset 0 0 6px rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 8s linear infinite;
+}
+
+.cd-ring:hover {
+    animation-play-state: paused;
+}
+
+.cd-art {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ccc;
+}
+
+
+/* rotation */
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

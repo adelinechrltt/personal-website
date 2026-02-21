@@ -1,5 +1,3 @@
-import "./Biography.css"
-
 import AdelineHalfBody from "../../assets/AdelineHalfbody.png"
 import RedStarOutline from "../../assets/RedStarOutline.svg"
 
@@ -8,6 +6,8 @@ import LinkedInIcon from "../../assets/icons/LinkedIn.tsx"
 import Instagram from "../../assets/icons/Instagram.svg"
 import GitHub from "../../assets/icons/GitHub.svg"
 import Spotify from "../../assets/icons/Spotify.svg"
+
+import "./styles/Biography.css"
 
 export default function Biography() {
     return (
