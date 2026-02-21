@@ -1,0 +1,75 @@
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 1.875rem;
+    width: 100%;
+}
+
+.portfolio-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    width: 100%;
+}
+
+.portfolio-header h1 {
+    font-size: calc(180 / 1512 * 100vw);
+    line-height: 70%;
+    margin: 0;
+}
+
+.portfolio-header p {
+    font-size: calc(24 / 1512 * 100vw);
+    margin: 0;
+}
+
+.portfolio-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.9375rem;
+    width: 100%;
+}
+
+.portfolio-projects h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.9375rem;
+    width: 100%;
+}
+
+.projects-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.portfolio-achievements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9375rem;
+    width: 100%;
+}
+
+.portfolio-achievements-header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.portfolio-achievements-header h3 {
+    font-size: 2rem;
+    margin: 0;
+}

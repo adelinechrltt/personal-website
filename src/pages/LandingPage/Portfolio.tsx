@@ -4,10 +4,11 @@ import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 import ProjectsCard from "../../components/ProjectsCard";
 import Carousel from "./Carousel";
 
-import Arrow from "../../assets/Arrow.svg"
-import ChevronIcon from "../../assets/Chevron";
+import Arrow from "../../assets/Arrow.svg";
 
 import { projects } from "../Projects/model/project.data";
+
+import "./styles/Portfolio.css";
 
 export default function Portfolio() {
     const navigate = useNavigate();
@@ -23,113 +24,46 @@ export default function Portfolio() {
     ];
 
     return (
-        <section id="portfolio" style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            minHeight: "100vh",
-            gap: `${30 / 16}rem`,
-            width: "100%"
-        }}>
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                gap: `${10 / 16}rem`,
-                width: "100%"
-            }}>
-                <h1 className="rufina-bold blue-1"
-                    style={{
-                        fontSize: `${180 / 1512 * 100}vw`,
-                        lineHeight: "70%",
-                        margin: 0
-                    }}>
-                    Portfolio.
-                </h1>
-                <p className="instrument-sans"
-                    style={{
-                        fontSize: `${24 / 1512 * 100}vw`,
-                        margin: 0
-                    }}
-                >
+        <section id="portfolio">
+            {/* Header */}
+            <div className="portfolio-header">
+                <h1 className="rufina-bold blue-1">Portfolio.</h1>
+                <p className="instrument-sans">
                     Take a peek at my past <span className="burgundy"><b>projects and achievements.</b></span>
                 </p>
             </div>
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-start",
-                justifyContent: "center",
-                gap: `${15 / 16}rem`,
-                width: "100%"
-            }}>
-                <h3 className="rufina-bold blue-1" style={{
-                    fontSize: `${32 / 16}rem`, margin: 0
-                }}>Projects</h3>
-                <div style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2, 1fr)",
-                    gap: `${15 / 16}rem`,
-                    width: "100%"
-                }}>
-                    {selectedProjects.map((project) => (
+
+            {/* Projects */}
+            <div className="portfolio-projects">
+                <h3 className="rufina-bold blue-1">Projects</h3>
+                <div className="projects-grid">
+                    {selectedProjects.map(project => (
                         <ProjectsCard
                             key={project.slug}
-                            type={project.tag == "iOS" ? "blue" : project.tag == "web" ? "red" : "gray"}
+                            type={project.tag === "iOS" ? "blue" : project.tag === "web" ? "red" : "gray"}
                             project={project}
                         />
                     ))}
                 </div>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "flex-start",
-                    justifyContent: "center",
-                    gap: `${15 / 16}rem`,
-                    width: "100%"
-                }}>
-                </div>
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end",
-                        width: "100%"
-                    }}
-                >
+                <div className="projects-footer">
                     <BtnSmallFill
-                        onClick={() => { navigate("/projects") }}
+                        onClick={() => navigate("/projects")}
                         text={"View all projects"}
                         type={BtnSmallFillType.blue}
                         icon={Arrow}
                     />
                 </div>
             </div>
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: `${15 / 16}rem`,
-                width: "100%"
-            }}>
-                <div
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end",
-                        width: "100%"
-                    }}
-                >
-                    <h3 className="rufina-bold burgundy"
-                        style={{
-                            fontSize: `${32 / 16}rem`,
-                            margin: 0
-                        }}>Achievements</h3>
+
+            {/* Achievements */}
+            <div className="portfolio-achievements">
+                <div className="portfolio-achievements-header">
+                    <h3 className="rufina-bold burgundy">Achievements</h3>
                 </div>
 
                 {/* Carousel */}
                 <Carousel />
             </div>
         </section>
-    )
+    );
 }
