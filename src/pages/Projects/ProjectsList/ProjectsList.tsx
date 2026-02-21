@@ -1,12 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import BtnSmallOutline from "../../../components/BtnSmallOutline";
 import ProjectsCard from "../../../components/ProjectsCard";
 import { projects } from "../model/project.data";
 
-import ArrowBack from "../../../assets/ArrowBack.svg"
-import { useState } from "react";
+import ArrowBack from "../../../assets/ArrowBack.svg";
 import ChevronIcon from "../../../assets/Chevron";
+
+import "./ProjectsList.css";
 
 export default function ProjectsList() {
     const navigate = useNavigate();
@@ -22,49 +24,30 @@ export default function ProjectsList() {
     });
 
     return (
-        <section style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: `${40 / 1812 * 100}vh`,
-        }}>
+        <section className="projects-list">
             {/* Page title */}
-            <div style={{
-                width: "100%"
-            }}>
+            <div className="page-title">
                 <div>
-                    <button style={{ margin: 0, background: "none" }} onClick={() => navigate("/")}>
-                        <img src={ArrowBack} alt=""
-                            style={{
-                                marginLeft: "-8vw"
-                            }
-                            }
-                        />
+                    <button onClick={() => navigate("/")}>
+                        <img src={ArrowBack} alt="" />
                     </button>
                 </div>
 
-                <h1 className="blue-1 shadow-text"
-                    style={{
-                        fontSize: `${180 / 1512 * 100}vw`,
-                        margin: "0"
-                    }}>Projects.</h1>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    justifyContent: "space-between"
-                }}>
-                    <h3 className="instrument-sans" style={{ margin: 0 }}>An overview of my <span className="burgundy"><b>projects catalogue.</b></span></h3>
-                    <div style={{
-                        display: "flex",
-                        flexDirection: "row",
-                    }}>
-                        <BtnSmallOutline text={"iOS Dev"} type={"blue"}></BtnSmallOutline>
-                        <BtnSmallOutline text={"Web Dev"} type={"blue"}></BtnSmallOutline>
-                        <BtnSmallOutline text={"Misc"} type={"blue"}></BtnSmallOutline>
+                <h1 className="blue-1 shadow-text">Projects.</h1>
+
+                <div className="subtitle-row">
+                    <h3 className="instrument-sans">
+                        An overview of my <span className="burgundy"><b>projects catalogue.</b></span>
+                    </h3>
+                    <div className="btn-row">
+                        <BtnSmallOutline text={"iOS Dev"} type={"blue"} />
+                        <BtnSmallOutline text={"Web Dev"} type={"red"} />
+                        <BtnSmallOutline text={"Misc"} type={"dark-gray"} />
                     </div>
                 </div>
             </div>
 
-            {/* iOS Projects */}
+            {/* Sections */}
             <ProjectsSection
                 title="iOS Development"
                 colorClass="blue-2"
@@ -75,7 +58,6 @@ export default function ProjectsList() {
                 setExpanded={setExpanded}
             />
 
-            {/* Webdev Projects */}
             <ProjectsSection
                 title="Web Development"
                 colorClass="burgundy"
@@ -87,7 +69,6 @@ export default function ProjectsList() {
                 setExpanded={setExpanded}
             />
 
-            {/* Misc Projects */}
             <ProjectsSection
                 title="Miscellaneous"
                 colorClass="dark-gray"
@@ -97,8 +78,8 @@ export default function ProjectsList() {
                 expanded={expanded}
                 setExpanded={setExpanded}
             />
-        </section >
-    )
+        </section>
+    );
 }
 
 function ProjectsSection({
@@ -114,32 +95,15 @@ function ProjectsSection({
     const isExpanded = expanded[sectionKey];
 
     return (
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: `${10 / 1812 * 100}vh`,
-            }}
-        >
-            {/* Header Row */}
+        <div className="projects-section">
+            {/* Header */}
             <div
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: `${align == "start" ? "start" : "end"}`
-                }}
+                className="header-row"
+                style={{ justifyContent: align === "start" ? "flex-start" : "flex-end" }}
             >
-                <h3
-                    className={`rufina-bold ${colorClass}`}
-                    style={{
-                        fontSize: `${32 / 1512 * 100}vw`,
-                        margin: 0,
-                        textAlign: align,
-                    }}
-                >
+                <h3 className={`rufina-bold ${colorClass}`} style={{ textAlign: align }}>
                     {title}
                 </h3>
-
                 <button
                     style={{
                         background: "none",
@@ -149,39 +113,29 @@ function ProjectsSection({
                         transition: "transform 0.3s ease"
                     }}
                     onClick={() =>
-                        setExpanded((prev: any) => ({
-                            ...prev,
-                            [sectionKey]: !prev[sectionKey],
-                        }))
+                        setExpanded((prev: any) => ({ ...prev, [sectionKey]: !prev[sectionKey] }))
                     }
                 >
-                    <ChevronIcon color={colorClass == "blue-2" ? "#5B89BF" :
-                        colorClass == "burgundy" ? "#7F2025" : "#38322F"} />
+                    <ChevronIcon
+                        color={
+                            colorClass === "blue-2" ? "#5B89BF" :
+                                colorClass === "burgundy" ? "#7F2025" : "#38322F"
+                        }
+                    />
                 </button>
             </div>
 
             {/* Collapsible Grid */}
             <div
+                className="collapsible-grid"
                 style={{
-                    overflow: "hidden",
                     maxHeight: isExpanded ? "2000px" : "0",
                     opacity: isExpanded ? 1 : 0,
-                    transition: "max-height 0.5s ease, opacity 0.3s ease",
                 }}
             >
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "repeat(2, 1fr)",
-                        gap: `${15 / 1512 * 100}vw`,
-                    }}
-                >
+                <div className="grid">
                     {projects.map((project: any) => (
-                        <ProjectsCard
-                            key={project.slug}
-                            project={project}
-                            type={cardType}
-                        />
+                        <ProjectsCard key={project.slug} project={project} type={cardType} />
                     ))}
                 </div>
             </div>

@@ -1,0 +1,68 @@
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.207vh;
+}
+
+.projects-list .page-title {
+    width: 100%;
+}
+
+.projects-list .page-title button {
+    margin: 0;
+    background: none;
+}
+
+.projects-list .page-title button img {
+    margin-left: -8vw;
+}
+
+.projects-list .page-title h1 {
+    font-size: 11.904vw;
+    margin: 0;
+}
+
+.projects-list .page-title .subtitle-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.projects-list .page-title .subtitle-row h3 {
+    margin: 0;
+}
+
+.projects-list .page-title .subtitle-row .btn-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-row {
+    gap: 0.5vw
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.552vh;
+}
+
+.projects-section .header-row {
+    display: flex;
+    align-items: center;
+}
+
+.projects-section h3 {
+    font-size: 2.116vw;
+    margin: 0;
+}
+
+.projects-section .collapsible-grid {
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+
+.projects-section .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+}
