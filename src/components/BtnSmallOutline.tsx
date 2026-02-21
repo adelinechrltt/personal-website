@@ -4,7 +4,8 @@ export const BtnSmallOutlineType = {
     blue: "blue",
     blueAlt: "blue-alt",
     red: "red",
-    white: "white"
+    white: "white",
+    gray: "dark-gray"
 } as const;
 
 export type BtnSmallOutlineType = typeof BtnSmallOutlineType[keyof typeof BtnSmallOutlineType];
@@ -37,7 +38,11 @@ export default function BtnSmallOutline({
             btnClass = "burgundy";
             break;
         case BtnSmallOutlineType.white:
-            btnClass = "white"
+            btnClass = "white";
+            break;
+        case BtnSmallOutlineType.gray:
+            btnClass = "dark-gray";
+            break;
     }
 
     return (
