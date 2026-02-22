@@ -1,0 +1,32 @@
+.btn-small-fill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-small-fill:hover {
+    transform: translateY(-2px);
+}
+
+.btn-small-fill:active {
+    transform: translateY(0);
+}
+
+.btn-small-fill.blue {
+    background-color: #6E9CD2;
+}
+
+.btn-small-fill.blue:hover {
+    background-color: #2864a9;
+}
+
+.btn-small-fill.red {
+    background-color: #7F2025;
+}
+
+.btn-small-fill.red:hover {
+    background-color: #ac131b;
+}

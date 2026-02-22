@@ -1,0 +1,97 @@
+.project-entry-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2vh;
+    width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 8vh;
+}
+
+.project-entry-back-btn {
+    margin: 0;
+    background: none;
+}
+
+.project-entry-back-btn img {
+    margin-left: -8vw;
+}
+
+.project-entry-title-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.project-entry-title-section h1 {
+    font-size: clamp(2rem, 11.904vw, 11.904rem);
+    margin: 0;
+}
+
+.project-entry-title {
+    margin: 0;
+    line-height: 0.8;
+}
+
+.project-entry-subtitle-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-entry-subtitle-row p {
+    font-size: 1.5vw;
+    margin: 0;
+    margin-bottom: 1vh;
+}
+
+.project-entry-tech-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-entry-tech-links span {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3vw;
+}
+
+.project-entry-section-header {
+    margin: 0;
+    font-size: 2.1vw;
+}
+
+.project-entry-body {
+    margin: 0;
+    font-size: 1.2vw;
+    text-align: justify;
+    max-width: 85%;
+}
+
+.project-entry-body ul {
+    margin: 0;
+    max-width: 60%;
+}
+
+.project-entry-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+.project-entry-align-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5vh;
+}
+
+.project-entry-align-end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5vh;
+}
+
+.project-entry-socials img,
+.project-entry-socials svg {
+    max-width: 2.5vw;
+}

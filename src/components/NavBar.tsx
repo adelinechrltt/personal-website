@@ -1,16 +1,17 @@
 import BtnSmallFill from "./BtnSmallFill"
 import BtnSmallOutline from "./BtnSmallOutline"
 
-import LinkSVG from "../assets/icons/Link.svg"
 import LinkIcon from "../assets/icons/Link"
 import { useState, useEffect } from "react";
+
+import "./styles/NavBar.css"
 
 interface NavBarProps {
     sections: string[];
 }
 
 export default function NavBar({ sections }: NavBarProps) {
-    const [activeSection, setActiveSection] = useState("Home");
+    const [activeSection, setActiveSection] = useState("Hero Section");
     const [manualOverride, setManualOverride] = useState(false);
     const [targetSection, setTargetSection] = useState<string | null>(null);
 
@@ -52,45 +53,22 @@ export default function NavBar({ sections }: NavBarProps) {
         el.scrollIntoView({ behavior: "smooth" });
     };
 
-
     return (
-        <section
-            className="instrument-sans"
-            style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                background: "linear-gradient(to right, #F0E8DD, #FFFFFF)",
-                position: "fixed",
-                width: "100vw",
-                padding: `${27 / 1512 * 100}vw ${120 / 1512 * 100}vw`,
-                boxSizing: `border-box`,
-                top: 0,
-                zIndex: 1000
-            }}>
-            <div className="blue-2" style={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                gap: `${60 / 1512 * 100}vw`
-            }}>
+        <section className="instrument-sans navbar">
+            <div className="blue-2 navbar-left">
                 {sections.map((section) =>
                     section === activeSection ? (
                         <BtnSmallOutline
                             key={section}
                             text={section}
-                            type={"blue-alt"}
+                            type="blue-alt"
                             size={24}
                             onClick={() => scrollToSection(section)}
                         />
                     ) : (
                         <h2
                             key={section}
-                            style={{
-                                fontSize: `${24 / 1512 * 100}vw`,
-                                margin: 0,
-                                cursor: "pointer",
-                            }}
+                            className="navbar-link"
                             onClick={() => scrollToSection(section)}
                         >
                             {section}
@@ -98,17 +76,28 @@ export default function NavBar({ sections }: NavBarProps) {
                     )
                 )}
             </div>
-            <div style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "flex-end",
-                alignItems: "center",
-                gap: `${60 / 1512 * 100}vw`
-            }}>
-                <BtnSmallFill onClick={() =>
-                    window.open("https://drive.google.com/drive/folders/19iKoH-SQ_I6FD54sieSNxMfy29LS-9L_?usp=sharing")} text={"CV"} type={"red"} icon={<LinkIcon width={13} />} size={20} gap={"5px"} />
-                <BtnSmallOutline onClick={() => scrollToSection("cta-section")} text={"Let's work together!"} type={"red"} size={24} />
+
+            <div className="navbar-right">
+                <BtnSmallFill
+                    onClick={() =>
+                        window.open(
+                            "https://drive.google.com/drive/folders/19iKoH-SQ_I6FD54sieSNxMfy29LS-9L_?usp=sharing"
+                        )
+                    }
+                    text="CV"
+                    type="red"
+                    icon={<LinkIcon width={13} />}
+                    size={20}
+                    gap="5px"
+                />
+
+                <BtnSmallOutline
+                    onClick={() => scrollToSection("cta-section")}
+                    text="Let's work together!"
+                    type="red"
+                    size={24}
+                />
             </div>
-        </section >
-    )
+        </section>
+    );
 }

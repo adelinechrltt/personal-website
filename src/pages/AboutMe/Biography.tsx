@@ -1,21 +1,46 @@
-import "./Biography.css"
+import { useEffect, useRef, useState } from "react"
 
 import AdelineHalfBody from "../../assets/AdelineHalfbody.png"
 import RedStarOutline from "../../assets/RedStarOutline.svg"
 
-import MusicIcon from "../../assets/icons/MusicIcon.svg"
-import LinkedInIcon from "../../assets/icons/LinkedIn.tsx"
-import Instagram from "../../assets/icons/Instagram.svg"
-import GitHub from "../../assets/icons/GitHub.svg"
-import Spotify from "../../assets/icons/Spotify.svg"
+import MusicIcon from "../../assets/icons/MusicIcon"
+import LinkedInIcon from "../../assets/icons/LinkedIn"
+import InstagramIcon from "../../assets/icons/Instagram"
+import GithubIcon from "../../assets/icons/GitHub"
+import SpotifyIcon from "../../assets/icons/Spotify"
+
+import { IconButton } from "../../assets/icons/IconButtonWrapper"
+
+import "./styles/Biography.css"
+import "./styles/Animation.css"
 
 export default function Biography() {
+    const bioRef = useRef<HTMLElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        if (!bioRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(bioRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <section style={{
             display: "flex",
             flexDirection: "column",
             gap: `${30 / 1812 * 100}vh`,
-        }}>
+        }} ref={bioRef}>
             <div style={{
                 position: "relative",
                 marginLeft: `${130 / 1512 * 100}rem`
@@ -127,10 +152,18 @@ export default function Biography() {
                                 gap: `${30 / 1512 * 100}vw`,
                                 margin: 0
                             }}>
-                                <LinkedInIcon width={30} height={30} />
-                                <img src={Instagram} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src={GitHub} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src={Spotify} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <IconButton onClick={() => window.open("https://linkedin.com/in/adelinechrltt", "_blank")}>
+                                    <LinkedInIcon width={30} height={30} />
+                                </IconButton>
+                                <IconButton onClick={() => window.open("https://instagram.com/adelinechrltt", "_blank")}>
+                                    <InstagramIcon width={30} height={30} />
+                                </IconButton>
+                                <IconButton onClick={() => window.open("https://github.com/adelinechrltt", "_blank")}>
+                                    <GithubIcon width={30} height={30} />
+                                </IconButton>
+                                <IconButton onClick={() => window.open("https://open.spotify.com/user/ia83v904ogj2u5vor1w0brc4e?si=59678a0ed2b74590", "_blank")}>
+                                    <SpotifyIcon width={30} height={30} />
+                                </IconButton>
                             </span>
                         </div>
 
@@ -152,7 +185,7 @@ export default function Biography() {
                                 borderRadius: `20px`,
                                 border: "1px solid #7F2025"
                             }}>
-                                <div className="cd-wrapper">
+                                <div className="cd-wrapper animate-spin">
                                     <div className="cd-ring">
                                         <img
                                             src="https://i.ytimg.com/vi/Cb0JZhdmjtg/maxresdefault.jpg" // placeholder album art
@@ -180,7 +213,7 @@ export default function Biography() {
                                             flexDirection: "row",
                                             justifyItems: "flex-start",
                                             gap: `6px`
-                                        }}><img src={MusicIcon} alt="" />
+                                        }}><MusicIcon width={30} height={30} />
                                             <p style={{ margin: 0, fontSize: `${20 / 1881 * 100}vw` }}><b>Jane Doe</b></p></span>
                                         <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>by Kenshi Yonezu & Hikaru Utada</p>
                                     </div>
@@ -232,22 +265,22 @@ export default function Biography() {
                             <li>
                                 <b>East Asian indie & urban-pop</b> (Hikaru Utada, m-flo, Elephant Gym)
                             </li>
-                            <li>I also do <a className="blue-2"><b><u>digital art</u></b></a> on the side too, sometimes!</li>
+                            <li>I also do <a href="https://atelieraurum.carrd.co/#" className="blue-2"><b><u>digital art</u></b></a> on the side too, sometimes!</li>
                         </ul>
                     </div>
                 </div >
             </div >
-            <img src={AdelineHalfBody} alt="" style={{
+            <img className={`${visible ? "animate-float" : ""}`} src={AdelineHalfBody} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
-                top: `${70 / 1512 * 100}vh`,
+                top: `${70 / 1512 * 100 + 6}vh`,
                 left: `${150 / 1512 * 100}vw`,
                 pointerEvents: "none"
             }} />
-            <img src={RedStarOutline} alt="" style={{
+            <img className={`${visible ? "animate-spin animate-float" : ""}`} src={RedStarOutline} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
-                top: `${320 / 1512 * 100}vh`,
+                top: `${320 / 1512 * 100 + 6}vh`,
                 left: `${180 / 1512 * 100}vw`,
                 pointerEvents: "none"
             }} />

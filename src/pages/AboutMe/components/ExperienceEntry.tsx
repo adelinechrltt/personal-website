@@ -62,7 +62,7 @@ export default function ExperienceEntry({
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <h3
                             className="instrument-sans-semibold"
-                            style={{ margin: 0 }}
+                            style={{ fontSize: `${20 / 1512 * 100}vw`, margin: 0 }}
                         >
                             {company}
                         </h3>
@@ -75,7 +75,7 @@ export default function ExperienceEntry({
                     style={{
                         display: "flex",
                         alignItems: "center",
-                        gap: `${15 / 1512 * 100}vw`
+                        gap: `${15 / 1512 * 100} vw`
                     }}
                 >
                     <p style={{ fontSize: `${16 / 1512 * 100}vw` }}>
@@ -87,8 +87,8 @@ export default function ExperienceEntry({
                             background: "none",
                             border: "none",
                             transform: isExpanded
-                                ? "rotate(0deg)"
-                                : "rotate(-180deg)",
+                                ? "rotate(180deg)"
+                                : "rotate(90deg)",
                             transition: "transform 0.25s ease",
                             cursor: "pointer"
                         }}

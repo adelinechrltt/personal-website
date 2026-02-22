@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import BtnSmallOutline from "./BtnSmallOutline";
 import type { Project } from "../pages/Projects/model/project.data";
 
+import "./styles/ProjectsCard.css";
+
 export const ProjectsCardType = {
     blue: "blue",
     red: "red",
@@ -23,19 +25,6 @@ export default function ProjectsCard({
 }: ProjectsCardProps) {
     const navigate = useNavigate();
     const isClickable = Boolean(project.slug && project.slug.trim() !== "");
-
-    let cardBG = "";
-    switch (type) {
-        case ProjectsCardType.blue:
-            cardBG = "blue-1-bg";
-            break;
-        case ProjectsCardType.red:
-            cardBG = "burgundy-bg";
-            break;
-        case ProjectsCardType.gray:
-            cardBG = "dark-gray-bg"
-    }
-
     const techContainerRef = useRef<HTMLSpanElement>(null);
     const [visibleCount, setVisibleCount] = useState(2);
 
@@ -54,16 +43,11 @@ export default function ProjectsCard({
 
     return (
         <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                borderRadius: "20px",
-                border: "1px solid #7F2025",
-                height: "22.6rem",
-                width: "100%",
-                overflow: "hidden",
-                cursor: isClickable ? "pointer" : "default",
-            }}
+            className={`
+                project-card
+                ${type}
+                ${isClickable ? "clickable" : ""}
+            `}
             onClick={
                 isClickable
                     ? () => navigate(`/projects/${project.slug}`)
@@ -88,7 +72,7 @@ export default function ProjectsCard({
             </div>
 
             {/* Description */}
-            <div className={`${cardBG}`} style={{
+            <div className="project-card-footer" style={{
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",

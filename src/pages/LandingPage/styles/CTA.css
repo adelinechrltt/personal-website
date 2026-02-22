@@ -1,0 +1,57 @@
+#cta-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 85vh;
+    gap: 1.875rem;
+    margin-top: 8vh;
+    margin-bottom: -6vh;
+}
+
+.cta-header {
+    font-size: 8vw;
+    line-height: 0.7;
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+.cta-header span {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.4rem;
+    text-underline-offset: 0.7rem;
+}
+
+.cta-contact,
+.cta-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    width: 100%;
+}
+
+.cta-contact p,
+.cta-socials p {
+    font-size: calc(24 / 1512 * 100vw);
+    margin: 0;
+}
+
+.cta-contact span,
+.cta-socials div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.625rem;
+}
+
+.cta-socials {
+    align-items: flex-end;
+}
+
+.cta-vector {
+    position: absolute;
+    right: -30%;
+    bottom: 60%;
+    z-index: 0;
+    pointer-events: none;
+}

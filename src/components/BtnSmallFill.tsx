@@ -1,3 +1,5 @@
+import "./styles/BtnFillColors.css"
+
 export const BtnSmallFillType = {
     blue: "blue",
     red: "red"
@@ -22,15 +24,16 @@ export default function BtnSmallFill({
     size = 24,
     gap = "0.9rem"
 }: BtnSmallFillProps) {
+
     return (
         <button
-            className={
-                `${type == BtnSmallFillType.blue ? "blue-1-bg" : "burgundy-bg"} 
-            off-white
-            instruent-sans-bold
-            shadow`
-            }
-            onClick={onClick}
+            className={`
+                btn-small-fill
+                ${type}
+                off-white
+                instrument-sans-bold
+                shadow
+            `} onClick={onClick}
             style={{
                 borderRadius: `${15 / 1512 * 100}vw`,
                 padding: `${7 / 1512 * 100}vw ${15 / 1512 * 100}vw`,

@@ -1,3 +1,42 @@
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-float {
+    animation: floatIn 0.4s ease-out forwards;
+}
+
+.animate-float-1 {
+    animation: floatIn 1s ease-out forwards;
+}
+
+.animate-float-2 {
+    animation: floatIn 1.2s ease-out forwards;
+}
+
+.animate-float-delay1 {
+    animation-delay: 0.2s;
+}
+
+.animate-float-delay2 {
+    animation-delay: 0.4s;
+}
+
+.animate-float-delay3 {
+    animation-delay: 0.7s;
+}
+
+.animate-spin {
+    animation: spin 8s linear infinite;
+}
+
 .cd-wrapper {
     width: 75px;
     height: 75px;
@@ -15,11 +54,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: spin 8s linear infinite;
-}
-
-.cd-ring:hover {
-    animation-play-state: paused;
 }
 
 .cd-art {
@@ -28,16 +62,4 @@
     border-radius: 50%;
     object-fit: cover;
     background-color: #ccc;
-}
-
-
-/* rotation */
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
