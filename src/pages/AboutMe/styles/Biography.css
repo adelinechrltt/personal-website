@@ -23,6 +23,15 @@
     margin-left: calc(80 / 1512 * 100rem);
 }
 
+a {
+    transition: color 0.1s ease-in;
+}
+
+a:hover {
+    color: #2864a9;
+    transition: color 0.18s ease-in;
+}
+
 
 /* Main content */
 

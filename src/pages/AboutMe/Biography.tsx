@@ -265,7 +265,7 @@ export default function Biography() {
                             <li>
                                 <b>East Asian indie & urban-pop</b> (Hikaru Utada, m-flo, Elephant Gym)
                             </li>
-                            <li>I also do <a className="blue-2"><b><u>digital art</u></b></a> on the side too, sometimes!</li>
+                            <li>I also do <a href="https://atelieraurum.carrd.co/#" className="blue-2"><b><u>digital art</u></b></a> on the side too, sometimes!</li>
                         </ul>
                     </div>
                 </div >
