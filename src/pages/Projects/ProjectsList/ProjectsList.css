@@ -49,6 +49,7 @@
 }
 
 .projects-section {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 0.552vh;
@@ -72,4 +73,20 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1vw;
+    margin-top: 1vh;
+}
+
+.collapsible-grid.expanded {
+    max-height: 5000px;
+    transition: max-height 0.8s ease-in-out;
+}
+
+.projects-section {
+    margin-bottom: 1rem;
+    transition: margin 0.3s ease;
+}
+
+.grid {
+    max-width: 97%;
+    justify-self: center;
 }

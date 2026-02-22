@@ -145,6 +145,7 @@ function ProjectsSection({
                 style={{
                     maxHeight: isExpanded ? "2000px" : "0",
                     opacity: isExpanded ? 1 : 0,
+                    overflow: isExpanded ? "hidden" : "visible"
                 }}
             >
                 <div className="grid">
