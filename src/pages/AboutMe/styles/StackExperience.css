@@ -46,6 +46,7 @@
     align-items: center;
     width: 100%;
     gap: calc(20 / 1512 * 100vh);
+    margin-bottom: 5vh;
 }
 
 .professional-experience h3 {

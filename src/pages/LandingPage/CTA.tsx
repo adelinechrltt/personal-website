@@ -8,10 +8,10 @@ import Arrow from "../../assets/Arrow.svg";
 import CTAVector from "../../assets/CTAVector.png";
 import LinkIcon from "../../assets/icons/Link.tsx";
 import LinkedInIcon from "../../assets/icons/LinkedIn.tsx";
+import EmailIcon from "../../assets/icons/Email.tsx";
 
 import "./styles/CTA.css";
 import "./styles/Animations.css"
-import EmailIcon from "../../assets/icons/Email.tsx";
 
 export default function CTA() {
     const navigate = useNavigate();
