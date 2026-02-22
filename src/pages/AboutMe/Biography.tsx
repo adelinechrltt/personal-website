@@ -1,23 +1,46 @@
+import { useEffect, useRef, useState } from "react"
+
 import AdelineHalfBody from "../../assets/AdelineHalfbody.png"
 import RedStarOutline from "../../assets/RedStarOutline.svg"
 
 import MusicIcon from "../../assets/icons/MusicIcon"
 import LinkedInIcon from "../../assets/icons/LinkedIn"
 import InstagramIcon from "../../assets/icons/Instagram"
-import GitHubIcon from "../../assets/icons/GitHub"
+import GithubIcon from "../../assets/icons/GitHub"
 import SpotifyIcon from "../../assets/icons/Spotify"
 
-import "./styles/Biography.css"
 import { IconButton } from "../../assets/icons/IconButtonWrapper"
-import GithubIcon from "../../assets/icons/GitHub"
+
+import "./styles/Biography.css"
+import "./styles/Animation.css"
 
 export default function Biography() {
+    const bioRef = useRef<HTMLElement>(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        if (!bioRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(bioRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <section style={{
             display: "flex",
             flexDirection: "column",
             gap: `${30 / 1812 * 100}vh`,
-        }}>
+        }} ref={bioRef}>
             <div style={{
                 position: "relative",
                 marginLeft: `${130 / 1512 * 100}rem`
@@ -162,7 +185,7 @@ export default function Biography() {
                                 borderRadius: `20px`,
                                 border: "1px solid #7F2025"
                             }}>
-                                <div className="cd-wrapper">
+                                <div className="cd-wrapper animate-spin">
                                     <div className="cd-ring">
                                         <img
                                             src="https://i.ytimg.com/vi/Cb0JZhdmjtg/maxresdefault.jpg" // placeholder album art
@@ -247,14 +270,14 @@ export default function Biography() {
                     </div>
                 </div >
             </div >
-            <img src={AdelineHalfBody} alt="" style={{
+            <img className={`${visible ? "animate-float" : ""}`} src={AdelineHalfBody} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
                 top: `${70 / 1512 * 100}vh`,
                 left: `${150 / 1512 * 100}vw`,
                 pointerEvents: "none"
             }} />
-            <img src={RedStarOutline} alt="" style={{
+            <img className={`${visible ? "animate-spin animate-float" : ""}`} src={RedStarOutline} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
                 top: `${320 / 1512 * 100}vh`,
