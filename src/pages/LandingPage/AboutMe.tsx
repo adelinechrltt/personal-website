@@ -10,6 +10,8 @@ import InstagramIcon from "../../assets/icons/Instagram";
 import GithubIcon from "../../assets/icons/GitHub";
 import LinkedInIcon from "../../assets/icons/LinkedIn";
 
+import { IconButton } from "../../assets/icons/IconButtonWrapper";
+
 import "./styles/AboutMe.css";
 import "./styles/Animations.css";
 
@@ -60,9 +62,15 @@ export default function AboutMe() {
 
                 <div className={`about-me-footer ${visible ? "animate-float-1" : ""}`}>
                     <span className="social-icons">
-                        <LinkedInIcon width={38} height={38} />
-                        <InstagramIcon width={38} height={38} />
-                        <GithubIcon width={38} height={38} />
+                        <IconButton onClick={() => window.open("https://linkedin.com/in/adelinechrltt", "_blank")}>
+                            <LinkedInIcon width={38} height={38} />
+                        </IconButton>
+                        <IconButton onClick={() => window.open("https://instagram.com/adelinechrltt", "_blank")}>
+                            <InstagramIcon width={38} height={38} />
+                        </IconButton>
+                        <IconButton onClick={() => window.open("https://github.com/adelinechrltt", "_blank")}>
+                            <GithubIcon width={38} height={38} />
+                        </IconButton>
                     </span>
 
                     <BtnSmallFill
