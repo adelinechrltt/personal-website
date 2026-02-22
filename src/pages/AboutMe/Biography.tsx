@@ -1,13 +1,15 @@
 import AdelineHalfBody from "../../assets/AdelineHalfbody.png"
 import RedStarOutline from "../../assets/RedStarOutline.svg"
 
-import MusicIcon from "../../assets/icons/MusicIcon.svg"
-import LinkedInIcon from "../../assets/icons/LinkedIn.tsx"
-import Instagram from "../../assets/icons/Instagram.svg"
-import GitHub from "../../assets/icons/GitHub.svg"
-import Spotify from "../../assets/icons/Spotify.svg"
+import MusicIcon from "../../assets/icons/MusicIcon"
+import LinkedInIcon from "../../assets/icons/LinkedIn"
+import InstagramIcon from "../../assets/icons/Instagram"
+import GitHubIcon from "../../assets/icons/GitHub"
+import SpotifyIcon from "../../assets/icons/Spotify"
 
 import "./styles/Biography.css"
+import { IconButton } from "../../assets/icons/IconButtonWrapper"
+import GithubIcon from "../../assets/icons/GitHub"
 
 export default function Biography() {
     return (
@@ -127,10 +129,18 @@ export default function Biography() {
                                 gap: `${30 / 1512 * 100}vw`,
                                 margin: 0
                             }}>
-                                <LinkedInIcon width={30} height={30} />
-                                <img src={Instagram} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src={GitHub} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
-                                <img src={Spotify} alt="" style={{ width: `${30 / 1512 * 100}vw` }} />
+                                <IconButton onClick={() => window.open("https://linkedin.com/in/adelinechrltt", "_blank")}>
+                                    <LinkedInIcon width={30} height={30} />
+                                </IconButton>
+                                <IconButton onClick={() => window.open("https://instagram.com/adelinechrltt", "_blank")}>
+                                    <InstagramIcon width={30} height={30} />
+                                </IconButton>
+                                <IconButton onClick={() => window.open("https://github.com/adelinechrltt", "_blank")}>
+                                    <GithubIcon width={30} height={30} />
+                                </IconButton>
+                                <IconButton onClick={() => window.open("https://open.spotify.com/user/ia83v904ogj2u5vor1w0brc4e?si=59678a0ed2b74590", "_blank")}>
+                                    <SpotifyIcon width={30} height={30} />
+                                </IconButton>
                             </span>
                         </div>
 
@@ -180,7 +190,7 @@ export default function Biography() {
                                             flexDirection: "row",
                                             justifyItems: "flex-start",
                                             gap: `6px`
-                                        }}><img src={MusicIcon} alt="" />
+                                        }}><MusicIcon width={30} height={30} />
                                             <p style={{ margin: 0, fontSize: `${20 / 1881 * 100}vw` }}><b>Jane Doe</b></p></span>
                                         <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>by Kenshi Yonezu & Hikaru Utada</p>
                                     </div>

@@ -1,4 +1,4 @@
-import "./styles/BtnColors.css"
+import "./styles/BtnFillColors.css"
 
 export const BtnSmallFillType = {
     blue: "blue",

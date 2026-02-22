@@ -6,8 +6,8 @@ import BtnSmallFill, { BtnSmallFillType } from "../../components/BtnSmallFill";
 import Arrow from "../../assets/Arrow.svg";
 import AdelineFullBody from "../../assets/AdelineFullbody.png";
 
-import Instagram from "../../assets/icons/Instagram.svg";
-import GitHub from "../../assets/icons/GitHub.svg";
+import InstagramIcon from "../../assets/icons/Instagram";
+import GithubIcon from "../../assets/icons/GitHub";
 import LinkedInIcon from "../../assets/icons/LinkedIn";
 
 import "./styles/AboutMe.css";
@@ -61,8 +61,8 @@ export default function AboutMe() {
                 <div className={`about-me-footer ${visible ? "animate-float-1" : ""}`}>
                     <span className="social-icons">
                         <LinkedInIcon width={38} height={38} />
-                        <img src={Instagram} alt="" />
-                        <img src={GitHub} alt="" />
+                        <InstagramIcon width={38} height={38} />
+                        <GithubIcon width={38} height={38} />
                     </span>
 
                     <BtnSmallFill

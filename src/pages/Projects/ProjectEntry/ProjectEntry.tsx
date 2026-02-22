@@ -8,8 +8,8 @@ import { projects } from "../model/project.data";
 import ArrowBack from "../../../assets/ArrowBack.svg";
 import BtnSmallOutline from "../../../components/BtnSmallOutline";
 
-import Instagram from "../../../assets/icons/Instagram.svg";
-import GitHub from "../../../assets/icons/GitHub.svg";
+import InstagramIcon from "../../../assets/icons/Instagram";
+import GitHubIcon from "../../../assets/icons/GitHub";
 import LinkedInIcon from "../../../assets/icons/LinkedIn";
 
 import "./styles/ProjectEntry.css";
@@ -59,7 +59,7 @@ export default function ProjectEntry() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <img src={GitHub} alt="GitHub" />
+                                <GitHubIcon />
                             </a>
                         )}
                         {project.linkedin && (
@@ -77,7 +77,7 @@ export default function ProjectEntry() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <img src={Instagram} alt="Instagram" />
+                                <InstagramIcon />
                             </a>
                         )}
                     </span>

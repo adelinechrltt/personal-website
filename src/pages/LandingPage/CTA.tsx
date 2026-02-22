@@ -11,6 +11,7 @@ import LinkedInIcon from "../../assets/icons/LinkedIn.tsx";
 
 import "./styles/CTA.css";
 import "./styles/Animations.css"
+import EmailIcon from "../../assets/icons/Email.tsx";
 
 export default function CTA() {
     const navigate = useNavigate();
@@ -51,7 +52,7 @@ export default function CTA() {
                         size={20}
                         text={"E-mail"}
                         type={BtnSmallOutlineType.red}
-                        icon="src/assets/icons/Email.svg"
+                        icon={<EmailIcon width={20} fill="#7F2025" />}
                         onClick={() => window.location.href = "mailto:adeline.chrltt@gmail.com"}
                     />
                     <BtnSmallOutline
