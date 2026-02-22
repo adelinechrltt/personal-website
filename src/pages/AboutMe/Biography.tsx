@@ -273,14 +273,14 @@ export default function Biography() {
             <img className={`${visible ? "animate-float" : ""}`} src={AdelineHalfBody} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
-                top: `${70 / 1512 * 100}vh`,
+                top: `${70 / 1512 * 100 + 6}vh`,
                 left: `${150 / 1512 * 100}vw`,
                 pointerEvents: "none"
             }} />
             <img className={`${visible ? "animate-spin animate-float" : ""}`} src={RedStarOutline} alt="" style={{
                 position: "absolute",
                 maxHeight: `${550 / 725 * 100}vh`,
-                top: `${320 / 1512 * 100}vh`,
+                top: `${320 / 1512 * 100 + 6}vh`,
                 left: `${180 / 1512 * 100}vw`,
                 pointerEvents: "none"
             }} />
