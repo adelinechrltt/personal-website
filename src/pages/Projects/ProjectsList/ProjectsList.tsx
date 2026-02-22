@@ -13,6 +13,13 @@ import "./ProjectsList.css";
 export default function ProjectsList() {
     const navigate = useNavigate();
 
+    const scrollToSection = (key: string) => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     const iosProjects = projects.filter(p => p.tag === "iOS");
     const webProjects = projects.filter(p => p.tag === "web");
     const miscProjects = projects.filter(p => p.tag === "misc");
@@ -40,44 +47,51 @@ export default function ProjectsList() {
                         An overview of my <span className="burgundy"><b>projects catalogue.</b></span>
                     </h3>
                     <div className="btn-row">
-                        <BtnSmallOutline text={"iOS Dev"} type={"blue"} />
-                        <BtnSmallOutline text={"Web Dev"} type={"red"} />
-                        <BtnSmallOutline text={"Misc"} type={"dark-gray"} />
+                        <BtnSmallOutline text={"iOS Dev"} type={"blue"} onClick={() => scrollToSection("ios-section")} />
+                        <BtnSmallOutline text={"Web Dev"} type={"red"} onClick={() => scrollToSection("web-section")} />
+                        <BtnSmallOutline text={"Misc"} type={"dark-gray"} onClick={() => scrollToSection("misc-section")} />
                     </div>
                 </div>
             </div>
 
             {/* Sections */}
-            <ProjectsSection
-                title="iOS Development"
-                colorClass="blue-2"
-                projects={iosProjects}
-                cardType="blue"
-                sectionKey="ios"
-                expanded={expanded}
-                setExpanded={setExpanded}
-            />
+            <div id="ios-section">
+                <ProjectsSection
+                    title="iOS Development"
+                    colorClass="blue-2"
+                    projects={iosProjects}
+                    cardType="blue"
+                    sectionKey="ios"
+                    expanded={expanded}
+                    setExpanded={setExpanded}
+                />
+            </div>
 
-            <ProjectsSection
-                title="Web Development"
-                colorClass="burgundy"
-                align="end"
-                projects={webProjects}
-                cardType="red"
-                sectionKey="web"
-                expanded={expanded}
-                setExpanded={setExpanded}
-            />
+            <div id={"web-section"}>
+                <ProjectsSection
+                    title="Web Development"
+                    colorClass="burgundy"
+                    align="end"
+                    projects={webProjects}
+                    cardType="red"
+                    sectionKey="web"
+                    expanded={expanded}
+                    setExpanded={setExpanded}
+                />
+            </div>
 
-            <ProjectsSection
-                title="Miscellaneous"
-                colorClass="dark-gray"
-                projects={miscProjects}
-                cardType="gray"
-                sectionKey="misc"
-                expanded={expanded}
-                setExpanded={setExpanded}
-            />
+            <div id="misc-section">
+                <ProjectsSection
+                    title="Miscellaneous"
+                    colorClass="dark-gray"
+                    projects={miscProjects}
+                    cardType="gray"
+                    sectionKey="misc"
+                    expanded={expanded}
+                    setExpanded={setExpanded}
+                />
+            </div>
+
         </section>
     );
 }
