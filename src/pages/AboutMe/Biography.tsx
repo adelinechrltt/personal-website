@@ -18,7 +18,38 @@ export default function Biography() {
     const bioRef = useRef<HTMLElement>(null);
     const [visible, setVisible] = useState(false);
 
+    const [lastPlayedSong, setLastPlayedSong] = useState({
+        song: "Iris Out",
+        artist: "Kenshi Yonezu",
+        albumImage: "https://www.lyrical-nonsense.com/wp-content/uploads/2025/09/Kenshi-Yonezu-IRIS-OUT.jpg",
+        playedAt: ""
+    });
+
+    function timeAgo(dateString: string) {
+        const now = new Date();
+        const played = new Date(dateString);
+
+        const diffMs = now.getTime() - played.getTime();
+        const diffSeconds = Math.floor(diffMs / 1000);
+        const diffMinutes = Math.floor(diffSeconds / 60);
+        const diffHours = Math.floor(diffMinutes / 60);
+        const diffDays = Math.floor(diffHours / 24);
+
+        if (diffDays > 0) return `${diffDays}d ago`;
+        if (diffHours > 0) return `${diffHours}h ago`;
+        if (diffMinutes > 0) return `${diffMinutes}m ago`;
+        return `${diffSeconds}s ago`;
+    }
+
     useEffect(() => {
+        fetch("/api/spotify-recent")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setLastPlayedSong(data);
+            })
+            .catch(err => console.error(err));
+
         if (!bioRef.current) return;
 
         const observer = new IntersectionObserver(
@@ -32,6 +63,7 @@ export default function Biography() {
         );
 
         observer.observe(bioRef.current);
+
         return () => observer.disconnect();
     }, []);
 
@@ -188,7 +220,7 @@ export default function Biography() {
                                 <div className="cd-wrapper animate-spin">
                                     <div className="cd-ring">
                                         <img
-                                            src="https://i.ytimg.com/vi/Cb0JZhdmjtg/maxresdefault.jpg" // placeholder album art
+                                            src={lastPlayedSong.albumImage}
                                             alt="Album art"
                                             className="cd-art"
                                         />
@@ -198,8 +230,8 @@ export default function Biography() {
                                     display: "flex",
                                     flexDirection: "column",
                                     justifyItems: "flex-start",
-                                    gap: `${10 / 1881.02 * 100}vh`,
-                                    justifyContent: "space-between",
+                                    gap: `1vh`,
+                                    justifyContent: "center",
                                     height: "90%",
                                 }}>
                                     <div style={{
@@ -213,11 +245,11 @@ export default function Biography() {
                                             flexDirection: "row",
                                             justifyItems: "flex-start",
                                             gap: `6px`
-                                        }}><MusicIcon width={30} height={30} />
-                                            <p style={{ margin: 0, fontSize: `${20 / 1881 * 100}vw` }}><b>Jane Doe</b></p></span>
-                                        <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>by Kenshi Yonezu & Hikaru Utada</p>
+                                        }}><MusicIcon width={20} height={20} />
+                                            <p style={{ margin: 0, fontSize: `${20 / 1881 * 100}vw` }}><b>{lastPlayedSong.song}</b></p></span>
+                                        <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>by {lastPlayedSong.artist}</p>
                                     </div>
-                                    <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>2d ago via Spotify Web API</p>
+                                    <p style={{ margin: 0, fontSize: `${14 / 1881 * 100}vw` }}>{timeAgo(lastPlayedSong.playedAt)} via Spotify Web API</p>
                                 </div>
                             </div>
                         </div>
