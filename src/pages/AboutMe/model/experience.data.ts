@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 
+import Benemica from "../../../assets/icons/experienceIcons/Benemica.png"
 import AppleDeveloperAcademy from "../../../assets/icons/experienceIcons/AppleDeveloperAcademy.jpeg"
 import AI4Impact from "../../../assets/icons/experienceIcons/AI4Impact.jpeg";
 import BNCC from "../../../assets/icons/experienceIcons/BNCC.jpeg"
@@ -15,6 +16,16 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
+    {
+        icon: Benemica,
+        company: "Benemica",
+        position: "Junior Fullstack Developer",
+        startDate: "02/2026",
+        endDate: "Present",
+        techStack: [".NET", ".NET MAUI"],
+        description: []
+    },
+
     {
         icon: AppleDeveloperAcademy,
         company: "Apple Developer Academy",
@@ -33,11 +44,11 @@ export const experiences: Experience[] = [
 
     {
         icon: AI4Impact,
-        company: "Another Company",
-        position: "Frontend Developer Intern",
+        company: "AI4Impact",
+        position: "Career Scholarship Awardee",
         startDate: "01/2024",
         endDate: "06/2024",
-        techStack: ["React", "TypeScript", "Tailwind"],
+        techStack: ["Smojo", "ChatGPT4-o API"],
         description: [
             "Built a GPT-4o-powered chatbot using Smojo for virtual copywriting assistance",
             "Designed UI and engineered prompts to generate brand- aligned, customizable copy",
