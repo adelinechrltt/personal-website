@@ -41,16 +41,13 @@ export default function ProjectCarousel() {
                 <div
                     className="carousel-track"
                     style={{
-                        transform: `translateX(calc(-${index * (100 / visibleCards)}% - ${index * (15 / 16 / visibleCards)}rem))`,
+                        transform: `translateX(-${index * (100 / visibleCards)}%)`,
                     }}
                 >
                     {projects.map((proj) => (
                         <div
                             key={`${proj.title}-${proj.year}`}
                             className="carousel-card"
-                            style={{
-                                flex: `0 0 calc(${100 / visibleCards}% - ${((visibleCards - 1) * (15 / 16)) / visibleCards}rem)`
-                            }}
                         >
                             <ProjectsCard type="red" project={proj} />
 

@@ -41,11 +41,9 @@ export const projects: Project[] = [
             "**Built the drag-and-drop module using MVVM,** ensuring modular and scalable architecture.",
             "Co-led **stakeholder engagement, concept & user testing, and exhibition conceptualization** for Talent Spark Exhibition (TSX), synthesizing insights into iterative product improvements."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 5 }, (_, i) =>
+            `/projects/Kimo/Kimo0${i + 1}.png`
+        )
     },
     {
         slug: "swifter",
@@ -69,11 +67,9 @@ export const projects: Project[] = [
             "**Integrated native Calendar functionality** using EventKit to automate run scheduling.",
             "**Led Git workflow practices and standardized branching** and review processes for the team."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 6 }, (_, i) =>
+            `/projects/Swifter/Swifter0${i + 1}.png`
+        )
     },
     {
         slug: "snorkeling-feat",
@@ -96,11 +92,9 @@ export const projects: Project[] = [
             "Integrated SwiftUI–UIKit frontend layers with Firebase RTDB to power real-time checklist and group booking functionality.",
             "Led code reviews, ticket management, QA cycles, and cross-feature debugging to ensure stable feature delivery."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 3 }, (_, i) =>
+            `/projects/Snorkeling/Snorkeling0${i + 1}.png`
+        )
     },
     {
         slug: "leaflens",
@@ -123,11 +117,9 @@ export const projects: Project[] = [
             "Integrated camera functionality with auto-cropping based on detected bounding boxes.",
             "Resolved state management bugs to improve prediction flow and UI responsiveness."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 3 }, (_, i) =>
+            `/projects/LeafLens/LeafLens0${i + 1}.png`
+        )
     },
     {
         slug: "digital-map",
@@ -150,11 +142,9 @@ export const projects: Project[] = [
             "Developed the technical proof-of-concept for the interactive indoor map.",
             "Synthesized insights into a final product pitch and presented the solution to stakeholders."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 1 }, (_, i) =>
+            `/projects/JxB/JxB0${i + 1}.png`
+        )
     },
 
     // Web Projects
@@ -189,11 +179,9 @@ export const projects: Project[] = [
             "Set up centralized configuration with encrypted properties.",
             "Orchestrated multi-service environments using Docker Compose."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 1 }, (_, i) =>
+            `/projects/Microservices/Microservices0${i + 1}.png`
+        )
     },
     {
         slug: "yelpcamp-course",
@@ -225,11 +213,9 @@ export const projects: Project[] = [
             "Integrated server-side validation for data integrity.",
             "Connected frontend rendering with backend APIs and database models."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 4 }, (_, i) =>
+            `/projects/YelpCamp/YelpCamp0${i + 1}.png`
+        )
     },
 
     // Misc Projects
@@ -263,11 +249,9 @@ export const projects: Project[] = [
             "Created system documentation including UML diagrams and module explanations.",
             "Collaborated in full-stack development for end-semester submission."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 1 }, (_, i) =>
+            `/projects/Stellarfest/Stellarfest0${i + 1}.png`
+        )
     },
     {
         slug: "ootd-game",
@@ -291,11 +275,9 @@ export const projects: Project[] = [
             "Created custom illustrations and visual identity.",
             "Translated personal storytelling into interactive game mechanics."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 1 }, (_, i) =>
+            `/projects/OutfitOfTheDay/OutfitOfTheDay0${i + 1}.png`
+        )
     },
     {
         slug: "few-shot-learning",
@@ -310,7 +292,6 @@ export const projects: Project[] = [
             "Few-Shot Learning",
             "Medical Imaging"
         ],
-        github: "https://github.com/yourrepo",
         problem: "**Skin lesion classifiers trained on single, well-curated datasets often fail under real-world domain shifts**, such as variations in age, anatomical location, and skin tone. \n\nThis performance drop disproportionately affects under-represented groups, highlighting the need for models that generalize more robustly across domains.",
         solution: "This research investigates **metric-based few-shot learning (FSL)** as a strategy to improve cross-domain generalization in dermatology image classification. \n\nFour episodically trained meta-learning models — **Prototypical, Matching, Siamese, and Relation Networks** — sharing an EfficientNetV2-S backbone were trained on HAM10000 and evaluated across five domains. \n\nThe best-performing FSL model was further tested on the DDI dataset and compared against conventional supervised baselines using imbalance-aware metrics such as **AUC-PR, F1, precision, and recall**.",
         features: [
@@ -325,10 +306,8 @@ export const projects: Project[] = [
             "Integrated and experimentally validated an **EfficientNetV2-S–based Prototypical Network** for cross-domain evaluation.",
             "Presented findings at **IEEE ITIS 2025** and received **Best Speaker Award**."
         ],
-        images: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/1016/1200/600",
-            "https://picsum.photos/id/1018/1200/600",
-        ],
+        images: Array.from({ length: 1 }, (_, i) =>
+            `/projects/FSL/FSL0${i + 1}.png`
+        )
     },
 ]
