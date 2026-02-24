@@ -12,8 +12,8 @@ type BtnSmallFillProps = {
     text: string;
     type: BtnSmallFillType;
     icon?: string | React.ReactNode;
-    size?: any;
-    gap?: any;
+    size?: number;
+    gap?: string;
 }
 
 export default function BtnSmallFill({

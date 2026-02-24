@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import BtnSmallOutline from "../../../components/BtnSmallOutline";
-import ProjectsCard from "../../../components/ProjectsCard";
-import { projects } from "../model/project.data";
+import ProjectsCard, { ProjectsCardType } from "../../../components/ProjectsCard";
+import { projects, type Project } from "../model/project.data";
 
 import ArrowBack from "../../../assets/ArrowBack.svg";
 import ChevronIcon from "../../../assets/Chevron";
@@ -24,7 +24,7 @@ export default function ProjectsList() {
     const webProjects = projects.filter(p => p.tag === "web");
     const miscProjects = projects.filter(p => p.tag === "misc");
 
-    const [expanded, setExpanded] = useState({
+    const [expanded, setExpanded] = useState<ExpandedSections>({
         ios: true,
         web: true,
         misc: true,
@@ -105,7 +105,7 @@ function ProjectsSection({
     sectionKey,
     expanded,
     setExpanded
-}: any) {
+}: ProjectsSectionProps) {
     const isExpanded = expanded[sectionKey];
 
     return (
@@ -127,7 +127,10 @@ function ProjectsSection({
                         transition: "transform 0.3s ease"
                     }}
                     onClick={() =>
-                        setExpanded((prev: any) => ({ ...prev, [sectionKey]: !prev[sectionKey] }))
+                        setExpanded((prev: ExpandedSections) => ({
+                            ...prev,
+                            [sectionKey]: !prev[sectionKey]
+                        }))
                     }
                 >
                     <ChevronIcon
@@ -149,11 +152,28 @@ function ProjectsSection({
                 }}
             >
                 <div className="grid">
-                    {projects.map((project: any) => (
+                    {projects.map((project: Project) => (
                         <ProjectsCard key={project.slug} project={project} type={cardType} />
                     ))}
                 </div>
             </div>
         </div>
     );
+}
+
+interface ExpandedSections {
+    ios: boolean
+    web: boolean
+    misc: boolean
+}
+
+interface ProjectsSectionProps {
+    title: string
+    colorClass: string
+    align?: "start" | "end"
+    projects: Project[]
+    cardType: ProjectsCardType
+    sectionKey: keyof ExpandedSections
+    expanded: ExpandedSections
+    setExpanded: React.Dispatch<React.SetStateAction<ExpandedSections>>
 }

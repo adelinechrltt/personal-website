@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BtnSmallOutline from "./BtnSmallOutline";
@@ -28,18 +28,17 @@ export default function ProjectsCard({
     const techContainerRef = useRef<HTMLSpanElement>(null);
     const [visibleCount, setVisibleCount] = useState(2);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const el = techContainerRef.current;
         if (!el) return;
 
         const isOverflowing = el.scrollWidth > el.clientWidth;
+        const newCount = isOverflowing ? 1 : 2;
 
-        if (isOverflowing) {
-            setVisibleCount(1);
-        } else {
-            setVisibleCount(2);
-        }
-    }, [project.techStack]);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setVisibleCount(prev => (prev !== newCount ? newCount : prev));
+
+    }, [project.techStack, visibleCount]);
 
     return (
         <div
