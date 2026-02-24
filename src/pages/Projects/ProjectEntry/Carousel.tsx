@@ -21,7 +21,9 @@ export default function Carousel({ images }: CarouselProps) {
                 style={{ transform: `translateX(-${index * 100}%)` }}
             >
                 {images.map((src, i) => (
-                    <img key={i} src={src} alt="" />
+                    <div className="carousel-slide">
+                        <img key={i} src={src} alt="" />
+                    </div>
                 ))}
             </div>
 
