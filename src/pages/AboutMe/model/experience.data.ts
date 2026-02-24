@@ -1,5 +1,3 @@
-import type { ComponentType, SVGProps } from "react";
-
 import Benemica from "../../../assets/icons/experienceIcons/Benemica.png"
 import AppleDeveloperAcademy from "../../../assets/icons/experienceIcons/AppleDeveloperAcademy.jpeg"
 import AI4Impact from "../../../assets/icons/experienceIcons/AI4Impact.jpeg";

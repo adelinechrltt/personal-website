@@ -15,7 +15,7 @@ type BtnSmallOutlineProps = {
     text: string;
     type: BtnSmallOutlineType;
     icon?: string | React.ReactNode;
-    size?: any
+    size?: number
 }
 
 

@@ -1,5 +1,4 @@
 import BtnSmallFill from "./BtnSmallFill";
-import BtnSmallOutline from "./BtnSmallOutline";
 
 import "./styles/WarningOverlay.css"
 
