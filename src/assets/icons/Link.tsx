@@ -1,0 +1,33 @@
+type LinkIconProps = {
+    size?: number;
+    width?: number;
+    height?: number;
+    color?: string;
+    strokeWidth?: number;
+};
+
+export default function LinkIcon({
+    size,
+    width = size ?? 17,
+    height = size ?? 20,
+    color = "white",
+    strokeWidth = 1.5,
+}: LinkIconProps) {
+    return (
+        <svg
+            width={width}
+            height={height}
+            viewBox="0 0 17 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M10.5069 14.3204L8.95747 16.4946C8.26121 17.4716 7.20535 18.132 6.02216 18.3306C4.83897 18.5291 3.62537 18.2495 2.64835 17.5532C1.67133 16.857 1.01091 15.8011 0.812377 14.6179C0.613846 13.4347 0.893467 12.2211 1.58973 11.2441L3.10499 9.11782M6.20005 4.77469L7.71531 2.6484C8.41157 1.67138 9.46743 1.01096 10.6506 0.812431C11.8338 0.613901 13.0474 0.893522 14.0244 1.58978C15.0015 2.28604 15.6619 3.3419 15.8604 4.52509C16.0589 5.70828 15.7793 6.92188 15.0831 7.8989L13.5336 10.0732M5.95917 12.9073L10.7683 6.15893"
+                stroke={color}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}

@@ -1,0 +1,5 @@
+.base-layout {
+    background-color: #EBE0D2;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 6vw, 253px);
+}

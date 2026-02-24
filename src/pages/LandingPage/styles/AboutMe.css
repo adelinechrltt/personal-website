@@ -1,0 +1,74 @@
+#about-me {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3.4rem;
+}
+
+.about-me-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-me-header h1 {
+    font-size: calc(260 / 1512 * 100vw);
+    margin: 0;
+    margin-bottom: -4rem;
+}
+
+.about-me-header h2 {
+    font-size: calc(64 / 1512 * 100vw);
+    -webkit-text-stroke: 1px;
+    text-align: end;
+    margin: 0;
+    margin-bottom: -1.5rem;
+}
+
+.about-me-header h2 .build {
+    text-decoration-thickness: 0.2rem;
+    text-decoration-line: underline;
+    text-underline-offset: 0.3rem;
+}
+
+.about-me-intro {
+    font-size: calc(24 / 1512 * 100vw);
+    margin: 0;
+}
+
+.about-me-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 3.125rem;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.9rem;
+}
+
+.about-me-image {
+    position: absolute;
+    right: 0%;
+    top: 20%;
+    height: auto;
+    max-height: calc(625 / 793 * 100vh);
+    max-width: 50%;
+    width: auto;
+    z-index: 2;
+    pointer-events: none;
+}
